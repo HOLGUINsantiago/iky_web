@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/HOLGUINsantiago/iky_web/settings/pages/static/css/main.489a483d.css",
+    "main.js": "/HOLGUINsantiago/iky_web/settings/pages/static/js/main.ee2f5577.js",
+    "static/js/453.bf212d1c.chunk.js": "/HOLGUINsantiago/iky_web/settings/pages/static/js/453.bf212d1c.chunk.js",
+    "index.html": "/HOLGUINsantiago/iky_web/settings/pages/index.html",
+    "main.489a483d.css.map": "/HOLGUINsantiago/iky_web/settings/pages/static/css/main.489a483d.css.map",
+    "main.ee2f5577.js.map": "/HOLGUINsantiago/iky_web/settings/pages/static/js/main.ee2f5577.js.map",
+    "453.bf212d1c.chunk.js.map": "/HOLGUINsantiago/iky_web/settings/pages/static/js/453.bf212d1c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.489a483d.css",
+    "static/js/main.ee2f5577.js"
+  ]
+}
