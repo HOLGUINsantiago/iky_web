@@ -1,0 +1,55 @@
+.auth-menu-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .profile-circle {
+    height: 40px;
+    width: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 20px; /* Ajoute un peu de marge à droite de la boule */
+    display: flex; /* Ajoute ceci pour utiliser flexbox */
+    align-items: center; /* Centre l'image verticalement */
+    justify-content: center; /* Centre l'image horizontalement */
+    overflow: hidden; /* Assure que l'image ne dépasse pas la boule */
+  }
+  
+  .profile-logo {
+    height: 60%; /* Ajustez la hauteur de l'image en pourcentage */
+    width: auto; /* Laisse la largeur automatique pour garder les proportions */
+  }
+  
+  .auth-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+  }
+  
+  .auth-list-styled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .auth-list-styled li {
+    margin: 0;
+    padding: 10px 20px;
+  }
+  
+  .auth-link-styled {
+    color: rgb(114, 46, 46);
+    font-family: sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+  

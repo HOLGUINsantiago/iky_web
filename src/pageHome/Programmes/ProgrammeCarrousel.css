@@ -1,0 +1,48 @@
+/* Styles pour le conteneur du carrousel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Styles pour le carrousel */
+  .carousel {
+    display: flex;
+    width: 100%;
+  }
+  
+  /* Styles pour chaque carte d'abonnement */
+  .carousel-card {
+    flex: 0 0 auto; /* Pas de flex-grow et flex-shrink, garde la largeur fixe */
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin: 0 10px;
+    text-align: center;
+    min-width: 300px; /* Ajuste la largeur minimale de la carte comme nécessaire */
+  }
+  
+  /* Styles pour les boutons de navigation */
+  .carousel-button {
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: #eee;
+    border-radius: 4px;
+    z-index: 1; /* Assure que les boutons sont au-dessus du carrousel */
+  }
+  
+  /* Pour les flèches de navigation à gauche et à droite */
+  .carousel-button:first-of-type {
+    margin-right: 10px;
+  }
+  
+  .carousel-button:last-of-type {
+    margin-left: 10px;
+  }
+  

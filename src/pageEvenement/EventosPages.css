@@ -1,0 +1,64 @@
+/* EvenementesPages.css */
+
+.eventos-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Assurez-vous que la hauteur minimum couvre toute la fenêtre */
+  margin: 0;
+  box-sizing: border-box;
+  position: relative; /* Inclure le padding et les bordures dans la largeur totale */
+}
+
+.menu-eventos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 10px 0;/* Ajustez la hauteur si nécessaire */
+}
+
+.content-eventos {
+  margin-top: 60px; /* Ajustez cette valeur pour correspondre à la hauteur du menu */
+  padding: 20px;
+  position: relative; /* Assurez-vous que le contenu se place au-dessus du pseudo-élément */
+  z-index: 1; /* Inclure le padding dans la largeur totale */
+}
+
+.content-mosaique-eventos {
+  margin-top: -90px;
+}
+
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  width: 40px; /* Largeur du bouton */
+  height: 40px; /* Hauteur du bouton */
+  background-color: #000000; /* Couleur de fond */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none; 
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.scroll-to-top-button:hover {
+  background-color: #000000; /* Couleur de la bulle au survol */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.eventos-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/images/photo_home.jpeg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.5; /* Ajustez l'opacité de l'image de fond */
+  z-index: 0; /* Place l'image de fond derrière le contenu */
+}
