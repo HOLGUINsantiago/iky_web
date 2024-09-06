@@ -1,0 +1,131 @@
+/* AuthMenu.css */
+
+.auth-menu-container {
+  position: relative;
+}
+
+.profile-circle {
+  width: 50px;
+  height: 50px;
+  margin-right: 21px;
+  margin-top: 22px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.auth-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.auth-list-styled {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  width: 67px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 244, 233, 0.97);
+}
+
+.auth-list-styled li {
+  margin-bottom: 10px;
+}
+
+.auth-link-styled {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  background-color: transparent;
+  border : none; 
+  border-radius: 8px;
+  height: 25px;
+  font-weight: bold;
+}
+
+.auth-link-styled:hover {
+  transform: scale(1.1); /* Augmente la taille du texte à 110% lors du survol */
+}
+
+.login-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 330px;
+  height: 100%;
+  background-color: #ffffff;
+  border-left: 1px solid #ccc;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-close-login,
+.button-close-signup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #B42424;
+}
+
+.login-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form h2 {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.login-form p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+
+.signup-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 330px;
+  height: 100%;
+  background-color: #ffffff;
+  border-left: 1px solid #ccc;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}

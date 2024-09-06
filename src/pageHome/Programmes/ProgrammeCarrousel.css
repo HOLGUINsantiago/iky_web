@@ -1,48 +1,141 @@
-/* Styles pour le conteneur du carrousel */
-.carousel-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+.pack-container {
+  position: relative;
+  display: flex;
+  max-width: 330px;
+  flex-direction: column;
+  border-radius: 12px;
+  background-color: #212121;
+  border: 1px solid #fff;
+  padding: 1.6rem;
+  color: #fff;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  opacity: 1; /* Assurez-vous que les cartes sont visibles */
+  transform: translateX(0); /* Initialement, les cartes sont en place */
+  transition: all 3s ease;
+  filter: drop-shadow(0px 0px 10px #DC9424);
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100vw);
+    opacity: 0;
   }
-  
-  /* Styles pour le carrousel */
-  .carousel {
-    display: flex;
-    width: 100%;
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  /* Styles pour chaque carte d'abonnement */
-  .carousel-card {
-    flex: 0 0 auto; /* Pas de flex-grow et flex-shrink, garde la largeur fixe */
-    box-sizing: border-box;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    margin: 0 10px;
-    text-align: center;
-    min-width: 300px; /* Ajuste la largeur minimale de la carte comme nécessaire */
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100vw);
+    opacity: 0;
   }
-  
-  /* Styles pour les boutons de navigation */
-  .carousel-button {
-    padding: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    border: none;
-    background-color: #eee;
-    border-radius: 4px;
-    z-index: 1; /* Assure que les boutons sont au-dessus du carrousel */
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  /* Pour les flèches de navigation à gauche et à droite */
-  .carousel-button:first-of-type {
-    margin-right: 10px;
-  }
-  
-  .carousel-button:last-of-type {
-    margin-left: 10px;
-  }
-  
+}
+
+.left-slide-in {
+  animation: slideInFromLeft 3s ease-out forwards;
+}
+
+.right-slide-in {
+  animation: slideInFromRight 3s ease-out forwards;
+}
+
+
+.header-programmas {
+  position: relative;
+  margin: 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 0;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.title-programmas {
+  display: block;
+  font-family: sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  color: #fff
+}
+
+.price-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  font-family: sans-serif;
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.price-container span:first-child {
+  margin-top: 10px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.price-container span:last-child {
+  align-self: flex-end;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.lists-programmas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list-programmas {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.list-programmas span {
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background-color: rgba(255, 255, 255, 0.185);
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-programmas span svg {
+  height: 12px;
+  width: 12px;
+}
+
+.list-programmas p {
+  display: block;
+  font-family: sans-serif;
+}
+
+.button-container-programmas {
+  margin-top: auto; 
+  padding: 0;
+}
+
+.button-container-programmas button {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: #000;
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+}

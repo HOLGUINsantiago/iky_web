@@ -1,0 +1,50 @@
+.modal-overlay-nuestroProfesores {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content-nuestroProfesores {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .modal-close-nuestroProfesores {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  .modal-photo-nuestroProfesores {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .modal-name-nuestroProfesores {
+    margin: 10px 0;
+  }
+  
+  .modal-profession-nuestroProfesores {
+    color: #666;
+  }
+  
+  .modal-nuestroProfesores {
+    margin-top: 10px;
+  }
+  

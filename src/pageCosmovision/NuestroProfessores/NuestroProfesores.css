@@ -1,0 +1,89 @@
+/* NuestroProfesores.css */
+/* Styles spécifiques de Uiverse.io */
+.container-nuestroProfesores {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+  }
+  
+  .container-nuestroProfesores .glass {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    background: linear-gradient(#454040, #3d302d);
+    /* background-color: #1d1d1d; */
+    border: 1px solid #000;   
+     box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 10px;
+    margin: 0 -45px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+
+    backdrop-filter: blur(10px);
+    transform: rotate(calc(var(--r) * 1deg));
+  }
+  
+  .container-nuestroProfesores:hover .glass {
+    transform: rotate(0deg);
+    margin: 0 10px;
+  }
+  
+ 
+  
+  
+  /* Styles pour les cartes de professeur */
+  .professor-card-nuestroProfesores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%; /* Ajustez la largeur pour qu'elle remplisse le conteneur .glass */
+  }
+  
+  .professor-photo-nuestroProfesores {
+    border-radius: 50%;
+    width: 200px; /* Réduit la taille de la photo pour s'adapter à la carte */
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .professor-info-nuestroProfesores {
+    text-align: center;
+  }
+  
+  .professor-name-nuestroProfesores {
+    font-size: 1em; /* Ajustez la taille du texte si nécessaire */
+    margin: 0;
+    color: #ffffff; /* Assurez-vous que le texte est lisible */
+  }
+  
+  .professor-profession-nuestroProfesores {
+    font-size: 0.8em; /* Ajustez la taille du texte si nécessaire */
+    color: #ffffff;
+  }
+  .see-more-button-nuestroProfesores {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .see-more-button-nuestroProfesores:hover {
+    background-color: #0056b3;
+  }
+
+  .modal-profesores{
+    z-index: 1000;
+  }

@@ -1,0 +1,96 @@
+.menu-acerca {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Éléments du Menu */
+  .menu-item-acerca {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0px 0px 30px #DC9424);
+    align-items: center;
+    background-color: rgb(26 41 6);
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s ease all;
+  }
+
+  .menu-item-even:hover {
+    filter: drop-shadow(0px 0px 30px rgb(26 41 6));
+  }
+  
+  .menu-item-inner-acerca {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    filter: drop-shadow(0px 0px 30px #DC9424);
+    color: #fff; /* Couleur du texte */
+    transform: rotate(45deg); /* Applique une rotation de 45 degrés */
+    transition: color 0.3s ease, text-shadow 0.3s ease; 
+  }
+  
+  /* Styles pour les carrés avec texte */
+  .with-text {
+    color: #ffffff;
+    background-color: rgb(26 41 6);
+  }
+  
+  /* Styles spécifiques aux éléments avec effet */
+  .special-effect {
+    transition: 0.3s ease all;
+  }
+  
+  .special-effect:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #ffffff;
+    z-index: -1;
+    border-radius: 2px;
+  }
+  
+  .special-effect:hover .menu-item-inner-acerca {
+    color: rgb(26 41 6);
+  }
+  
+  .special-effect:hover:before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    background-color: #ffffff;
+  }
+  
+  /* Effet de clic */
+  .with-text:active {
+    transform: scale(0.9);
+  }
+  
+.menu-item-acerca:nth-child(7) { margin-top: 96px; margin-left: -734px; width: 132px; height: 132px;background-color: rgb(26 41 6);}
+.menu-item-acerca:nth-child(2) { margin-top: 91px; margin-left: 796px; width: 132px; height: 132px;background-color: rgb(26 41 6);}
+.menu-item-acerca:nth-child(3) { margin-top: -111px; margin-left: 995px; width: 132px; height: 132px;background-color: rgb(26 41 6);}
+.menu-item-acerca:nth-child(1) { margin-top: -101px; margin-left: -934px; width: 132px; height: 132px; background-color: rgb(26 41 6);}
+.menu-item-acerca:nth-child(6) { margin-top: -103px; margin-left: 30px; width: 250px; height: 250px; background-color: rgb(26 41 6);}
+.menu-item-acerca:nth-child(5) { margin-top: -101px; margin-left: -535px; width: 132px; height: 132px; background-color: rgb(26 41 6);}
+.menu-item-acerca:nth-child(4) { margin-top: -108px; margin-left: 596px; width: 132px; height: 132px;background-color: rgb(26 41 6);}
+.menu-item-acerca:nth-child(8) { margin-top: 51px; margin-left: -334px; width: 100px; height: 100px; background-color: rgb(26 41 6);}
+.menu-item-acerca:nth-child(9) { margin-top: 46px; margin-left: 398px; width: 100px; height: 100px;background-color: rgb(26 41 6);}
+
+
+.menu-item-acerca:nth-child(6) {
+    background-color: rgb(26 41 6);
+    box-shadow: none; /* Enlever les ombres */
+    cursor: default; /* Supprimer le curseur pointer */
+    /* Aucun effet de transition */
+  }

@@ -1,0 +1,211 @@
+.home-container {
+    width: 100%;
+    height: 100vh; /* Hauteur de l'image de fond */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/backgrounds/3FD006E5-591C-4D1F-B913-DA8B3E895010.JPG');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.content{
+  background-color: #21140e;
+}
+
+.logo-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.logo-wrapper img{
+    width: 40%;
+    
+}
+
+.auth-menu-wrapper {
+    position: absolute;
+    right: 70px;
+    top: 0px;
+    z-index: 10;
+}
+
+
+.titulo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el ancho total */
+    
+}
+
+.ishka-big {
+  font-size: 5vw; 
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+
+.separator{
+    height: 20vh;
+}
+
+.planning{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carusel-fotos {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #21140e;
+    background: linear-gradient(137deg, #b42424 0%, #DC9424 100%);
+    filter: drop-shadow(0px 0px 20px #DC9424);
+    overflow: hidden;
+}
+
+.text-wrapper {
+    background-color: #21140e;
+    border-radius: 10px;
+    width: 100%;
+    z-index: 2;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw;
+    color: #dc9424;
+    margin : 0px;
+    margin-left: -6vw;
+}
+
+.title-home {
+    display: flex;
+    justify-content: center;
+    color: #ffffff ;
+    font-size: 50px;
+    font-weight: normal;
+    background-color: #21140e;
+}
+
+.programmes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #21140e;
+    gap :6vw;
+    position: relative;
+    border-radius: 0px;
+    padding-bottom: 15vh;
+  }
+  
+  .programmas-card {
+    opacity: 0;
+    transform: translateX(-100vw); /* Positionne les cartes hors de l'écran à gauche */
+    transition: all 0.5s ease;
+    position: absolute; /* Permet aux cartes de se positionner en fonction du conteneur */
+    left: 50%;
+    transform: translateX(-50%); /* Centre les cartes horizontalement */
+  }
+  
+.eventos-wrapper{
+    display: flex;
+    flex-wrap: wrap;          
+    gap: 20px;               
+    justify-content: center; 
+    margin-bottom: 30px;
+    background-color: #21140e;
+}
+
+.separator-bar {
+    width: 80px;
+    height: 4px; 
+    background-color: #ffffff; 
+    margin: 0 auto;
+    border-radius: 2px;  
+    margin-top: 90px;
+   
+  }
+
+.first-part{
+  background-color: #21140e;
+  background-image: url('../assets/images/snake.png');
+  background-position: center;
+  background-size: contain; 
+  background-repeat: no-repeat; /* Evita quela imagen se repita */
+  padding-bottom: 8vw;
+}
+
+.vision-container {
+  display: flex;
+  padding: 2vw 4vw 0vw 4vw;
+  background-image: url('../assets/images/mandalas/feu.jpg'); /* Verifica que la ruta sea correcta */
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: scroll; /* Cambia a scroll si fixed no es necesario */
+  height: auto; /* Ajusta la altura según el contenido */
+  position: relative; /* Asegura que los elementos hijos se posicionen correctamente */
+  gap: 14vw;
+  height: 92vh;
+}
+
+.left-side-vision {
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-side-vision {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30vw; /* Ajusta el ancho según sea necesario */
+
+}
+
+.right-side-vision img {
+  max-width: 120%; /* Asegura que la imagen no exceda el contenedor */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  margin-right: 2vw;
+}
+
+.left-side-vision p {
+  margin: 0;
+  margin-top: 1vw;
+  padding: 0vw 10vw 0vw 2vw;
+  color: #ffffff;
+  margin-left: -1.8vw;
+  font-size: 1vw; 
+}
+
+.left-side-vision-text {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+

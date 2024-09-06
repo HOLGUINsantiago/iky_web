@@ -1,0 +1,151 @@
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+.card-container-diplomas {
+  padding: 20px;
+}
+
+.card-container-diplomas .card-diplomas {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex !important;
+  gap: 50px; /* Ajoute un espace de 20px entre les éléments */
+}
+
+.slick-prev, .slick-next {
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 24px;
+  color: #fff;
+}
+
+
+.card-diplomas .front-content-diplomas .card-image-diplomas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Assure que l'image couvre entièrement le conteneur */
+  z-index: -1; /* Assure que l'image est en arrière-plan */
+}
+
+.card-diplomas .front-content-diplomas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  margin-right: 20px;
+}
+
+.card-diplomas .front-content-diplomas p {
+  font-size: 50px;
+  font-weight: 700;
+  opacity: 1;
+  background: linear-gradient(-45deg, #4c7441 0%, #0e4d2f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  margin: 0; /* Assurez-vous que le paragraphe n'a pas de marge par défaut */
+}
+
+.card-diplomas .content-diplomas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  background: linear-gradient(-45deg, #4c7441 0%, #0e4d2f 100%);
+  color: #e8e8e8;
+  line-height: 1.5;
+  font-size: 25px;
+  border-radius: 5px;
+  pointer-events: none;
+  transform: translateY(-96%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-container-diplomas .card-diplomas.large-card {
+  transform: scale(1.2);
+}
+
+/* Taille pour les cartes autour */
+.card-container-diplomas .card-diplomas.small-card {
+  transform: scale(0.9);
+}
+
+.card-diplomas .content-diplomas .heading-diplomas {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0; /* Assurez-vous que le heading n'a pas de marge par défaut */
+}
+
+.card-diplomas .content-diplomas .heading-diplomas {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0; /* Assurez-vous que le heading n'a pas de marge par défaut */
+}
+
+
+.card-diplomas:hover .content-diplomas {
+  transform: translateY(0);
+}
+
+.card-diplomas:hover .front-content-diplomas {
+  transform: translateY(30%);
+}
+
+.card-diplomas:hover .front-content-diplomas p {
+  opacity: 0;
+}
+
+.expand-button-diplomas {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ff0f7b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.expand-button-diplomas:hover {
+  background-color: #f89b29;
+}

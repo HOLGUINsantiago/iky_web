@@ -13,40 +13,21 @@ function MosaiqueYoga() {
 
   const items = [
     "Systema Iky",
-    "Clases Regulares",
-    "Cursos",
-    "Retiros",
-    "Profesorado",
-    "Instructorado",
-    "Profondizacion",
+    "Clases",
+    "Cursos, retiros y talleres",
+    "Profesorado y intructorado",
+    "Profondizaciones y especializaciones",
+    "",
+    "",
     "YOGA",
     "",
     "",
     "",
   ];
 
-  const sectionIds = [
-    "systema",
-    "clases",
-    "cursos",
-    "retiros",
-    "profesorado",
-    "instructorado",
-    "profondizacion",
-    "",
-    "",
-    "",
-  ];
+  const sectionIds = ["1", "2", "3", "4", "5", "", "", "", "", ""];
 
-  const specialSections = [
-    "systema",
-    "clases",
-    "cursos",
-    "retiros",
-    "profesorado",
-    "instructorado",
-    "profondizacion",
-  ];
+  const specialSections = ["1", "2", "3", "4", "5"];
 
   return (
     <div className="menu-yoga">

@@ -1,0 +1,137 @@
+/* Container principal */
+.event-list {
+  max-width: 1200px;
+  margin: 50px auto;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+.h1-newEvent {
+  font-size: 40px;
+  font-weight: 600;
+  color: #111211;
+  margin-bottom: 24px;
+}
+
+/* Disposition en grille */
+.events-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.event-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #21140e;
+  border-radius: 5px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+  text-align: center;
+  width: 320px;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 30px; 
+  cursor: pointer;
+}
+
+.event-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.event-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  background-color: #21140e; 
+}
+
+.event-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.event-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 16px 0 8px 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* Effet au survol */
+.event-item:hover .event-image,
+.event-item:hover .event-title,
+.event-item:hover .progress-bar-container {
+  opacity: 0; /* Cache l'image, le titre et la jauge de progression */
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #DC9424;
+  font-size: 18px;
+  /* font-weight: bold; */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Empêche l'interaction avec ce texte */
+}
+
+.event-item:hover .hover-overlay {
+  opacity: 1; /* Affiche le texte "Voir plus" */
+}
+
+/* Container principal de la barre de progression */
+.progress-bar-container {
+  width: 100%; /* Étend la jauge sur toute la largeur */
+  height: 15px;
+  background-color: #bfaaaa;
+ 
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+/* Barre de progression */
+.progress-bar {
+  height: 100%;
+  background-color: #b42424;
+  /* background-color: #DC9424; */
+  transition: width 0.3s ease;
+  
+}
+
+/* Texte du temps restant */
+.time-left-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: white;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 2; 
+}

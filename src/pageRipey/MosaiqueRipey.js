@@ -12,9 +12,9 @@ function MosaiqueRipey() {
   };
 
   const items = [
-    "Diploma",
-    "Lista de Profesores",
-    "Paises",
+    "Qué es el RIPEY",
+    "Diplomas",
+    "Lista de profesores por paises",
     "RIPEY",
     "",
     "",
@@ -24,9 +24,9 @@ function MosaiqueRipey() {
     "",
   ];
 
-  const sectionIds = ["diploma", "lista", "paises", "", "", "", "", "", "", ""];
+  const sectionIds = ["1", "2", "3", "", "", "", "", "", "", ""];
 
-  const specialSections = ["diploma", "lista", "paises"];
+  const specialSections = ["1", "2", "3"];
 
   return (
     <div className="menu-ripey">
@@ -36,7 +36,7 @@ function MosaiqueRipey() {
 
         return (
           <div
-            className={`menu-item-ripey ${item ? "with-text" : ""} ${
+            className={`menu-item-ripey ${item ? "with-text-ripey" : ""} ${
               isSpecial ? "special-effect" : ""
             }`}
             style={{ transform: `rotate(-45deg)` }}

@@ -1,37 +1,13 @@
-/* Styles pour le carrousel */
-.carousel-container {
-    position: relative; /* Fixe le carrousel en haut à droite */
-    top: 0;
-    right: 0;
-    width: 730px; /* Ajustez la largeur du carrousel selon vos besoins */
-    height: 100vh; /* Hauteur de 100% de la fenêtre */
-    background-color: white; /* Fond blanc pour le carrousel */
-    z-index: 10; /* Assure que le carrousel est au-dessus des autres éléments */
-    overflow: hidden; /* Cache les débordements */
+.carousel-container{
+  background-color: #21140e;
+}
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  
 }
 
-/* Styles pour les images du carrousel */
-/* Carousel.css */
-.carousel-container {
-    width: 100%;
-    max-width: 1000px; /* Ajustez selon vos besoins */
-    margin: 0 auto;
-  }
-  
-  .carousel-item {
-    position: relative;
-  }
-  
-  .carousel-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-
-.carousel-image, .carousel-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajuste le contenu à l'intérieur du conteneur */
+.carousel-image {
+  max-width: 100%;
+  height: auto;
 }
-

@@ -1,0 +1,72 @@
+/* ExplicationRipey.css */
+.container-ripey {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-ripey {
+  position: relative;
+  width: 700px;
+  height: auto;
+  transition: 0.3s ease;
+  border-radius: 10px;
+  filter: drop-shadow(0px 0px 10px #adadad);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  background-color: #20283D; /* Couleur de fond de la carte */
+  color: #000000; /* Couleur du texte */
+  min-height: 400px; /* Hauteur minimale pour un meilleur centrage */
+  justify-content: center; /* Centrage vertical */
+}
+
+.card-ripey::before {
+  content: '';
+  background-color: #20283D;
+  position: absolute;
+  z-index: 1;
+  transition: 0.3s ease;
+  height: 98%;
+  width: 98%;
+  top: 1%;
+  left: 1%;
+  border-radius: 28px;
+}
+
+.card-ripey:hover {
+  filter: drop-shadow(0px 0px 30px #8e8e8e);
+}
+
+.ripey-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacement entre les éléments */
+}
+
+.ripey-list li {
+  font-size: 16px;
+  margin: 0;
+  color: #ffffff; /* Couleur du texte des éléments de la liste */
+}
+
+.text-explication {
+  margin: 10px 0;
+  color: #ffffff; /* Assurez-vous que le texte est noir */
+  font-size: 16px; /* Ajustez la taille de la police selon vos préférences */
+}
+
+@media (max-width: 768px) {
+  .card-ripey {
+    width: 90%;
+    padding: 10px;
+  }
+}

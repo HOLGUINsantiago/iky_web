@@ -1,0 +1,13 @@
+/* Conteneur pour aligner les cartes en grille */
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Crée une grille flexible avec des colonnes auto-ajustables */
+    gap: 2em; /* Espacement entre les cartes */
+    justify-content: center; /* Centre la grille horizontalement */
+  }
+  
+  /* Assurez-vous que chaque carte est bien dimensionnée */
+  .main-video {
+    width: 100%; /* S'adapte à la largeur de la colonne */
+  }
+  

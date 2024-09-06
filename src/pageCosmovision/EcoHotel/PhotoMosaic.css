@@ -1,0 +1,87 @@
+/* src/PhotoMosaic.css */
+.photo-mosaic {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 200px);
+    gap: 10px;
+    margin-bottom: 140px;
+  }
+  
+  .photo-item {
+    position: relative;
+  }
+  
+  .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    margin-top: 80px;
+    margin-bottom: 40px;
+
+  }
+  
+  .wave-title {
+    position: absolute;
+    bottom: 50px;
+    font-weight: none;
+    left: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    padding: 10px;
+    font-size: 2rem;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    z-index: 10;
+  }
+  
+  .wave-title.show {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  /* Animation pour chaque lettre */
+  .wave-title span {
+    opacity: 0;
+    display: inline-block;
+    animation: letterFade 0.5s ease forwards;
+  }
+  
+  .wave-title.show span {
+    animation-delay: calc(0.1s * var(--i));
+  }
+  
+  @keyframes letterFade {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+/* Styles pour le paragraphe */
+.wave-paragraph {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    z-index: 9;
+  }
+  
+  .wave-title.show + .wave-paragraph {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1s; /* Attendre que le titre soit complètement apparu */
+  }

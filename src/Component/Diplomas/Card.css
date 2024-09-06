@@ -1,0 +1,20 @@
+/* Carte de diplôme */
+.diploma-card {
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
+  margin: 0; /* Assure qu'il n'y a pas de marge autour des cartes */
+  max-width: 200px; /* Largeur maximale des cartes */
+  width: 100%; /* Assure que la carte prend toute la largeur disponible dans la grille */
+  transition: transform 0.3s ease; /* Ajoute une transition fluide pour l'effet de zoom */
+}
+
+.diploma-card:hover {
+  transform: scale(2); /* Agrandit légèrement la carte */
+  transform-origin: top left; /* Définit l'origine de la transformation au coin supérieur gauche */
+}
+/* Image dans la carte */
+.diploma-image {
+  width: 100%; /* Assure que l'image occupe toute la largeur du conteneur */
+  height: auto; /* Maintient les proportions de l'image */
+  object-fit: cover; /* Ajuste l'image pour remplir le conteneur sans déformation */
+  border-radius: 5px; /* Enlève le rayon aux coins pour éviter les espaces */
+}

@@ -1,0 +1,52 @@
+.acerca-container-globalPage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+.menu-acerca-globalPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+
+.content-acerca-globalPage {
+    /* margin-top: 60px; */
+    /* padding: 20px; */
+    position: relative;
+    z-index: 1;
+}
+
+.content-mosaique-globalPage {
+    margin-top: 0px;
+}
+
+.scroll-to-top-button-globalPage {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    border-radius: 50%;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.scroll-to-top-button-globalPage:hover {
+    background-color: #000000;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+

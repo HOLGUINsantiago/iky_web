@@ -1,0 +1,112 @@
+.card {
+    position: relative;
+  width: 700px;
+  height: auto;
+  transition: 0.3s ease;
+  border-radius: 30px;
+  filter: drop-shadow(0px 0px 30px #DC9424);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Aligne le contenu en haut */
+  box-sizing: border-box;
+  }
+
+  .container-calendar{
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card::before {
+    content: '';
+  background-color: #181818;
+  position: absolute;
+  z-index: 1;
+  transition: 0.3s ease;
+  height: 98%;
+  width: 98%;
+  top: 1%;
+  left: 1%;
+  border-radius: 28px;
+  }
+  
+  .card:hover {
+    filter: drop-shadow(0px 0px 30px #b42424);
+  }
+  .schedule {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    color: white;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .schedule-day {
+    margin-bottom: 20px;
+  }
+  
+  .day {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .course {
+    font-size: 16px;
+    width: 70%;
+    color: #fff; /* Couleur du texte */
+    text-decoration: none; /* Enlève le souligné par défaut */
+  }
+  
+  .course:hover {
+    text-decoration: underline; /* Souligner le texte au survol */
+    color: #f1f1f1; /* Couleur au survol */
+  }
+  
+  
+  .schedule-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .schedule-entry:last-child {
+    border-bottom: none;
+  }
+  
+  .course {
+    font-size: 16px;
+    width: 70%;
+  }
+  
+  .time {
+    font-size: 14px;
+    color: #f1f1f1;
+    width: 30%;
+    text-align: right;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 90%;
+      padding: 10px;
+    }
+  
+    .day {
+      font-size: 16px;
+    }
+  
+    .course {
+      font-size: 14px;
+    }
+  
+    .time {
+      font-size: 12px;
+    }
+  }

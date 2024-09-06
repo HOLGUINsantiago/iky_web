@@ -1,0 +1,48 @@
+/* SearchBar.css */
+.searchBar-container {
+  display: flex;
+  justify-content: center; /* Centre les barres de recherche horizontalement */
+  align-items: center; /* Centre les barres de recherche verticalement */
+  gap: 40px; 
+  margin-top: 30px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input {
+  width: 200px; /* Ajustez la largeur si nécessaire */
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid #8e8e8e;
+  border-radius: 8px;
+  outline: none;
+  background-color: #21140e; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  transition: 0.3s ease;
+}
+
+.input::placeholder {
+  color: #ffffff; /* Couleur des placeholders */
+}
+
+.input:focus,
+.input:hover {
+  outline: none;
+  border-color: #8e8e8e; /* Couleur de la bordure en focus/hover */
+  background-color: #21140e; /* Couleur de fond en focus/hover */
+  box-shadow: 0 0 0 4px rgb(180 36 36 / 10%);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: #8e8e8e; /* Couleur de l'icône */
+  width: 1rem;
+  height: 1rem;
+}

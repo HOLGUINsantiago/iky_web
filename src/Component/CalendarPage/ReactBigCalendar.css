@@ -1,0 +1,108 @@
+
+/* Conteneur principal du calendrier */
+.rbc-calendar {
+  background-color: white;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* En-têtes de jour dans la vue mois */
+.rbc-month-view .rbc-header {
+  background-color: #000000; /* Utilisation de la couleur #B42424 */
+  color: white;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Ligne de bordure entre les jours */
+.rbc-month-row + .rbc-month-row {
+  border-top: 1px solid #ddd;
+}
+
+/* Jours du mois */
+.rbc-month-view .rbc-day-bg {
+  border-right: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.rbc-month-view .rbc-date-cell {
+  text-align: right;
+  padding: 5px;
+  font-weight: bold;
+}
+
+/* Événements dans la vue mois */
+.rbc-event {
+  background-color: #DC9424; /* Couleur des événements #DC9424 */
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.rbc-event:hover {
+  background-color: #B36D16; /* Couleur au survol légèrement plus foncée */
+}
+
+/* Vue de la semaine et de la journée */
+.rbc-time-view {
+  border: none;
+}
+
+.rbc-time-view .rbc-time-header {
+  background-color: #B42424; /* Utilisation de la couleur #B42424 */
+  color: white;
+}
+
+.rbc-time-view .rbc-time-content {
+  border-top: 1px solid #ddd;
+}
+
+/* Barre de temps */
+.rbc-time-header-cell {
+  border-right: 1px solid #ddd;
+  background-color: #f4f4f4;
+  color: #111211; /* Texte couleur #111211 */
+  font-weight: bold;
+}
+
+/* Vue des événements */
+.rbc-time-content .rbc-time-slot {
+  border-top: 1px solid #eee;
+}
+
+/* Sélection d'un créneau horaire */
+.rbc-slot-selecting {
+  background-color: rgba(180, 36, 36, 0.2); /* Couleur de sélection #B42424 en transparence */
+}
+
+/* Jour sélectionné dans la vue mois */
+.rbc-selected-cell {
+  background-color: rgba(180, 36, 36, 0.1); /* Couleur de sélection #B42424 en transparence */
+}
+
+/* En-têtes des vues semaine/jour */
+.rbc-time-header-gutter {
+  background-color: #DC9424; /* Utilisation de la couleur #DC9424 */
+  color: white;
+}
+
+/* Barre d'heure sur la gauche */
+.rbc-time-content .rbc-time-gutter {
+  background-color: #f9f9f9;
+  color: #111211;
+}
+
+/* Scrollbars dans les vues journée et semaine */
+.rbc-time-content {
+  overflow-y: auto;
+}
+
+/* Bordure des événements dans les vues journée et semaine */
+.rbc-time-content .rbc-event {
+  border: 1px solid #DC9424; /* Bordure des événements #DC9424 */
+}

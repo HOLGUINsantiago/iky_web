@@ -1,3 +1,5 @@
+/* LoginPage.css */
+
 .loginPage {
     background-color: #f0f0f0;  
     min-height: 100vh;         
@@ -6,4 +8,11 @@
     align-items: center;
     justify-content: center;    
     padding: 20px;
+    position: relative; /* Ensure that child elements can be positioned relative to this container */
+}
+
+.authMenu {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
 }

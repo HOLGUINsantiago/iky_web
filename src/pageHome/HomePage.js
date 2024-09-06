@@ -1,12 +1,18 @@
-import React from "react";
-import Nav from "./Nav.js";
-import AuthMenu from "./AuthMenu.js";
+import React, { useState, useEffect } from "react";
+import Nav from "../Component/Nav.js";
+import AuthMenu from "../Component/AuthMenu.js";
 import TextWithModal from "./TextWithModal.js";
-import ProgramCarousel from "./Programmes/ProgrammeCarrousel.js";
 import { LoremIpsum } from "lorem-ipsum";
 import "./HomePage.css";
-import logoImage from "../assets/images/logo/ISHKA_logo_2021_fin-01.png";
-import ImageCarousel from "./Carousel.js";
+import logoImage from "../assets/images/iky.png";
+import Carousel from "./Carousel.js";
+
+import image1 from "../assets/images/backgrounds/IMG_1948.jpeg";
+import image2 from "../assets/images/IMG_0648.jpeg";
+import image3 from "../assets/images/backgrounds/IMG_4322.jpg";
+import mandala from "../assets/images/mandalas/mandalaNew.png";
+
+const images = [image1, image2, image3];
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
@@ -21,6 +27,25 @@ const lorem = new LoremIpsum({
 
 function Home() {
   const randomText = lorem.generateParagraphs(10);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const triggerPoint = 200; // Ajustez cette valeur pour contrôler quand l'effet commence
+
+      if (scrollPosition > triggerPoint) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div>
@@ -33,17 +58,20 @@ function Home() {
         </div>
         <div className="logo-wrapper">
           <img src={logoImage} alt="Logo" />
+          <h1 className={`ishka ${scrolled ? "scrolled" : ""}`}>
+            ISHKA KANKUEB YOGA
+          </h1>
         </div>
       </div>
-      <div className="carusel-fotos">
-        <ImageCarousel />
+      <div className="carousel-text-container">
+        <div className="carusel-fotos">
+          <Carousel images={images} />
+        </div>
+        <div className="text-wrapper">
+          <div className="title">Nuestra visión</div>
+          <TextWithModal text={randomText} />
+        </div>
       </div>
-      <div className="text-wrapper">
-        <TextWithModal title="Nuestra vision" text={randomText} />
-      </div>
-      {/* <div className="program-carousel-wrapper">
-        <ProgramCarousel programs={programs} />
-      </div> */}
     </div>
   );
 }
