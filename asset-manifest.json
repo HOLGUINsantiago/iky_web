@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.11e36e87.css",
-    "main.js": "/static/js/main.94ab155f.js",
+    "main.css": "/static/css/main.ea27b915.css",
+    "main.js": "/static/js/main.78f60a77.js",
     "static/js/453.579ea4ad.chunk.js": "/static/js/453.579ea4ad.chunk.js",
     "static/media/EcoHotel_Brochure.pdf": "/static/media/EcoHotel_Brochure.8c449279a6d5ceac6181.pdf",
     "static/media/Jardin1.jpg": "/static/media/Jardin1.2e3612cf252cec2ae217.jpg",
@@ -85,12 +85,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.11e36e87.css.map": "/static/css/main.11e36e87.css.map",
-    "main.94ab155f.js.map": "/static/js/main.94ab155f.js.map",
+    "main.ea27b915.css.map": "/static/css/main.ea27b915.css.map",
+    "main.78f60a77.js.map": "/static/js/main.78f60a77.js.map",
     "453.579ea4ad.chunk.js.map": "/static/js/453.579ea4ad.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.11e36e87.css",
-    "static/js/main.94ab155f.js"
+    "static/css/main.ea27b915.css",
+    "static/js/main.78f60a77.js"
   ]
 }
