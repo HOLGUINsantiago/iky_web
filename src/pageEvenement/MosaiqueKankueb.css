@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #b42424;
+  background-color: #4b1a1a;
   border-radius: 2px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -24,7 +24,7 @@
 }
 
 .menu-item-even:hover {
-  filter: drop-shadow(0px 0px 30px #b42424);
+  filter: drop-shadow(0px 0px 30px #4b1a1a);
 }
 
 .menu-item-inner-even {
@@ -39,7 +39,7 @@
 /* Styles pour les carrés avec texte */
 .with-text {
   color: #ffffff;
-  background-color: #b42424;
+  background-color: #4b1a1a;
 }
 
 /* Styles spécifiques aux éléments avec effet */
@@ -63,7 +63,7 @@
 }
 
 .special-effect:hover .menu-item-inner-even {
-  color: #b42424;
+  color: #4b1a1a;
 }
 
 .special-effect:hover:before {
@@ -79,19 +79,19 @@
 }
 
 /* Positions spécifiques pour les carrés */
-.menu-item-even:nth-child(7) { margin-top: 168px; margin-left: -214px; width: 100px; height: 100px; background-color: #b42424;}
-.menu-item-even:nth-child(8) { margin-top: 410px; margin-left: 31px; width: 100px; height: 100px; background-color: #b42424;}
-.menu-item-even:nth-child(6) { margin-top: 157px; margin-left: 287px; width: 100px; height: 100px;background-color: #b42424; }
-.menu-item-even:nth-child(2) { margin-top: 4px; margin-left: 482px; width: 132px; height: 132px;background-color: #b42424; }
-.menu-item-even:nth-child(4) { margin-top: 7px; margin-left: 869px; width: 132px; height: 132px; background-color: #b42424;}
-.menu-item-even:nth-child(3) { margin-top: -103px; margin-left: 30px; width: 250px; height: 250px;background-color: #b42424; }
-.menu-item-even:nth-child(5) { margin-top: 15px; margin-left: -798px; width: 132px; height: 132px; background-color: #b42424;}
-.menu-item-even:nth-child(1) { margin-top: 16px; margin-left: -412px; width: 132px; height: 132px; background-color: #b42424;}
+.menu-item-even:nth-child(7) { margin-top: 168px; margin-left: -214px; width: 100px; height: 100px; background-color: #4b1a1a;}
+.menu-item-even:nth-child(8) { margin-top: 410px; margin-left: 31px; width: 100px; height: 100px; background-color: #4b1a1a;}
+.menu-item-even:nth-child(6) { margin-top: 157px; margin-left: 287px; width: 100px; height: 100px;background-color: #4b1a1a; }
+.menu-item-even:nth-child(2) { margin-top: 4px; margin-left: 482px; width: 132px; height: 132px;background-color: #4b1a1a; }
+.menu-item-even:nth-child(4) { margin-top: 7px; margin-left: 869px; width: 132px; height: 132px; background-color: #4b1a1a;}
+.menu-item-even:nth-child(1) { margin-top: -103px; margin-left: 30px; width: 250px; height: 250px;background-color: #4b1a1a; }
+.menu-item-even:nth-child(5) { margin-top: 15px; margin-left: -798px; width: 132px; height: 132px; background-color: #4b1a1a;}
+.menu-item-even:nth-child(3) { margin-top: 16px; margin-left: -412px; width: 132px; height: 132px; background-color: #4b1a1a;}
 
 
 /* Enlever les effets pour "Eventos" */
 .menu-item-even:nth-child(9) {
-  background-color: #b42424;
+  background-color: #4b1a1a;
   border: 3px solid rgb(181, 78, 78);
   box-shadow: none; /* Enlever les ombres */
   cursor: default;

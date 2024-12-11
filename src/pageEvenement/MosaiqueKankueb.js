@@ -13,9 +13,9 @@ function Mosaique() {
   };
 
   const items = [
-    "Cosmovision y Calendario Maya",
     "Kankueb",
     "Mystic Dance",
+    "Cosmovision y Calendario Maya",
     "",
     "",
     "",

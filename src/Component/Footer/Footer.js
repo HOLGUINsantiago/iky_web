@@ -1,5 +1,11 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+} from "react-icons/fa";
 import "./Footer.css";
 
 function Footer() {
@@ -34,7 +40,7 @@ function Footer() {
         <div className="footer-section">
           <h4>Siguenos</h4>
           <ul className="social-links">
-            <li>
+            {/* <li>
               <a
                 href="https://facebook.com"
                 target="_blank"
@@ -42,32 +48,25 @@ function Footer() {
               >
                 <FaFacebook color="#1877F2" />
               </a>
-            </li>
+            </li> */}
+
             <li>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaTwitter color="#1DA1F2" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/chakrarajakan/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaInstagram color="#E1306C" />
               </a>
             </li>
+
             <li>
               <a
-                href="https://linkedin.com"
+                href="https://www.youtube.com/@chakrarajakan"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin color="#0077B5" />
+                <FaYoutube color="#FF0000" />
               </a>
             </li>
           </ul>

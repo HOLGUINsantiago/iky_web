@@ -1,0 +1,166 @@
+/* Style général du container du menu utilisateur */
+.user-menu-container {
+    position: absolute;
+    top: 20px;
+    right: -50px;
+    z-index: 1000;
+    height: 100%;
+  }
+  
+  .user-dropdown {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: rgba(255, 244, 233, 0.97);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 270px;
+    padding: 15px;
+    display: none;
+    z-index: 1000;
+    height: auto; 
+  }
+  
+  .user-dropdown {
+    display: none; /* Par défaut, le menu est masqué */
+  }
+  
+  .user-dropdown.sh {
+    display: block; /* Affiche le menu lorsqu'il est visible */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .user-info {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .user-name {
+    font-size: 12px; /* Très petit, en haut */
+    color: #000000;
+    margin-bottom: 5px;
+  }
+  
+  .profile-circle {
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  
+  .greeting {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user-menu-btn {
+    padding: 8px 16px;  /* Ajuster la taille du bouton */
+    width: 200px;
+    color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 14px; /* Réduire la taille de la police */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 10px;  /* Ajouter un espace entre les boutons */
+  }
+  
+  .user-menu-btn.logout {
+    background-color: transparent;
+    border-radius: 15px;
+  }
+  
+  .user-menu-btn.logout:hover {
+    background-color: #000000;
+    color: antiquewhite;
+  }
+  
+  .access-platform-btn {
+    background-color: transparent;
+    border-radius: 15px;
+    border-color: #000000;
+  }
+  
+  .access-platform-btn:hover {
+    background-color: #000000;
+    color: antiquewhite;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .user-menu-container {
+      top: 10px;
+      right: 10px;
+    }
+    .profile-circle {
+      width: 35px;
+      height: 35px;
+    }
+    .profile-logo {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  
+  /* Cadre "puzzle" pour les notifications, événements, et prochain cours */
+  .user-notifications {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 15px 15px 0 0; /* Coins arrondis uniquement en haut */
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 3px;
+    margin-top: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto;  /* Ajuster la hauteur pour s'adapter au contenu */
+  }
+  
+  .user-events {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 4px; /* Coins arrondis uniquement en haut */
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto;  /* Ajuster la hauteur pour s'adapter au contenu */
+  }
+  
+  .user-upcoming-course {
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 0 0 15px 15px; /* Coins arrondis uniquement en bas */
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    margin-top: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto;  /* Ajuster la hauteur pour s'adapter au contenu */
+  }
+  
+
+  

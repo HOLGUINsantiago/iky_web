@@ -1,0 +1,81 @@
+.kankueb-container {
+  position: relative;
+  text-align: justify;
+  display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+  align-items: flex-start;
+  padding: 50px;
+  background-color: transparent; /* Fond transparent pour le texte */
+  z-index: 1; /* Assure que le texte est au-dessus de la superposition */
+  height: 100%;
+}
+
+.kankueb-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 600px;
+  height: 600px;
+  z-index: -1;
+  background-image: url("../../assets/images/serp.png");
+  background-size: cover; /* L'image couvre toute la zone */
+  background-position: center top; /* Centre l'image horizontalement */
+  background-repeat: no-repeat;
+  opacity: 0.3; /* Image semi-transparente */
+  filter: brightness(80%) blur(0px); /* Applique un filtre de luminosité et flou */
+}
+
+.kankueb-header {
+  display: flex;
+  flex-direction: row; 
+  width: 100%;
+}
+
+.kankueb-image-container {
+  display: flex;
+  flex-direction: column; /* Les images seront empilées verticalement */
+  justify-content: center;
+  align-items: flex-start; /* Les images seront alignées à gauche */
+  margin-right: 70px; /* Espacement entre les images et le texte */
+}
+
+.kankueb-image {
+  width: 200px; /* Taille des images */
+  height: auto;
+  margin-bottom: 0px; /* Espacement entre les images */
+  border: 2px solid white; /* Bordure blanche entre les images */
+}
+
+.kankueb-content {
+  flex-grow: 1; /* Permet au texte de prendre tout l'espace restant */
+  max-width: 80%; /* Augmente la largeur du texte */
+}
+
+.kankueb-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #d6d6d6;
+  text-align: left;
+}
+
+.kankueb-text {
+  font-size: 16px;
+  color: #c5c4c4;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.kankueb-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.kankueb-list li {
+  margin-bottom: 10px;
+  color: beige;
+}
+
+.kankueb-list strong {
+  color: beige;
+}

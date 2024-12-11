@@ -1,0 +1,41 @@
+.explanation-agua {
+    position: relative;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 610px;
+    overflow: hidden; /* Assure que l'image de fond ne dépasse pas les bords arrondis */
+}
+
+.explanation-agua::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../assets/images/elements/Agua1.png");
+    opacity: 0.6; /* Transparence de l'image de fond */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Met l'image derrière le contenu */
+    transition: opacity 0.3s ease;
+}
+
+.explanation-agua h4 {
+    color: #c3a155;
+    margin-top: -10px;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative; /* Assure que le texte est au-dessus de l'image */
+    z-index: 1;
+}
+
+.explanation-agua p {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+    position: relative; /* Assure que le texte est au-dessus de l'image */
+    z-index: 1;
+}

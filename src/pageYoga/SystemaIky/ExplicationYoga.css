@@ -1,0 +1,58 @@
+/* ExplicationRipey.css */
+.container-Yoga {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-Yoga {
+    position: relative;
+    width: 700px;
+    height: auto;
+    transition: 0.3s ease;
+    border-radius: 10px;
+    filter: drop-shadow(0px 0px 10px #adadad);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    background-color: #646a78; /* Couleur de fond de la carte */
+    color: #f9f6f6; 
+    justify-content: center; /* Centrage vertical */
+  }
+  
+  
+  
+  .card-Yoga:hover {
+    filter: drop-shadow(0px 0px 30px #8e8e8e);
+  }
+  
+  
+.sistema-iky-section {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .sistema-iky-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 0;
+  }
+  
+  .sistema-iky-header h3 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .sistema-iky-text {
+    margin: 10px 0;
+    padding-left: 10px;
+    line-height: 1.6;
+    color: white;
+  }

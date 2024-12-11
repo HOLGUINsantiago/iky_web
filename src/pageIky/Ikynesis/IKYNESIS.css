@@ -1,0 +1,17 @@
+.ikynesis-container {
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .ikynesis-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  .ikynesis-text strong {
+    color: #c9c9c9; /* Couleur rouge pour souligner certains éléments */
+  }
+  

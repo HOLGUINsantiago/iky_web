@@ -1,0 +1,46 @@
+.salsa-summary {
+    padding: 20px;
+    margin-top: 50px;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    opacity: 0; /* Initialement invisible */
+    transform: translateY(20px); /* Déplace le composant vers le bas au départ */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .salsa-summary.visible {
+    opacity: 1; /* Visible lorsque la classe 'visible' est ajoutée */
+    transform: translateY(0); /* Remet le composant à sa position d'origine */
+  }
+  
+  .titre-salsa {
+    text-align: center;
+    color: #333;
+  }
+  
+  .session-details {
+    margin-top: 20px;
+  }
+  
+  .session-details h3 {
+    color: #555;
+  }
+  
+  ul {
+    list-style-type: none; /* Retire les puces */
+    padding-left: 0; /* Retire le padding par défaut */
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  .p-salsa {
+    line-height: 1.6;
+    color: #ffffff;
+  }
+  

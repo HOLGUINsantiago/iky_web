@@ -1,0 +1,33 @@
+/* FireExplanation.css */
+.explanation-eter {
+    background-image: url("../../../assets/images/elements/eter1.png"); /* Assurez-vous que le chemin est correct */
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir tout l'élément */
+    background-position: center; /* Centre l'image de fond */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 610px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative; /* Assure que les éléments positionnés absolument se trouvent à l'intérieur de cet élément */
+}
+
+.explanation-eter h4 {
+    color: #754f76;
+    font-size: 1.5rem;
+    margin-top: -10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.explanation-eter p {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.explanation-eter p strong {
+    color: #ffffff;
+    font-weight: bold;
+}
+

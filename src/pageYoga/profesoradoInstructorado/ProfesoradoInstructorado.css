@@ -1,0 +1,72 @@
+.profesorado-instructorado-container {
+    margin-top: 60px;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .section-yoga-profesorado {
+    margin-bottom: 40px;
+  }
+  
+  .title-yoga-profesorado {
+    font-size: 24px;
+    color: #868686;
+    margin-bottom: 16px;
+  }
+  
+  .description-yoga-profesorado {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+  
+  .subtitle-yoga-profesorado {
+    font-size: 20px;
+    color: #868686;
+    margin-bottom: 12px;
+  }
+  
+  .content-yoga-profesorado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Espace entre le texte et l'image */
+    margin-bottom: 20px;
+  }
+  
+  .text-content-yoga-profesorado {
+    flex: 1;
+    min-width: 60%;
+  }
+  
+  .image-container-yoga-profesorado {
+    flex-shrink: 0;
+    max-width: 35%; /* Limite la largeur maximale de l'image */
+    min-width: 250px;
+    align-self: flex-start; /* Assure que l'image reste alignée en haut */
+  }
+  
+  .objective-image-yoga-profesorado {
+    width: 100%;
+    border: 1px solid white;
+    background-color: white;
+  }
+  
+  /* Media Queries pour les petits écrans */
+  @media (max-width: 768px) {
+    .content-yoga-profesorado {
+      flex-direction: column;
+    }
+  
+    .image-container-yoga-profesorado {
+      margin-left: 0;
+      margin-top: 20px;
+      max-width: 100%;
+    }
+  
+    .text-content-yoga-profesorado {
+      min-width: 100%;
+    }
+  }
+  

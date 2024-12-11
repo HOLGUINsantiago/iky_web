@@ -1,0 +1,120 @@
+/* Conteneur principal */
+.container-wrapper {
+    display: flex;
+    justify-content: center; /* Centre le conteneur horizontalement */
+    align-items: center; /* Centre le conteneur verticalement */
+    height: 100vh; /* Occupe toute la hauteur de la fenêtre */
+    position: relative;
+    overflow: hidden; /* Assure que les éléments ne débordent pas */
+    margin: 0;
+  }
+  
+  /* Conteneur pour les lettres alignées en colonne */
+  .yes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les lettres horizontalement */
+    transition: transform 0.5s ease;
+    position: relative;
+  }
+  
+  /* Conteneur pour chaque lettre principale */
+  .letter-container {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Style de base pour les lettres principales */
+  .letter-y, .letter-e, .letter-s {
+    font-size: 100px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    position: relative;
+  }
+  
+  /* Style des petites lettres animées */
+  .wave {
+    display: inline-block;
+    color: white;
+    opacity: 0;
+    font-size: 50px;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Positionnement des vagues */
+  .wave-1 { left: 55px; }
+  .wave-2 { left: 90px; }
+  .wave-3 { left: 125px; }
+  .wave-spagnol.wave-1 { left: 55px; }
+  .wave-spagnol.wave-2 { left: 88px; }
+  .wave-spagnol.wave-3 { left: 125px; }
+  .wave-spagnol.wave-4 { left: 160px; }
+  .wave-spagnol.wave-5 { left: 195px; }
+  .wave-spagnol.wave-6 { left: 230px; }
+  .wave-spagnol.wave-7 { left: 265px; }
+  .wave-alsa.wave-1 { left: 55px; }
+  .wave-alsa.wave-2 { left: 90px; }
+  .wave-alsa.wave-3 { left: 120px; }
+  .wave-alsa.wave-4 { left: 155px; }
+  
+  /* Classe visible */
+  .wave.visible {
+    opacity: 1;
+    transform: translateY(-50%) translateX(10px);
+  }
+  
+  /* Style pour le conteneur de la croix de fermeture */
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px; /* Positionne la croix à droite du conteneur principal */
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+  }
+  
+  .close-btn.visible {
+    opacity: 1;
+  }
+  
+  /* Style du conteneur des détails */
+  .details-container {
+    position: absolute;
+    top: 50%; /* Centre verticalement par rapport au conteneur principal */
+    transform: translateY(-50%); 
+    right: -10px;
+    padding: 20px; 
+    border-radius: 8px; /* Coins arrondis */
+    text-align: center; /* Centre le texte dans les détails */
+    transition: opacity 0.5s ease; /* Transition pour l'apparition/disparition */
+     /* Assure que le contenu peut défiler si nécessaire */
+  }
+  
+  /* Style des détails de cours */
+  .course-details {
+    font-size: 24px;
+    color: #000; /* Couleur de texte pour les détails */
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  /* Animation pour faire apparaître les détails */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

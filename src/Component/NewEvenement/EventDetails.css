@@ -25,7 +25,7 @@
     max-width: 90%;
     text-align: justify;
     font-size: 16px;
-    color: white;
+    color: rgb(255, 0, 0);
     transition: color 0.3s ease-in-out;
     margin-left: 50px;
   }
@@ -36,7 +36,7 @@
   
   /* Changement de style après défilement */
   .event-info-container.scrolled {
-    color: black; 
+    color: rgb(154, 154, 154); 
     z-index: 1000;/* Change la couleur du texte en noir */
   }
   
@@ -48,7 +48,7 @@
   .content-below {
     height: 100vh; /* Hauteur de la section avec le fond blanc */
     padding: 50px 20px;
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(206, 206, 206);
     position: relative; /* Assure que les éléments positionnés absolument sont relatifs à ce conteneur */
   }
   
@@ -79,3 +79,51 @@
     background-color: #B42424; /* Couleur de fond au survol du bouton */
   }
   
+ /* Style de la fenêtre modale */
+.modal-event {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  z-index: 1000;
+}
+
+/* Style du contenu de la fenêtre modale */
+.modal-event-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 800%;
+  max-width: 500px;
+  animation: modal-fade-in 0.3s ease-out;
+}
+
+/* Animation d'apparition de la modale */
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Bouton pour fermer la modale */
+.close-button {
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

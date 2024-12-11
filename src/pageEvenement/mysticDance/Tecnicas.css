@@ -1,0 +1,25 @@
+/* src/components/Techniques.css */
+.techniques-container {
+    padding: 20px;
+
+    color: white;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.techniques-container h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.techniques-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    
+}
+
+.p-tecnicas{
+    color: #c5c4c4;
+}

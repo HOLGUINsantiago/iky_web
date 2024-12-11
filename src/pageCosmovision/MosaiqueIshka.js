@@ -17,13 +17,13 @@ function MosaiqueRipey() {
     "Nuestro profesores",
     "Calendario",
     "Eco-Hotel",
-    "Descubre",
+    "",
     "Ishka Center",
   ];
 
-  const sectionIds = [1, 2, 3, 4, 5, 6, ""];
+  const sectionIds = [1, 2, 3, 4, 5, "", ""];
 
-  const specialSections = [1, 2, 3, 4, 5, 6];
+  const specialSections = [1, 2, 3, 4, 5];
 
   return (
     <div className="menu-ishka">

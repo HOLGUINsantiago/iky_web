@@ -1,0 +1,38 @@
+/* src/components/CosmovisionMaya.css */
+.cosmovision-container {
+    padding: 20px;
+    color: #c5c4c4;; /* Couleur du texte pour une bonne lisibilité */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
+}
+
+.cosmovision-container h2 {
+    font-size: 1.8rem;
+    color: #ffffff; /* Une couleur sombre pour le titre */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.text-and-image-container {
+    display: flex; /* Utilisation de flexbox pour disposer le texte et l'image en ligne */
+    align-items: flex-start; /* Aligne le texte et l'image en haut */
+    gap: 20px; /* Espacement entre le texte et l'image */
+}
+
+.text-section {
+    flex: 2; /* Prend plus de place que l'image */
+    margin-right: 20px; /* Espacement à droite du texte */
+    text-align: justify;
+    color: #c5c4c4;
+}
+
+.image-section {
+    flex: 1; /* Prend moins de place que le texte */
+    max-width: 300px; /* Limite la largeur de l'image */
+    text-align: justify;
+}
+
+.image-section img {
+    width: 100%; /* L'image occupe toute la largeur du conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    border-radius: 8px; /* Coins arrondis pour l'image */
+}

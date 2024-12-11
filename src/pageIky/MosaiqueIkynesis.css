@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #b42424;
+  background-color: #463d4b;
   filter: drop-shadow(0px 0px 30px #DC9424);
   border-radius: 2px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -25,21 +25,21 @@
   transition: 0.3s ease all;
 }
 .menu-item-iky:hover {
-  filter: drop-shadow(0px 0px 30px #b42424);
+  filter: drop-shadow(0px 0px 30px #463d4b);
 }
 
 /* Positions spécifiques pour les carrés */
-.menu-item-iky:nth-child(9) { margin-top: 90px; margin-left: -337px; width: 132px; height: 132px; background-color: #b42424;}
-.menu-item-iky:nth-child(10) { margin-top: -299px; margin-left: 398px; width: 132px; height: 132px; background-color: #b42424;}
-.menu-item-iky:nth-child(11) { margin-top: -302px; margin-left: 793px; width: 132px; height: 132px;background-color: #b42424;}
-.menu-item-iky:nth-child(8) { margin-top: 87px; margin-left: -731px; width: 132px; height: 132px;background-color: #b42424;}
-.menu-item-iky:nth-child(6) { margin-top: 94px; margin-left: 795px; width: 132px; height: 132px;background-color: #b42424;}
-.menu-item-iky:nth-child(7) { margin-top: -309px; margin-left: -730px; width: 132px; height: 132px; background-color: #b42424;}
-.menu-item-iky:nth-child(5) { margin-top: -103px; margin-left: 30px; width: 250px; height: 250px; background-color: #b42424;}
-.menu-item-iky:nth-child(4) { margin-top: -109px; margin-left: -929px; width: 132px; height: 132px; background-color: #b42424;}
-.menu-item-iky:nth-child(2) { margin-top: -104px; margin-left: 596px; width: 132px; height: 132px;background-color: #b42424;}
-.menu-item-iky:nth-child(3) { margin-top: -106px; margin-left: 991px; width: 132px; height: 132px;background-color: #b42424;} /* Exemple de nouveau carré décoratif */
-.menu-item-iky:nth-child(1) { margin-top: -110px; margin-left: -532px; width: 132px; height: 132px;background-color: #b42424;} 
+.menu-item-iky:nth-child(9) { margin-top: 90px; margin-left: -337px; width: 132px; height: 132px; background-color: #463d4b;}
+.menu-item-iky:nth-child(10) { margin-top: -299px; margin-left: 398px; width: 132px; height: 132px; background-color: #463d4b;}
+.menu-item-iky:nth-child(11) { margin-top: -302px; margin-left: 793px; width: 132px; height: 132px;background-color: #463d4b;}
+.menu-item-iky:nth-child(8) { margin-top: 87px; margin-left: -731px; width: 132px; height: 132px;background-color: #463d4b;}
+.menu-item-iky:nth-child(6) { margin-top: 94px; margin-left: 795px; width: 132px; height: 132px;background-color: #463d4b;}
+.menu-item-iky:nth-child(7) { margin-top: -309px; margin-left: -730px; width: 132px; height: 132px; background-color: #463d4b;}
+.menu-item-iky:nth-child(5) { margin-top: -103px; margin-left: 30px; width: 250px; height: 250px; background-color: #463d4b;}
+.menu-item-iky:nth-child(4) { margin-top: -109px; margin-left: -929px; width: 132px; height: 132px; background-color: #463d4b;}
+.menu-item-iky:nth-child(2) { margin-top: -104px; margin-left: 596px; width: 132px; height: 132px;background-color: #463d4b;}
+.menu-item-iky:nth-child(3) { margin-top: -106px; margin-left: 991px; width: 132px; height: 132px;background-color: #463d4b;} /* Exemple de nouveau carré décoratif */
+.menu-item-iky:nth-child(1) { margin-top: -110px; margin-left: -532px; width: 132px; height: 132px;background-color: #463d4b;} 
 /* Exemple de nouveau carré décoratif */
 /* Menu Item Inner */
 .menu-item-inner-iky { 
@@ -53,7 +53,7 @@
 
 .with-text {
   color: #ffffff;
-  background-color: #b42424;
+  background-color: #463d4b;
 }
 
 /* Styles spécifiques aux éléments avec effet */
@@ -76,7 +76,7 @@
 }
 
 .special-effect:hover .menu-item-inner-iky {
-  color: #b42424;
+  color: #463d4b;
 }
 
 .special-effect:hover:before {
@@ -91,11 +91,3 @@
   transform: scale(0.9);
 }
   
-  /* Enlever les effets pour "Eventos" */
-.menu-item-iky:nth-child(8) {
-    background-color: #b42424;
-    border: 3px solid rgb(181, 78, 78);
-    box-shadow: none; /* Enlever les ombres */
-    cursor: default; /* Supprimer le curseur pointer */
-    /* Aucun effet de transition */
-  }

@@ -16,6 +16,8 @@ import Footer from "../Component/Footer/Footer.js";
 import ProximosEventos from "../Component/NewEvenement/Evenement.js";
 import ProximosEventosDetails from "../Component/NewEvenement/EventDetails.js";
 import FlyerCours from "../Component/FlyerCours/FlyerCours.js";
+import LoginComponent from "../pageLogin/LoginForm.js";
+import Paiement from "../Component/NewEvenement/inscription/Paiement.js";
 
 import image1 from "../assets/images/backgrounds/IMG_1948.jpeg";
 import image2 from "../assets/images/IMG_0648.jpeg";
@@ -140,10 +142,11 @@ const Eventos = [
   {
     id: 1,
     title: "Conférence React 2024",
-    date: "2024-09-15",
+    price: 10000, // Prix comme un nombre en pesos colombiens
+    location: "Paris, France",
+    eventDate: new Date("2025-11-25T10:00:00"),
     eventImage: essai,
     flyerImage: flyer1,
-    eventDate: "2024-11-25T10:00:00",
     details: "Détails de l'événement...",
     shortDescription:
       "Rejoignez-nous pour une conférence passionnante sur React.",
@@ -153,29 +156,14 @@ const Eventos = [
   {
     id: 2,
     title: "Conférence React 2024",
-    date: "2024-09-15",
+    price: 0, // Gratuit
+    location: "Lyon, France",
+    eventDate: new Date("2024-12-12T10:00:00"),
     eventImage: image,
     flyerImage: flyer1,
-    eventDate: "2024-10-25T10:00:00",
-    backgroundImage: essai,
     details:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit",
-    shortDescription:
-      "Rejoignez-nous pour une conférence passionnante sur les dernières nouveautés de React.",
-    longDescription:
-      "Détails complets de l'événement : conférenciers, sessions, ateliers, et bien plus encore. Ne manquez pas cette opportunité d'apprendre des experts.",
-  },
-  {
-    id: 3,
-    title: "Conférence React 2024",
-    date: "2024-09-15",
-    eventImage: essai,
-    flyerImage: flyer1,
-    eventDate: "2024-11-25T10:00:00",
-    details: "Détails de l'événement...",
-    shortDescription:
-      "Rejoignez-nous pour une conférence passionnante sur React.",
-    backgroundImage: essai,
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    shortDescription: "Rejoignez-nous pour une conférence passionnante.",
     longDescription: "Détails complets de l'événement...",
   },
 ];
@@ -295,6 +283,8 @@ function Home() {
                 path="/event/:id"
                 element={<ProximosEventosDetails events={Eventos} />}
               />
+              <Route path="/login" element={<LoginComponent />} />
+              <Route path="/paiement" element={<Paiement />} />
             </Routes>
           </div>
           <div className="separator-bar"></div>

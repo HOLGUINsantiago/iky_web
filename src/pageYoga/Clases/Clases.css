@@ -1,0 +1,93 @@
+.clases-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+  grid-gap: 30px; /* Espacement entre les colonnes et les rangées */
+}
+
+.clases-title {
+  grid-column: span 2; /* Le titre prend toute la largeur des deux colonnes */
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.clases-section {
+  opacity: 0;
+  transition: opacity 2s ease, transform 2s ease; /* Transition fluide pour l'opacité et la transformation */
+  margin-bottom: 30px;
+  transform: translateX(-100vw); /* Par défaut, déplacer les éléments en dehors de l'écran à gauche */
+}
+
+/* Animation pour la colonne gauche (vient de la gauche) */
+.clases-section.left {
+  transform: translateX(-100vw);
+  color: white;/* Hors de l'écran à gauche */
+}
+
+.clases-section.left.visible {
+  opacity: 1;
+  transform: translateX(0);
+  color: white;/* Hors de l'écran à gauche */
+  /* Revient à sa position initiale */
+}
+
+/* Animation pour la colonne droite (vient de la droite) */
+.clases-section.right {
+  transform: translateX(100vw);
+  color: white;/* Hors de l'écran à gauche */
+  /* Hors de l'écran à droite */
+}
+
+.clases-section.right.visible {
+  opacity: 1;
+  transform: translateX(0); /* Revient à sa position initiale */
+}
+
+/* Pour les petits écrans, revenir à une seule colonne */
+@media (max-width: 768px) {
+  .clases-container {
+      grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+  }
+
+  .clases-title {
+      grid-column: span 1; /* Le titre prend la largeur d'une seule colonne */
+  }
+
+  /* Animation fluide en venant du bas pour les petits écrans */
+  .clases-section.left,
+  .clases-section.right {
+      transform: translateY(100px); /* Hors de l'écran en bas */
+  }
+
+  .clases-section.visible {
+      opacity: 1;
+      transform: translateY(0); /* Revient à sa position initiale */
+  }
+}
+
+
+/* Style pour les petites images */
+.clases-images {
+  display: flex;
+  justify-content: space-between; /* Espacement égal entre les images */
+  opacity: 0;
+  transform: translateX(100vw); /* Hors de l'écran à droite */
+  transition: opacity 2s ease, transform 2s ease; /* Transition fluide à 2 secondes */
+  margin-top: 30px;
+}
+
+.clases-images.visible {
+  opacity: 1;
+  transform: translateX(0); /* Revient à sa position initiale */
+}
+
+.clases-image {
+  width: 130px; /* Ajuste la taille des images selon tes besoins */
+  height: 130px;
+}
+
+.clases-image:last-child {
+  margin-right: 0; /* Pas d'espace à droite de la dernière image */
+}

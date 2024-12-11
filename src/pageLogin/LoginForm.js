@@ -1,40 +1,55 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import "./LoginForm.css";
 
-const LoginComponent = () => {
-  const [email, setEmail] = useState("");
+const LoginComponent = ({ onLoginSuccess }) => {
+  const [mail, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [stayLoggedIn, setStayLoggedIn] = useState(false);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [forgotEmail, setForgotEmail] = useState("");
   const [confirmationMessage, setConfirmationMessage] = useState(""); // État pour le message de confirmation
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem("authToken");
-    if (token) {
-      navigate("/videos");
-    }
-  }, [navigate]);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
-  const handleLoginSubmit = (event) => {
-    event.preventDefault();
+  const handleConnexion = (event) => {
+    const data = {
+      mail,
+      password,
+    };
 
-    const simulatedToken = "your-simulated-token";
+    fetch(apiUrl + "/api/estudiantes/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        // Vérifier si la réponse est OK
+        if (!response.ok) {
+          throw new Error("Erreur dans la requête");
+        }
 
-    if (stayLoggedIn) {
-      localStorage.setItem("authToken", simulatedToken);
-    }
+        // Extraire un header spécifique
+        const authorizationHeader = response.headers.get("token");
+        localStorage.setItem("authToken", authorizationHeader);
 
-    navigate("/videos");
+        // Convertir la réponse en JSON si nécessaire
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Données reçues:", data);
+      })
+      .catch((error) => {
+        console.error("Erreur:", error);
+      });
   };
 
   const handleForgotPasswordSubmit = (event) => {
     event.preventDefault();
     // Logique de récupération du mot de passe
     setConfirmationMessage(
-      `Se ha enviado un correo electrónico de recuperación de contraseña a la dirección de correo electrónico ${forgotEmail}`
+      `Se ha enviado un correo electrónico de recuperación de contraseña a la dirección de correo electrónico ${forgotEmail}`,
     );
     // Réinitialiser l'email après soumission
     setForgotEmail("");
@@ -43,11 +58,7 @@ const LoginComponent = () => {
   return (
     <div className="login-container">
       {!showForgotPassword ? (
-        <form
-          className="login-form"
-          autoComplete="off"
-          onSubmit={handleLoginSubmit}
-        >
+        <form className="login-form" autoComplete="off">
           <h1>Iniciar sesión</h1>
           <p>¡Bienvenido de nuevo! Por favor, inicie sesión para continuar.</p>
           <div className="input-group">
@@ -56,7 +67,7 @@ const LoginComponent = () => {
               type="email"
               name="email"
               id="email"
-              value={email}
+              value={mail}
               onChange={(e) => setEmail(e.target.value)}
               autoComplete="off"
             />
@@ -80,15 +91,14 @@ const LoginComponent = () => {
             </span>
           </p>
           <div className="checkbox-group">
-            <input
-              type="checkbox"
-              id="stayLoggedIn"
-              checked={stayLoggedIn}
-              onChange={(e) => setStayLoggedIn(e.target.checked)}
-            />
+            <input type="checkbox" id="stayLoggedIn" />
             <label htmlFor="stayLoggedIn">Mantenerme conectado</label>
           </div>
-          <button className="button-login" type="submit">
+          <button
+            className="button-login"
+            type="submit"
+            onClick={handleConnexion}
+          >
             Iniciar sesión
           </button>
           <p className="signup-link">

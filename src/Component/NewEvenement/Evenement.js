@@ -4,42 +4,32 @@ import "./Evenement.css";
 
 const EventList = ({ events }) => {
   const navigate = useNavigate();
-  const eventRefs = useRef([]); // Pour stocker les références des cartes d'événements
-
-  // Fonction pour calculer le temps restant
-  const calculateTimeLeft = (eventDate) => {
-    const difference = +new Date(eventDate) - +new Date();
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    } else {
-      timeLeft = {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      };
-    }
-
-    return timeLeft;
-  };
-
-  // Fonction pour calculer la largeur de la jauge en fonction des jours restants
-  const calculateProgressWidth = (daysLeft) => {
-    const maxDays = 100;
-    const percentage = Math.min((daysLeft / maxDays) * 100, 100);
-    return `${percentage}%`;
-  };
+  const eventRefs = useRef([]);
 
   // Fonction handleViewMore pour naviguer à l'événement sélectionné
   const handleViewMore = (id) => {
     navigate(`/event/${id}`);
+  };
+
+  // Fonction pour calculer le nombre de jours restants
+  const calculateDaysRemaining = (eventDate) => {
+    const today = new Date();
+    const eventDateObj = new Date(eventDate);
+
+    // Ignorer les heures/minutes
+    today.setHours(0, 0, 0, 0);
+    eventDateObj.setHours(0, 0, 0, 0);
+
+    const timeDiff = eventDateObj - today;
+    const daysRemaining = Math.ceil(timeDiff / (1000 * 3600 * 24)); // Calculer la différence en jours
+    return Math.max(daysRemaining, 0); // Toujours un minimum de 0
+  };
+  // Fonction pour calculer la largeur de la barre de progression
+  const calculateProgress = (eventDate) => {
+    const daysRemaining = calculateDaysRemaining(eventDate);
+    const maxDays = 30; // Vous pouvez ajuster cela selon le nombre de jours maximal avant un événement (par exemple, un mois)
+    const progress = (daysRemaining / maxDays) * 100;
+    return Math.min(progress, 100); // Assurez-vous que la barre ne dépasse pas 100%
   };
 
   useEffect(() => {
@@ -75,12 +65,13 @@ const EventList = ({ events }) => {
     <div className="event-list">
       <div className="events-grid">
         {events.map((event, index) => {
-          const timeLeft = calculateTimeLeft(event.eventDate);
+          const progress = calculateProgress(event.eventDate); // Récupération du pourcentage de progression
+
           return (
             <div
               key={event.id}
               className="event-item"
-              onClick={() => handleViewMore(event.id)}
+              onClick={() => handleViewMore(event.id)} // Appel de la navigation
               ref={(el) => (eventRefs.current[index] = el)} // Associe la référence à la carte
             >
               <img
@@ -89,17 +80,17 @@ const EventList = ({ events }) => {
                 className="event-image"
               />
               <h2 className="event-title">{event.title}</h2>
+
+              {/* Barre de progression */}
               <div className="progress-bar-container">
                 <div
                   className="progress-bar"
-                  style={{ width: calculateProgressWidth(timeLeft.days) }}
-                >
-                  <span className="time-left-text">
-                    {`${timeLeft.days}d ${timeLeft.hours}h ${timeLeft.minutes}m`}
-                  </span>
+                  style={{ width: `${progress}%` }} // Applique la largeur calculée
+                />
+                <div className="time-left-text">
+                  {calculateDaysRemaining(event.eventDate)} jours restants
                 </div>
               </div>
-              <div className="hover-overlay">Voir plus</div>
             </div>
           );
         })}

@@ -16,9 +16,9 @@
   overflow: hidden;
 }
 
-.slick-track {
+.card-container-diplomas .slick-track {
   display: flex !important;
-  gap: 50px; /* Ajoute un espace de 20px entre les éléments */
+  gap: 50px;
 }
 
 .slick-prev, .slick-next {

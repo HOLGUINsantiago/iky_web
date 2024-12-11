@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import "./NuestroProfesores.css";
 import Carlos from "../../assets/images/profil/IMG_9535.jpg";
 import Simon from "../../assets/images/profil/Simon.jpg";
-import Modal from "./Modal"; // Assurez-vous que ce chemin est correct
+import Jose from "../../assets/images/profil/Jose.jpg";
+import Marie from "../../assets/images/profil/Marie.jpg";
+import Katherine from "../../assets/images/profil/Katherine.jpg";
+
+import ModalIshka from "./ModalIshka.js"; // Assurez-vous que ce chemin est correct
 
 const professors = [
   {
@@ -19,10 +23,22 @@ const professors = [
     bio: "Licenciado en lenguas extranjeras aplicadas a la enseñanza y la traducción. Traductor simultáneo.Profesor de Ishka Kankueb Yoga y meditación con énfasis en movimiento humano y estrategias de encauzamiento de la mente desde el 2017. Ha traducido y enseñado en más de 20 entrenamientos internacionales para instructores de yoga en IKY y del programa YES de Yoga, Español y Salsa.",
   },
   {
-    photo: "photo3.jpg",
-    name: "Albert Einstein",
-    profession: "Professeur de Théorie de la Relativité",
-    bio: "Albert Einstein est célèbre pour sa théorie de la relativité et ses contributions à la physique théorique.",
+    photo: Jose,
+    name: "Jose Armando Valencia",
+    profession: "Profesor IKY de yoga",
+    bio: "Profesor IKY de yoga integral y meditación con énfasis en biomecánica y kankueb maya desde 2019. Egresado tecnología profesional del deporte. Escuela Nacional del deporte en 2015.",
+  },
+  {
+    photo: Marie,
+    name: "Maria Isabel López",
+    profession: "Profesor IKY de yoga",
+    bio: "Ingeniera Industrial egresada de la Universidad del Valle. Profesora de Ishka Kankueb Yoga con énfasis en biomecánica y kankueb desde el año 2020. Mentora en relacionamiento de parejas y co-creadora del entrenamiento *SexPowerMent.",
+  },
+  {
+    photo: Katherine,
+    name: "Katherine Garcia Amaya",
+    profession: "Profesor IKY de yoga",
+    bio: "Licenciada en artes escénicas. Profesora IKY de yoga integral y meditación con énfasis en kankueb y biomecánica desde 2021. Docente de artes y yoga para niños. Profesora de danza meditativa.",
   },
 ];
 
@@ -71,7 +87,7 @@ function App() {
       ))}
 
       {modalData && (
-        <Modal
+        <ModalIshka
           className="modal-profesores"
           isOpen={!!modalData}
           onClose={closeModal}

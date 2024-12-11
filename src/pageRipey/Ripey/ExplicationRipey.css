@@ -11,7 +11,7 @@
 .card-ripey {
   position: relative;
   width: 700px;
-  height: auto;
+  height: 300px;
   transition: 0.3s ease;
   border-radius: 10px;
   filter: drop-shadow(0px 0px 10px #adadad);
@@ -21,23 +21,11 @@
   align-items: flex-start;
   box-sizing: border-box;
   background-color: #20283D; /* Couleur de fond de la carte */
-  color: #000000; /* Couleur du texte */
-  min-height: 400px; /* Hauteur minimale pour un meilleur centrage */
+  color: #f9f6f6; 
   justify-content: center; /* Centrage vertical */
 }
 
-.card-ripey::before {
-  content: '';
-  background-color: #20283D;
-  position: absolute;
-  z-index: 1;
-  transition: 0.3s ease;
-  height: 98%;
-  width: 98%;
-  top: 1%;
-  left: 1%;
-  border-radius: 28px;
-}
+
 
 .card-ripey:hover {
   filter: drop-shadow(0px 0px 30px #8e8e8e);

@@ -1,0 +1,48 @@
+.yoga-summary {
+    padding: 20px;
+    margin: 50px auto; /* Centrer le composant */
+    width: 80%; /* Largeur en pourcentage pour un ajustement responsive */
+    width: 1000px; /* Limiter la largeur maximale */
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    opacity: 0; /* Initialement invisible */
+    transform: translateY(20px); /* Déplace le composant vers le bas */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  /* Classe pour afficher le composant avec un délai */
+  .yoga-summary.visible {
+    opacity: 1; /* Visible lorsque la classe 'visible' est ajoutée */
+    transform: translateY(0); /* Remet le composant à sa position d'origine */
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .yoga-methods,
+  .session-details {
+    margin-top: 20px;
+  }
+  
+  .yoga-methods h3,
+  .session-details h3 {
+    color: #555;
+  }
+  
+  ul {
+    list-style-type: none; /* Retire les puces */
+    padding-left: 0; /* Retire le padding par défaut */
+  }
+  
+  .li-yoga {
+    margin-bottom: 10px;
+  }
+  
+  .p-yoga {
+    line-height: 1.6;
+    color: #666;
+  }
+  

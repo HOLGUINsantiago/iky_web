@@ -10,7 +10,7 @@ import MosaiqueIkynesis from "../pageIky/MosaiqueIkynesis.js";
 import Carlos from "../assets/images/profil/Carlos.jpg";
 import essai from "../assets/images/backgrounds/IMG_1948.jpeg";
 import image1 from "../assets/images/IMG_0648.jpeg";
-import flyer1 from "../assets/images/post_instruct.png";
+import flyer1 from "../assets/images/iky.png";
 import imageAbout from "../assets/images/backgrounds/IMG_1948.jpeg";
 import imageYoga from "../assets/images/backgrounds/3FD006E5-591C-4D1F-B913-DA8B3E895010.JPG";
 import CardComponent from "../Component/Diplomas/DiplomaGallery.js";
@@ -29,6 +29,15 @@ import MetodoFeldenkrais from "../pageAcerca/MetodoFeldenkrais/MetodoFeldenkrais
 import Ripey from "../pageRipey/Ripey/Ripey.js";
 import ExempleDiplomas from "../pageRipey/Ripey/DiplomasExemple/DiplomasExemple.js";
 import Simon from "../assets/images/profil/Simon.jpg";
+import SystemaIKY from "../pageYoga/SystemaIky/SystemaIKY.js";
+import YogaDef from "../pageYoga/YogaDef.js";
+import Clases from "../pageYoga/Clases/Clases.js";
+import Kankueb from "../pageEvenement/Kankueb/Kankueb.js";
+
+import YogaBack from "../assets/images/YogaBack.jpg";
+import imageIkynesis from "../assets/images/imageIkynesis.jpeg";
+import imageKankueb from "../assets/images/imageKankueb.JPG";
+import YogaBackground from "../assets/images/imageYoga.jpg";
 
 import Salon1 from "../assets/images/Salon1.jpg";
 import Jardin1 from "../assets/images/Jardin1.jpg";
@@ -51,6 +60,12 @@ import Diplomas7 from "../assets/images/Diplomas/master-choa-kok-sui.jpg";
 import Diplomas8 from "../assets/images/Diplomas/reiki-usui-shiki-ryoho-sanacion-natural.jpg";
 import Diplomas9 from "../assets/images/Diplomas/tai-chi.jpg";
 import Diplomas10 from "../assets/images/Diplomas/terapia-de-yoga-nidra.jpg";
+import { color } from "framer-motion";
+import IKYNESIS from "../pageIky/Ikynesis/IKYNESIS.js";
+import CosmovisionMaya from "../pageEvenement/CosmovisonMaya/Cosmovision.js";
+import Techniques from "../pageEvenement/mysticDance/Tecnicas.js";
+import ProfesoradoInstructorado from "../pageYoga/profesoradoInstructorado/ProfesoradoInstructorado.js";
+import Yes from "../pageYoga/YES/Yes.js";
 
 const cardsData = [
   {
@@ -267,9 +282,15 @@ const sectionsCRKan = [
 
 const sectionsYoga = [
   {
+    id: 0,
+    name: "Definición de Yoga",
+    content: <YogaDef />,
+    recommendations: [],
+  },
+  {
     id: 1,
     name: "Systema Iky",
-    content: loremIpsum({ count: 20, units: "paragraphs" }),
+    content: <SystemaIKY />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
@@ -284,7 +305,7 @@ const sectionsYoga = [
   {
     id: 2,
     name: "Clases",
-    content: loremIpsum({ count: 20, units: "paragraphs" }),
+    content: <Clases />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
@@ -299,7 +320,7 @@ const sectionsYoga = [
   {
     id: 3,
     name: "Cursos, retiros y talleres",
-    content: loremIpsum({ count: 20, units: "paragraphs" }),
+    content: <Yes />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
@@ -314,7 +335,7 @@ const sectionsYoga = [
   {
     id: 4,
     name: "Profesorado y intructorado",
-    content: loremIpsum({ count: 20, units: "paragraphs" }),
+    content: <ProfesoradoInstructorado />,
   },
   {
     id: 5,
@@ -334,6 +355,12 @@ const sectionsYoga = [
 ];
 
 const sectionsIkynesis = [
+  {
+    id: 0,
+    name: "Ikynesis",
+    content: <IKYNESIS />,
+    recommendations: [],
+  },
   {
     id: 1,
     name: "Yoga del movimiento",
@@ -427,19 +454,13 @@ const sectionsISHKA = [
     content: <PhotoEcoHotel />,
     recommendations: [],
   },
-  {
-    id: 6,
-    name: "Descubre",
-    content: <Video />,
-    recommendations: [],
-  },
 ];
 
 const sectionsKankueb = [
   {
     id: 1,
-    name: "Cosmovision y Calendario Maya",
-    content: loremIpsum({ count: 20, units: "paragraphs" }),
+    name: "Kankueb",
+    content: <Kankueb />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
@@ -453,8 +474,8 @@ const sectionsKankueb = [
   },
   {
     id: 2,
-    name: "Kankueb",
-    content: loremIpsum({ count: 20, units: "paragraphs" }),
+    name: "Cosmovision y Calendario Maya",
+    content: <CosmovisionMaya />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
@@ -470,7 +491,7 @@ const sectionsKankueb = [
   {
     id: 3,
     name: "Mystic Dance",
-    content: loremIpsum({ count: 20, units: "paragraphs" }),
+    content: <Techniques />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
@@ -624,110 +645,22 @@ const sectionsIshka = [
   },
 ];
 
-const eventsData = [
-  {
-    id: 1,
-    title: "Conférence React 2024",
-    date: "2024-09-15",
-    eventImage: essai,
-    flyerImage: flyer1,
-    eventDate: "2024-11-25T10:00:00",
-    details:
-      "Lorem incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit",
-    shortDescription:
-      "Rejoignez-nous pour une conférence passionnante sur les dernières nouveautés de React.",
-    backgroundImage: essai,
-    longDescription:
-      "Détails complets de l'événement : conférenciers, sessions, ateliers, et bien plus encore. Ne manquez pas cette opportunité d'apprendre des experts.",
-  },
-  {
-    id: 2,
-    title: "Conférence React 2024",
-    date: "2024-09-15",
-    eventImage: image1,
-    flyerImage: flyer1,
-    eventDate: "2024-10-25T10:00:00",
-    backgroundImage: essai,
-    details:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit",
-    shortDescription:
-      "Rejoignez-nous pour une conférence passionnante sur les dernières nouveautés de React.",
-    longDescription:
-      "Détails complets de l'événement : conférenciers, sessions, ateliers, et bien plus encore. Ne manquez pas cette opportunité d'apprendre des experts.",
-  },
-  {
-    id: 3,
-    title: "Conférence React 2024",
-    date: "2024-09-15",
-    eventImage: image1,
-    flyerImage: flyer1,
-    eventDate: "2024-08-11T10:00:00",
-    backgroundImage: essai,
-    details:
-      "ut labore et ds nisi ut aliquip ex voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit",
-    shortDescription:
-      "Rejoignez-nous pour une conférence passionnante sur les dernières nouveautés de React.",
-    longDescription:
-      "Détails complets de l'événement : conférenciers, sessions, ateliers, et bien plus encore. Ne manquez pas cette opportunité d'apprendre des experts.",
-  },
-  {
-    id: 4,
-    title: "Conférence React 2024",
-    date: "2024-09-15",
-    eventImage: image1,
-    flyerImage: flyer1,
-    eventDate: "2025-01-25T10:00:00",
-    backgroundImage: essai,
-    details: "Détails complets de l'événement ici...",
-    shortDescription:
-      "Rejoignez-nous pour une conférence passionnante sur les dernières nouveautés de React.",
-    longDescription:
-      "Détails complets de l'événement : conférenciers, sessions, ateliers, et bien plus encore. Ne manquez pas cette opportunité d'apprendre des experts.",
-  },
-  {
-    id: 5,
-    title: "Conférence React 2024",
-    date: "2024-09-15",
-    eventImage: image1,
-    flyerImage: flyer1,
-    eventDate: "2024-08-25T10:00:00",
-    backgroundImage: essai,
-    details: "Détails complets de l'événement ici...",
-    shortDescription:
-      "Rejoignez-nous pour une conférence passionnante sur les dernières nouveautés de React.",
-    longDescription:
-      "Détails complets de l'événement : conférenciers, sessions, ateliers, et bien plus encore. Ne manquez pas cette opportunité d'apprendre des experts.",
-  },
-  {
-    id: 6,
-    title: "Conférence React 2024",
-    date: "2024-09-15",
-    eventImage: image1,
-    flyerImage: flyer1,
-    eventDate: "2024-09-25T10:00:00",
-    backgroundImage: essai,
-    details: "Détails complets de l'événement ici...",
-    shortDescription:
-      "Rejoignez-nous pour une conférence passionnante sur les dernières nouveautés de React.",
-    longDescription:
-      "Détails complets de l'événement : conférenciers, sessions, ateliers, et bien plus encore. Ne manquez pas cette opportunité d'apprendre des experts.",
-  },
-  // Ajoutez plus d'événements ici
-];
-
 const routes = [
   {
     path: "/kankueb",
     name: "Kankueb",
     content: sectionsKankueb,
     mosaique: MosaiqueKankueb,
-    backgroundImage: imageAbout,
+    backgroundImage: imageKankueb,
+    color: "rgb(53 19 19)",
   },
   {
     path: "/iky",
     name: "iky",
     content: sectionsIkynesis,
+    backgroundImage: imageIkynesis,
     mosaique: MosaiqueIkynesis,
+    color: "#463d4b",
   },
   {
     path: "/ripey",
@@ -758,7 +691,8 @@ const routes = [
     name: "yoga",
     content: sectionsYoga,
     mosaique: MosaiqueYoga,
-    backgroundImage: imageYoga,
+    backgroundImage: YogaBackground,
+    color: "#475840",
   },
 ];
 

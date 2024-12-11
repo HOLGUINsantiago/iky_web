@@ -12,8 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #b42424;
-    filter: drop-shadow(0px 0px 30px #DC9424);
+    background-color: #475840;
+    filter: drop-shadow(0px 0px 30px #c5a674);
     border-radius: 2px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -21,7 +21,7 @@
     transition: 0.3s ease all;
   }
   .menu-item-yoga:hover {
-    filter: drop-shadow(0px 0px 30px #b42424);
+    filter: drop-shadow(0px 0px 30px #475840, 0.5);
   }
   
   .menu-item-inner-yoga {
@@ -36,7 +36,7 @@
   /* Styles pour les carrés avec texte */
   .with-text {
     color: #ffffff;
-    background-color: #b42424;
+    background-color: #475840,  0.5;
   }
   
   /* Styles spécifiques aux éléments avec effet */
@@ -59,7 +59,7 @@
   }
   
   .special-effect:hover .menu-item-inner-yoga {
-    color: #b42424;
+    color: #475840;
   }
   
   .special-effect:hover:before {
@@ -76,22 +76,21 @@
   
 
 .menu-item-yoga:nth-child(6) {
-    background-color: #b42424;
-    border: 3px solid rgb(181, 78, 78);
+    background-color: #475840;
     box-shadow: none; /* Enlever les ombres */
     cursor: default; /* Supprimer le curseur pointer */
     /* Aucun effet de transition */
   }
 
-.menu-item-yoga:nth-child(1) { margin-top: 49px; margin-left: -1199px; width: 100px; height: 100px;background-color: #b42424;}
-.menu-item-yoga:nth-child(2) { margin-top:-262px; margin-left: 1261px; width: 100px; height: 100px;background-color: #b42424;}
-.menu-item-yoga:nth-child(3) { margin-top: -255px; margin-left: 775px; width: 155px; height: 155px;background-color: #b42424;}
-.menu-item-yoga:nth-child(4) { margin-top: -197px; margin-left: -473px; width: 155px; height: 155px;background-color: #b42424;}
-.menu-item-yoga:nth-child(5) { margin-top: 31px; margin-left: -706px; width: 155px; height: 155px;background-color: #b42424;}
-.menu-item-yoga:nth-child(6) { margin-top: 80px; margin-left: 871px; width: 132px; height: 132px;background-color: #b42424;}
-.menu-item-yoga:nth-child(7) { margin-top: -298px; margin-left: -806px; width: 132px; height: 132px;background-color: #b42424;}
-.menu-item-yoga:nth-child(8) { margin-top: -103px; margin-left: 30px; width: 250px; height: 250px;background-color: #b42424;}
-.menu-item-yoga:nth-child(9) { margin-top: -296px; margin-left: -1197px; width: 132px; height: 132px;background-color: #b42424;}
-.menu-item-yoga:nth-child(10) { margin-top: -24px; margin-left: 546px; width: 155px; height: 155px;background-color: #b42424;}
-.menu-item-yoga:nth-child(11) { margin-top: 80px; margin-left: 1261px; width: 132px; height: 132px;background-color: #b42424;} /* Exemple de nouveau carré décoratif */
+.menu-item-yoga:nth-child(1) { margin-top: 49px; margin-left: -1199px; width: 100px; height: 100px;background-color: #475840;}
+.menu-item-yoga:nth-child(2) { margin-top:-262px; margin-left: 1261px; width: 100px; height: 100px;background-color: #475840;}
+.menu-item-yoga:nth-child(3) { margin-top: -255px; margin-left: 775px; width: 155px; height: 155px;background-color: #475840;}
+.menu-item-yoga:nth-child(4) { margin-top: -197px; margin-left: -473px; width: 155px; height: 155px;background-color: #475840;}
+.menu-item-yoga:nth-child(5) { margin-top: 31px; margin-left: -706px; width: 155px; height: 155px;background-color: #475840;}
+.menu-item-yoga:nth-child(6) { margin-top: 80px; margin-left: 871px; width: 132px; height: 132px;background-color: #475840;}
+.menu-item-yoga:nth-child(7) { margin-top: -298px; margin-left: -806px; width: 132px; height: 132px;background-color: #475840;}
+.menu-item-yoga:nth-child(8) { margin-top: -103px; margin-left: 30px; width: 250px; height: 250px;background-color: #475840;}
+.menu-item-yoga:nth-child(9) { margin-top: -296px; margin-left: -1197px; width: 132px; height: 132px;background-color: #475840;}
+.menu-item-yoga:nth-child(10) { margin-top: -24px; margin-left: 546px; width: 155px; height: 155px;background-color: #475840;}
+.menu-item-yoga:nth-child(11) { margin-top: 80px; margin-left: 1261px; width: 132px; height: 132px;background-color: #475840;} /* Exemple de nouveau carré décoratif */
 
