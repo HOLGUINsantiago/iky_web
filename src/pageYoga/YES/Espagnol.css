@@ -1,7 +1,7 @@
 .espagnol-summary {
     padding: 20px;
     margin: 50px auto; /* Centrer le composant */
-    width: 80%; /* Largeur en pourcentage pour un ajustement responsive */
+    top: 50px;
     width: 1000px; /* Limiter la largeur maximale */
     font-family: Arial, sans-serif;
     background-color: rgb(255, 255, 255);
@@ -17,7 +17,7 @@
     transform: translateY(0); /* Remet le composant à sa position d'origine */
   }
   
-  h2 {
+  .h2-espagnol {
     text-align: center;
     color: #333;
   }

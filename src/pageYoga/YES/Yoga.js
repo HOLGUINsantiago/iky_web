@@ -14,7 +14,7 @@ const YogaSummary = () => {
 
   return (
     <div className={`yoga-summary ${visible ? "visible" : ""}`}>
-      <h2> Yoga</h2>
+      <h2 className="h2-yoga"> Yoga</h2>
       <p className="p-yoga">
         Durante 7 días vive con nosotros la cultura latina en la capital mundial
         de la salsa, una ciudad llena de vida, diversión y bellas experiencias.

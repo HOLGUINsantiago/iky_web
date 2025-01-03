@@ -1,9 +1,12 @@
+/* Style de base */
 .explanation-fire {
     position: relative;
     border-radius: 8px;
-    padding: 20px;
-    max-width: 610px;
-    overflow: hidden; /* Assure que l'image de fond ne dépasse pas les bords arrondis */
+    width: 100%; /* Par défaut, occupe toute la largeur */
+    max-width: 610px; /* Largeur maximale */
+    margin: 0 auto; /* Centré */
+    overflow: hidden; /* Empêche l'image de dépasser les bords arrondis */
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .explanation-fire::before {
@@ -14,10 +17,10 @@
     width: 100%;
     height: 100%;
     background-image: url("../../../assets/images/elements/fuego1.png");
-    background-size: cover;
+    background-size: cover; /* L'image couvre tout l'élément */
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -1; /* Met l'image derrière le contenu */
+    z-index: -1; /* L'image est derrière le contenu */
     transition: opacity 0.3s ease;
 }
 
@@ -27,7 +30,7 @@
     text-align: center;
     text-transform: uppercase;
     margin-top: -10px;
-    position: relative; /* Assure que le texte est au-dessus de l'image */
+    position: relative;
     z-index: 1;
 }
 
@@ -35,13 +38,60 @@
     color: #ffffff;
     font-size: 1rem;
     line-height: 1.6;
-    position: relative; /* Assure que le texte est au-dessus de l'image */
+    position: relative;
     z-index: 1;
 }
-
 
 .explanation-fire p strong {
     color: #ffffff;
     font-weight: bold;
 }
 
+/* ---- MEDIA QUERIES ---- */
+
+/* Pour les petits écrans (≤768px) */
+@media (max-width: 768px) {
+    .explanation-fire {
+        max-width: 85%; /* Limite la largeur à 90% de l'écran */
+        border-radius: 6px; /* Coins légèrement arrondis */
+    }
+
+    .explanation-fire h4 {
+        font-size: 1.2rem; /* Réduit la taille de la police du titre */
+    }
+
+    .explanation-fire p {
+        font-size: 0.9rem; /* Réduit la taille des paragraphes */
+    }
+}
+
+/* Pour les très petits écrans (≤480px) */
+@media (max-width: 480px) {
+    .explanation-fire {
+        padding: 10px; /* Réduit encore l'espace intérieur */
+    }
+
+    .explanation-fire h4 {
+        font-size: 1rem; /* Taille du titre encore plus petite */
+    }
+
+    .explanation-fire p {
+        font-size: 0.8rem; /* Taille des paragraphes réduite */
+        line-height: 1.4; /* Réduit l'espacement des lignes */
+    }
+}
+
+/* Pour les grands écrans (≥1200px) */
+@media (min-width: 1200px) {
+    .explanation-fire {
+        max-width: 660px; 
+    }
+
+    .explanation-fire h4 {
+        font-size: 1.8rem; /* Agrandit la taille du titre */
+    }
+
+    .explanation-fire p {
+        font-size: 1.1rem; /* Augmente la taille des paragraphes */
+    }
+}

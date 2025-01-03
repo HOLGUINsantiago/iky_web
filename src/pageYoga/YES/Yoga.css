@@ -1,6 +1,8 @@
 .yoga-summary {
     padding: 20px;
     margin: 50px auto; /* Centrer le composant */
+    margin-top: 120px;
+    margin-bottom: 130px;
     width: 80%; /* Largeur en pourcentage pour un ajustement responsive */
     width: 1000px; /* Limiter la largeur maximale */
     font-family: Arial, sans-serif;
@@ -17,7 +19,7 @@
     transform: translateY(0); /* Remet le composant à sa position d'origine */
   }
   
-  h2 {
+  .h2-yoga {
     text-align: center;
     color: #333;
   }

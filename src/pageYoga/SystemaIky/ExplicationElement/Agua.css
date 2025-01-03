@@ -2,8 +2,10 @@
     position: relative;
     border-radius: 8px;
     padding: 20px;
-    max-width: 610px;
-    overflow: hidden; /* Assure que l'image de fond ne dépasse pas les bords arrondis */
+    width: 100%; /* Par défaut, occupe toute la largeur */
+    max-width: 610px; /* Largeur maximale sur les grands écrans */
+    margin: 0 auto; /* Centré */
+    overflow: hidden; 
 }
 
 .explanation-agua::before {
@@ -38,4 +40,55 @@
     line-height: 1.6;
     position: relative; /* Assure que le texte est au-dessus de l'image */
     z-index: 1;
+}
+
+/* ---- MEDIA QUERIES ---- */
+
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+    .explanation-agua {
+        padding: 15px; /* Réduit l'espace intérieur */
+        max-width: 90%; /* Limite la largeur à 90% de l'écran */
+        border-radius: 6px; /* Coins légèrement arrondis */
+    }
+
+    .explanation-agua h4 {
+        font-size: 1.2rem; /* Réduit la taille de la police du titre */
+    }
+
+    .explanation-agua p {
+        font-size: 0.9rem; /* Réduit la taille des paragraphes */
+    }
+}
+
+/* Pour les très petits écrans (mobiles en portrait) */
+@media (max-width: 480px) {
+    .explanation-agua {
+        padding: 10px; /* Réduit encore l'espace intérieur */
+    }
+
+    .explanation-agua h4 {
+        font-size: 1rem; /* Encore plus petit pour le titre */
+    }
+
+    .explanation-agua p {
+        font-size: 0.8rem; /* Texte plus petit pour les paragraphes */
+        line-height: 1.4; /* Réduit l'espacement des lignes */
+    }
+}
+
+/* Pour les grands écrans */
+@media (min-width: 1200px) {
+    .explanation-agua {
+        max-width: 700px; /* Augmente la largeur pour les écrans larges */
+        padding: 25px; /* Augmente l'espace intérieur */
+    }
+
+    .explanation-agua h4 {
+        font-size: 1.8rem; /* Agrandit le titre */
+    }
+
+    .explanation-agua p {
+        font-size: 1.1rem; /* Texte légèrement plus grand */
+    }
 }

@@ -12,9 +12,9 @@ const MapWithDescription = () => {
       <div className="description-section">
         <h2>ISHKA CENTER</h2>
         <p>
-          Fundada en 2003 por Chakra Raja Kan en 2003, ISHKA CENTER está ubicada
-          en la planicie andina del valle del río Cauca, específicamente en el
-          sector de Pance, al extremo sur de la ciudad de Cali – Colombia.
+          Fundada en 2003 por C.R.Kan, ISHKA CENTER está ubicada en la planicie
+          andina del valle del río Cauca, específicamente en el sector de Pance,
+          al extremo sur de la ciudad de Cali – Colombia.
         </p>
         <p>
           Rodeada de bellos jardines compuestos de abundante vegetación
@@ -44,7 +44,7 @@ const MapWithDescription = () => {
         <p>
           Somos el centro de yoga y bienestar con la mayor cantidad de reviews y
           mejor calificación en Google, como lo puedes constatar en nuestro
-          perfil: https://maps.app.goo.gl/CKVQnJ5cpr1fGNwo9
+          perfil.
         </p>
         <strong>
           Ishka Center facilita un entorno seguro de aprendizaje, agradable,

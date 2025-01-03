@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SystemaIKY.css";
 import ExplicationYoga from "./ExplicationYoga.js";
 import mandalaIky from "../../assets/images/ikyu mandala_new-02-Photoroom.png";
@@ -11,6 +11,22 @@ import EterExplanation from "./ExplicationElement/Eter.js";
 function SistemaIKY() {
   const [activeComponent, setActiveComponent] = useState(null);
   const [shiftMandala, setShiftMandala] = useState(0); // État pour gérer le décalage
+
+  useEffect(() => {
+    const updateMandalaShift = () => {
+      if (window.innerWidth < 768) {
+        setShiftMandala(0); // Centrer pour petit écran
+      } else if (window.innerWidth >= 1200) {
+        setShiftMandala(0); // Centrer pour grand écran aussi
+      } else {
+        setShiftMandala(0); // Centrer pour les tailles moyennes
+      }
+    };
+
+    updateMandalaShift(); // Appel initial pour centrer au début
+    window.addEventListener("resize", updateMandalaShift); // Écoute les changements de taille
+    return () => window.removeEventListener("resize", updateMandalaShift); // Nettoyage
+  }, []);
 
   const handleMouseEnter = (component) => {
     setActiveComponent(component);
@@ -100,11 +116,10 @@ function SistemaIKY() {
             <a href="#definicion-yoga" onClick={scrollToYogaSection}>
               yoga
             </a>{" "}
-            y por lo tanto haciendo más eficaz la consecución de su objetivo y
-            la obtención de sus beneficios. Como ninguna otra línea de yoga,
-            pone a la mano del practicante exclusivas herramientas que se
-            convierten en el nuevo paradigma del yoga: biomecánica, IKY Drishti
-            y kankueb.
+            , haciendo más eficaz la consecución de su objetivo y la obtención
+            de sus beneficios. Como ninguna otra línea de yoga, pone a la mano
+            del practicante exclusivas herramientas que se convierten en el
+            nuevo paradigma del yoga: biomecánica, IKY Drishti y kankueb.
           </p>
           <p className="sistema-iky-textp">
             Siguiendo los principios de la biomecánica, el movimiento corporal
@@ -130,8 +145,15 @@ function SistemaIKY() {
             principios del kankueb disponen al practicante hacia una comprensión
             más completa de las posibilidades de su mente y por lo tanto un
             mejor uso de esta.
+            <br />
+            <br />
+            Como lo mencionamos previamente, el modelo teórico del SISTEMA IKY –
+            ISHKA KANKUEB YOGA, está formulado a partir de la simbólica
+            clasificación maya del universo a través de los cuatro elementos, a
+            saber:
           </p>
         </div>
+
         <p className="sistema-iky-text-middle">
           Desliza el cursor sobre el mandala para saber más sobre cada uno de
           los elementos.
@@ -147,10 +169,10 @@ function SistemaIKY() {
             onMouseEnter={() => handleMouseEnter(<FireExplanation />)}
             onMouseLeave={handleMouseLeave}
             style={{
-              top: "100px",
-              left: "562px",
-              width: "200px",
-              height: "160px",
+              top: "10%",
+              left: "42%",
+              width: "16%",
+              height: "25%",
             }} // Ajuste des positions et dimensions
           ></div>
 
@@ -159,10 +181,10 @@ function SistemaIKY() {
             onMouseEnter={() => handleMouseEnter(<AireExplanation />)}
             onMouseLeave={handleMouseLeave}
             style={{
-              top: "225px",
-              left: "382px",
-              width: "170px",
-              height: "250px",
+              top: "35%",
+              left: "31%",
+              width: "12%",
+              height: "30%",
             }} // Ajuste des positions et dimensions
           ></div>
 
@@ -171,10 +193,10 @@ function SistemaIKY() {
             onMouseEnter={() => handleMouseEnter(<EterExplanation />)}
             onMouseLeave={handleMouseLeave}
             style={{
-              top: "270px",
-              left: "582px",
-              width: "170px",
-              height: "160px",
+              top: "38%",
+              left: "44%",
+              width: "12%",
+              height: "25%",
             }} // Ajuste des positions et dimensions
           ></div>
 
@@ -183,10 +205,10 @@ function SistemaIKY() {
             onMouseEnter={() => handleMouseEnter(<AguaExplanation />)}
             onMouseLeave={handleMouseLeave}
             style={{
-              top: "225px",
-              left: "780px",
-              width: "170px",
-              height: "250px",
+              top: "35%",
+              left: "56%",
+              width: "12%",
+              height: "30%",
             }} // Ajuste des positions et dimensions
           ></div>
 
@@ -195,10 +217,10 @@ function SistemaIKY() {
             onMouseEnter={() => handleMouseEnter(<TierraExplanation />)}
             onMouseLeave={handleMouseLeave}
             style={{
-              top: "440px",
-              left: "567px",
-              width: "200px",
-              height: "180px",
+              top: "63%",
+              left: "42%",
+              width: "16%",
+              height: "25%",
             }} // Ajuste des positions et dimensions
           ></div>
           {/* Ajoute plus de zones interactives ici */}
@@ -214,13 +236,6 @@ function SistemaIKY() {
             </div>
           )}
         </div>
-
-        <p className="sistema-iky-text">
-          Como lo mencionamos previamente, el modelo teórico del SISTEMA IKY –
-          ISHKA KANKUEB YOGA, está formulado a partir de la simbólica
-          clasificación maya del universo a través de los cuatro elementos, a
-          saber:
-        </p>
       </div>
     </>
   );

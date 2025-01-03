@@ -79,7 +79,7 @@ function App() {
                 className="see-more-button-nuestroProfesores"
                 onClick={() => openModal(professor)}
               >
-                Voir plus
+                Ver más
               </button>
             </div>
           </div>

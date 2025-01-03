@@ -6,12 +6,11 @@ const Biographie = ({ nom, titre, photoUrl }) => {
     <div className="biographie-container">
       <img src={photoUrl} alt={`${nom}'s photo`} className="biographie-photo" />
       <div className="biographie-text">
-        <h2 className="biographie-nom">{nom}</h2>
         <h3 className="biographie-titre">{titre}</h3>
 
-        <h4 className="biographie-section-title">Experiencia como Profesor</h4>
+        <h4 className="biographie-section-title">Experiencia como profesor</h4>
         <p className="biographie-section-text">
-          C.R. Kan inició en marzo de 2004 sus labores como profesor de yoga en
+          C.R.Kan inició en marzo de 2004 sus labores como maestro de yoga en
           Bogotá, donde un año atrás había ya fundado ISHKA CENTER. Establecido
           en Cali desde 2005, a donde trasladó ISHKA CENTER a su sede actual en
           Pance, inició en 2009 la dirección de su primer profesorado anual de
@@ -26,7 +25,7 @@ const Biographie = ({ nom, titre, photoUrl }) => {
           YOGA®, de su autoría.
           <br />
           <br />
-          C.R. Kan se ha convertido en un profesor influyente en el yoga en el
+          C.R. Kan se ha convertido en un maestro influyente en el yoga en el
           planeta, al proponer a través del Sistema IKY una metodología
           revolucionaria y de avanzada.
           <br />
@@ -131,10 +130,24 @@ const Biographie = ({ nom, titre, photoUrl }) => {
           <br />
           <br />
           Continuando con su iniciativa de democratizar el acceso al
-          conocimiento del yoga, ha creado una serie de podcasts et classes de
-          yoga de acceso libre a través de diferentes plataformas comme YouTube
-          et Spotify, auxquelles vous pouvez accéder via cette page web à
-          travers ces liens.
+          conocimiento del yoga, ha creado una serie de podcasts y clases de
+          yoga de acceso libre a través de diferentes plataformas como{" "}
+          <a
+            href="https://www.youtube.com/@chakrarajakan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            YouTube
+          </a>{" "}
+          y{" "}
+          <a
+            href="https://www.instagram.com/yoga.iky/?hl=fr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram.
+          </a>{" "}
         </p>
       </div>
     </div>

@@ -1,4 +1,4 @@
-/* FireExplanation.css */
+/* Style de base */
 .explanation-eter {
     background-image: url("../../../assets/images/elements/eter1.png"); /* Assurez-vous que le chemin est correct */
     background-size: cover; /* Ajuste la taille de l'image pour couvrir tout l'élément */
@@ -6,9 +6,11 @@
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     border-radius: 8px;
     padding: 20px;
-    max-width: 610px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 100%; /* Par défaut, occupe toute la largeur */
+    max-width: 610px; /* Largeur maximale sur les grands écrans */
+    margin: 0 auto; /* Centré */
     position: relative; /* Assure que les éléments positionnés absolument se trouvent à l'intérieur de cet élément */
+    transition: transform 0.3s ease, opacity 0.3s ease; 
 }
 
 .explanation-eter h4 {
@@ -31,3 +33,53 @@
     font-weight: bold;
 }
 
+/* ---- MEDIA QUERIES ---- */
+
+/* Pour les petits écrans (≤768px) */
+@media (max-width: 768px) {
+    .explanation-eter {
+        padding: 15px; /* Réduit l'espace intérieur */
+        max-width: 90%; /* Limite la largeur à 90% de l'écran */
+        border-radius: 6px; /* Coins légèrement arrondis */
+    }
+
+    .explanation-eter h4 {
+        font-size: 1.2rem; /* Réduit la taille de la police du titre */
+    }
+
+    .explanation-eter p {
+        font-size: 0.9rem; /* Réduit la taille des paragraphes */
+    }
+}
+
+/* Pour les très petits écrans (≤480px) */
+@media (max-width: 480px) {
+    .explanation-eter {
+        padding: 10px; /* Réduit encore l'espace intérieur */
+    }
+
+    .explanation-eter h4 {
+        font-size: 1rem; /* Encore plus petit pour le titre */
+    }
+
+    .explanation-eter p {
+        font-size: 0.8rem; /* Texte plus petit pour les paragraphes */
+        line-height: 1.4; /* Réduit l'espacement des lignes */
+    }
+}
+
+/* Pour les grands écrans (≥1200px) */
+@media (min-width: 1200px) {
+    .explanation-eter {
+        max-width: 700px; /* Augmente la largeur pour les écrans larges */
+        padding: 25px; /* Augmente l'espace intérieur */
+    }
+
+    .explanation-eter h4 {
+        font-size: 1.8rem; /* Agrandit le titre */
+    }
+
+    .explanation-eter p {
+        font-size: 1.1rem; /* Texte légèrement plus grand */
+    }
+}

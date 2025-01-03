@@ -4,7 +4,7 @@ import "./Fire.css"; // Ajout de l'importation du fichier CSS
 function FireExplanation() {
   return (
     <div className="explanation-fire">
-      <h4>Feu</h4>
+      <h4>Fuego</h4>
       <p>
         <strong>Color:</strong> rojo como las brasas.
       </p>

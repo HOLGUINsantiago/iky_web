@@ -7,14 +7,14 @@ const EspagnolSummary = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisible(true);
-    }, 300); // Ajustez le délai si nécessaire
+    }, 280); // Ajustez le délai si nécessaire
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className={`espagnol-summary ${visible ? "visible" : ""}`}>
-      <h2> Espagnol</h2>
+      <h2 className="h2-espagnol"> Español</h2>
       <p className="p-espagnol">
         Durante 7 días vive con nosotros la cultura latina en la capital mundial
         de la salsa, una ciudad llena de vida, diversión y bellas experiencias.
@@ -24,7 +24,7 @@ const EspagnolSummary = () => {
       </p>
       <div className="espgnols-methods">
         {" "}
-        <h2>Aprendizaje del Español</h2>
+        <h2 className="h2-espagnol">Aprendizaje del Español</h2>
         <p className="p-espagnol">
           Sumergirte en nuestra experiencia latina incluye aprender español, que
           estará presente en tus interacciones con los profesores de baile, las

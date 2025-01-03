@@ -1,7 +1,7 @@
 /* AuthMenu.css */
 
 .auth-menu-container {
-  position: relative;
+  position: fixed;
 }
 
 .profile-circle-home {

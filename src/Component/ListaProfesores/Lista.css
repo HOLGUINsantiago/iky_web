@@ -157,3 +157,10 @@
 .profesores-description{
     text-align: justify;
 }
+
+.map-container-ripey{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}

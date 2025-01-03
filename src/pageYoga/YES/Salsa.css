@@ -29,18 +29,10 @@
   .session-details h3 {
     color: #555;
   }
-  
-  ul {
-    list-style-type: none; /* Retire les puces */
-    padding-left: 0; /* Retire le padding par défaut */
-  }
-  
-  li {
-    margin-bottom: 10px;
-  }
+
   
   .p-salsa {
     line-height: 1.6;
-    color: #ffffff;
+    color: #666;
   }
   

@@ -1,4 +1,4 @@
-.text-formacionYoga {
+.text-FormaciónYoga {
   text-align: justify;
   padding: 50px; /* Ajustez la valeur selon l'indentation souhaitée */
   line-height: 1.6;
@@ -7,7 +7,7 @@
   position: relative; /* Pour permettre la position relative des images */
 }
 
-.text-formacionYoga img {
+.text-FormaciónYoga img {
   max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur de son conteneur */
   height: auto; /* Gardez les proportions de l'image */
   margin-bottom: 20px; /* Espace sous les images */
@@ -21,7 +21,7 @@
   margin-right: 40px;
   padding: 7px; /* Ajoute de l'espace entre la photo et le cadre */
   border: 1px solid rgb(133, 129, 129); /* Ajoute un cadre noir autour de la photo */
-  background-color: rgb(26 41 6); 
+  background-color: rgb(26 41 6);
 }
 
 .img-left {
@@ -32,5 +32,5 @@
   margin-left: 40px;
   padding: 7px; /* Ajoute de l'espace entre la photo et le cadre */
   border: 1px solid rgb(133, 129, 129); /* Ajoute un cadre noir autour de la photo */
-  background-color: rgb(26 41 6); 
+  background-color: rgb(26 41 6);
 }

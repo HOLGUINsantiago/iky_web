@@ -15,7 +15,7 @@ function Mosaique() {
   const items = [
     "Kankueb",
     "Mystic Dance",
-    "Cosmovision y Calendario Maya",
+    "Cosmovisión y Calendario Maya",
     "",
     "",
     "",

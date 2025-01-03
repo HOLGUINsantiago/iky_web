@@ -25,6 +25,8 @@
   background-color: #21140e;
 }
 
+
+
 .logo-wrapper{
     display: flex;
     justify-content: center;
@@ -55,12 +57,14 @@
 }
 
 .ishka-big {
-  font-size: 5vw; 
+  font-size:3vw; 
   color: white;
   display: flex;
   justify-content: center;
   align-content: center;
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 
@@ -98,7 +102,7 @@
     font-size: 6vw;
     color: #dc9424;
     margin : 0px;
-    margin-left: -6vw;
+    margin-left: -8%;
 }
 
 .title-home {
@@ -130,15 +134,25 @@
     transform: translateX(-50%); /* Centre les cartes horizontalement */
   }
   
-.eventos-wrapper{
+  .eventos-wrapper {
     display: flex;
-    flex-wrap: wrap;          
-    gap: 20px;               
-    justify-content: center; 
+    flex-direction: column; /* Les lignes s'empilent verticalement */
+    gap: 30px;
+    justify-content: flex-start;
     margin-bottom: 30px;
     background-color: #21140e;
-}
+  }
 
+  .eventos-instructorado,
+.eventos-otros {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap; /* Permet l'ajustement des cartes */
+  gap: 20px; 
+  width: 100%; /* Prend toute la largeur */
+  background-color: #21140e; /* Couleur de fond */
+}
+  
 .separator-bar {
     width: 80px;
     height: 4px; 
@@ -177,14 +191,33 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start; /* Assure que le contenu est collé à gauche */
+  padding: 0; /* Supprime tout padding inutile */
+  margin: 0; /* Supprime tout margin inutile */
+}
+
+.left-side-vision p {
+  margin: 0; /* Supprime les marges */
+  margin-top: 1vw;
+  padding: 0; /* Supprime les paddings */
+  color: #ffffff;
+  font-size: 1vw;
+}
+
+.left-side-vision-text {
+  height: 80%;
+  display: flex;
+  justify-content: flex-start; /* Aligne le contenu à gauche */
+  align-items: flex-start;
+  padding: 0; /* Supprime les paddings */
+  margin: 0; /* Supprime les marges */
 }
 
 .right-side-vision {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30vw; /* Ajusta el ancho según sea necesario */
-
+  justify-content: flex-start; /* Aligne les éléments à gauche */
+  align-items: flex-start;
+  width: 30vw;
 }
 
 .right-side-vision img {
@@ -206,6 +239,120 @@
   height: 80%;
   display: flex;
   justify-content: center;
+  padding-right: 50px;
+}
+
+@media (max-width: 768px) {
+  /* Conteneur principal */
+  .home-container {
+    height: auto; /* Ajuste la hauteur en fonction du contenu */
+    padding: 10px; /* Ajout de padding pour éviter le débordement */
+  }
+
+  .home-container::before {
+    background-size: contain; /* Ajuste l'image pour s'adapter */
+    background-position: top;
+    opacity: 0.7; /* Réduit l'opacité pour une meilleure lisibilité */
+  }
+
+  /* Logo */
+  .logo-wrapper img {
+    width: 60%; /* Réduction de la taille du logo */
+  }
+
+  /* Auth menu */
+  .auth-menu-wrapper {
+    right: 20px; /* Ajuste la position pour les petits écrans */
+    top: 10px;
+  }
+
+  /* Titre principal */
+  .ishka-big {
+    font-size: 6vw; /* Plus petit pour s'adapter aux écrans étroits */
+    margin: 20px 0;
+  }
+
+  .separator {
+    height: 10vh; /* Réduction de la hauteur */
+  }
+
+  /* Carrousel */
+  .carusel-fotos {
+    width: 90%; /* Occupe presque toute la largeur */
+    margin: 20px auto;
+  }
+
+  /* Titres */
+  .title {
+    font-size: 8vw; /* Taille adaptative pour les titres */
+    margin: 0 auto; /* Centrer les titres */
+    margin-left: 0; /* Suppression de la marge gauche */
+  }
+
+  .title-home {
+    font-size: 5vw; /* Ajustement pour s'adapter à l'écran */
+  }
+
+  /* Programmes */
+  .programmes-wrapper {
+    gap: 4vw; /* Réduction de l'espace entre les cartes */
+    padding-bottom: 10vh;
+  }
+
+  /* Cartes programmes */
+  .programmas-card {
+    position: relative; /* Ajuste pour un alignement fluide */
+    transform: translateX(0); /* Centre les cartes */
+    opacity: 1; /* Les rendre visibles */
+  }
+
+  /* Événements */
+  .eventos-wrapper {
+    gap: 20px; /* Espacement réduit */
+    margin-bottom: 20px;
+  }
+
+  .eventos-instructorado, .eventos-otros {
+    flex-direction: column; /* Empile les cartes verticalement */
+    gap: 10px; /* Espacement réduit */
+  }
+
+  /* Barre de séparation */
+  .separator-bar {
+    width: 60px; /* Réduction de la largeur */
+    margin-top: 30px;
+  }
+
+  /* Première partie */
+  .first-part {
+    padding-bottom: 12vw; /* Plus d'espace pour les petits écrans */
+    background-size: cover; /* Étend l'image pour couvrir */
+  }
+
+  /* Vision */
+  .vision-container {
+    flex-direction: column; /* Colonne pour aligner verticalement */
+    padding: 5vw; /* Plus de padding pour les petits écrans */
+    gap: 5vw; /* Moins d'espace entre les éléments */
+    height: auto; /* Laisse la hauteur ajustée par le contenu */
+  }
+
+  .left-side-vision, .right-side-vision {
+    width: 100%; /* Prend toute la largeur de l'écran */
+    align-items: center; /* Centre les éléments */
+    text-align: center; /* Texte centré */
+  }
+
+  .left-side-vision p {
+    font-size: 3vw; /* Réduction de la taille du texte */
+    margin: 10px 0;
+  }
+
+  .right-side-vision img {
+    max-width: 100%; /* Ajuste l'image pour l'écran */
+    height: auto;
+    margin-right: 0;
+  }
 }
 
 

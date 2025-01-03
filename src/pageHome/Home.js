@@ -18,6 +18,8 @@ import ProximosEventosDetails from "../Component/NewEvenement/EventDetails.js";
 import FlyerCours from "../Component/FlyerCours/FlyerCours.js";
 import LoginComponent from "../pageLogin/LoginForm.js";
 import Paiement from "../Component/NewEvenement/inscription/Paiement.js";
+import EvenementInstructorado from "../Component/Instructorado/EvenementInstructorado.js";
+import EvenementInstructoradoDetails from "../Component/Instructorado/EventDetails.js";
 
 import image1 from "../assets/images/backgrounds/IMG_1948.jpeg";
 import image2 from "../assets/images/IMG_0648.jpeg";
@@ -58,7 +60,7 @@ const programs1 = [
     price: 99,
     features: [
       "Acceso a todas las clases desde la plataforma",
-      "300 horas de formacion dividas en 6 meses",
+      "300 horas de Formación dividas en 6 meses",
       "Certificacion y registro en RIPEY",
       "Modulos teoricos y practicos",
       "Acceso a grupo de WhatsApp",
@@ -168,6 +170,36 @@ const Eventos = [
   },
 ];
 
+const EventosInstructorado = [
+  {
+    id: 1,
+    title: "Instructorado 1",
+    price: 10000, // Prix comme un nombre en pesos colombiens
+    location: "Paris, France",
+    eventDate: new Date("2025-11-25T10:00:00"),
+    eventImage: essai,
+    flyerImage: flyer1,
+    details: "Détails de l'événement...",
+    shortDescription:
+      "Rejoignez-nous pour une conférence passionnante sur React.",
+    backgroundImage: essai,
+    longDescription: "Détails complets de l'événement...",
+  },
+  {
+    id: 2,
+    title: "Instructorado 2",
+    price: 0, // Gratuit
+    location: "Lyon, France",
+    eventDate: new Date("2024-12-12T10:00:00"),
+    eventImage: image,
+    flyerImage: flyer1,
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    shortDescription: "Rejoignez-nous pour une conférence passionnante.",
+    longDescription: "Détails complets de l'événement...",
+  },
+];
+
 const images = [
   image1,
   image2,
@@ -229,7 +261,12 @@ function Home() {
       <div className="content">
         <div className="first-part">
           <div className="titulo-container">
-            <h1 className="ishka-big">YOGA AL ALCANCE DE TU MANO</h1>
+            <h1 className="ishka-big">
+              IKY: EL MÁS COMPLETO Y AVANZADO SISTEMA DE EMPODERAMIENTO Y
+              CRECIMIENTO PERSONAL
+              <br />
+              DE LOS TIEMPOS ACTUALES
+            </h1>
           </div>
 
           <div className="carousel-text-container">
@@ -246,22 +283,30 @@ function Home() {
                 <p>
                   Somos la escuela de enseñanza y transmisión de técnicas,
                   herramientas y conocimientos de empoderamiento físico y
-                  mental, expansión de la consciencia y realización del ser más
+                  mental, expansión de la consciencia y realización del ser, más
                   influyente y revolucionaria en el mundo del yoga, la
-                  meditación y el desarrollo personal. iniciada en colombia en
-                  2003 por el maestro carlos holguín, iky se fundamenta en las
-                  técnicas y principios clásicos del yoga tántrico y el kankueb
-                  maya, adaptados y sistematizados para las necesidades y
-                  realidades de la humanidad actual a través de los nuevos
-                  desarrollos de la biomecánica y la biopsicología.
-                  principalmente integramos las disciplinas mencionadas desde
+                  meditación y el desarrollo personal.
+                  <br />
+                  <br />
+                  Iniciada en colombia en 2003 por el maestro Carlos Holguín,
+                  iky se fundamenta en las técnicas y principios clásicos del
+                  yoga tántrico y el kankueb maya, adaptados y sistematizados
+                  para las necesidades y realidades de la humanidad actual a
+                  través de los nuevos desarrollos de la biomecánica y la
+                  biopsicología.
+                  <br />
+                  <br />
+                  Principalmente integramos las disciplinas mencionadas desde
                   una perspectiva científica, práctica, realista y de
                   pensamiento crítico, sin abandonar las bondades del
                   pensamiento abstracto y el estudio y conocimiento de sus bases
-                  ancestrales. de esta manera, ofrecemos una sistematización
-                  coherente de herramientas prácticas para el bienestar humano,
-                  la gestión eficiente de la salud integral y el desarrollo
-                  equilibrado de la mente.
+                  ancestrales.
+                  <br />
+                  <br />
+                  De esta manera, ofrecemos una sistematización coherente de
+                  herramientas prácticas para el bienestar humano, la gestión
+                  eficiente de la salud integral y el desarrollo equilibrado de
+                  la mente.
                 </p>
               </div>
             </div>
@@ -270,22 +315,40 @@ function Home() {
             </div>
           </div>
           <div className="separator-bar"></div>
-          <h2 className="title-home">Planning of the week</h2>
+          <h2 className="title-home">Planning de la semana</h2>
           <div className="planning">
             <FlyerCours />
           </div>
           <div className="separator-bar"></div>
-          <h2 className="title-home">Proximos eventos</h2>
+          <h2 className="title-home">Próximos eventos</h2>
           <div className="eventos-wrapper">
-            <ProximosEventos events={Eventos} />
-            <Routes>
-              <Route
-                path="/event/:id"
-                element={<ProximosEventosDetails events={Eventos} />}
-              />
-              <Route path="/login" element={<LoginComponent />} />
-              <Route path="/paiement" element={<Paiement />} />
-            </Routes>
+            {/* Ligne 1 : Instructorado */}
+            <div className="eventos-instructorado">
+              <EvenementInstructorado events={EventosInstructorado} />
+              <Routes>
+                <Route
+                  path="/event/:id"
+                  element={
+                    <EvenementInstructoradoDetails
+                      events={EventosInstructorado}
+                    />
+                  }
+                />
+              </Routes>
+            </div>
+
+            {/* Ligne 2 : Autres événements */}
+            <div className="eventos-otros">
+              <ProximosEventos events={Eventos} />
+              <Routes>
+                <Route
+                  path="/event/:id"
+                  element={<ProximosEventosDetails events={Eventos} />}
+                />
+                <Route path="/login" element={<LoginComponent />} />
+                <Route path="/paiement" element={<Paiement />} />
+              </Routes>
+            </div>
           </div>
           <div className="separator-bar"></div>
           <h2 className="title-home">Programmas</h2>

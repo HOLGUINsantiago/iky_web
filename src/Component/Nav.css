@@ -1,71 +1,116 @@
 .nav-content {
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    background-color: rgba(255, 244, 233, 0.97);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    padding: 0 20px;
-    margin: 20px auto 0;
-    gap: 10px;
-    width: max-content;
-    max-width: 100%;
-    box-shadow: 0 50px 80px rgba(0, 0, 0, 0.1), 0 50px 80px rgba(0, 0, 0, 0.08);
-  }
-  
-  .logo {
-    height: 30px;
-    margin-right: 20px;
-    margin-top: 5px;
-  }
-  
+  position: fixed; /* Garde l'élément visible même lors du défilement */
+  top: 25px; /* Fixe la barre au sommet de la fenêtre */
+  left: 50%; /* Place le côté gauche au milieu de la fenêtre */
+  transform: translateX(-50%); /* Recentre l'élément par rapport à son milieu */
+  z-index: 1000; /* Assure que la barre est au-dessus des autres éléments */
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 244, 233, 0.97);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding: 0 20px;
+  gap: 20px;
+  width: max-content;
+  max-width: 100%;
+  box-shadow: 0 50px 80px rgba(0, 0, 0, 0.1), 0 50px 80px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease; /* Pour un effet de transition fluide sur la position */
+}
+
+.logo {
+  height: 30px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+.nav-content ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.nav-content li {
+  margin: 0;
+}
+
+.nav-content .link-styled {
+  color: rgb(0, 0, 0); /* Couleur de base des liens */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  display: block;
+  padding: 12px 16px;
+  border-radius: 25px;
+  position: relative;
+  white-space: nowrap;
+  font-size: 17px;
+  transition: color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Animation pour l'interaction */
+}
+
+.nav-content .link-styled::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: background 0.3s ease, transform 0.2s ease; /* Transition pour le changement de fond */
+  border-radius: 25px;
+}
+
+.nav-content .link-styled:hover::before {
+  background: linear-gradient(to bottom, rgba(251, 247, 229, 0.97), rgba(251, 247, 229, 0.97));
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2); /* Ombre portée pour plus de profondeur */
+  transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+.nav-content .link-styled:hover {
+  color: #b52125; /* Couleur plus intense au survol */
+}
+
+/* Styles pour le hamburger */
+.hamburger {
+  display: block;
+  font-size: 30px; /* Assurez-vous que le bouton est assez grand */
+  cursor: pointer;
+  color: black; /* Couleur du texte (les barres) */
+  padding: 10px;
+  z-index: 9999; /* S'assurer que le bouton hamburger est au-dessus des autres éléments */
+}
+
+.hamburger:hover {
+  color: #b52125; /* Change la couleur au survol pour donner de l'interactivité */
+}
+
+/* Assurez-vous que le menu mobile se cache par défaut et se déploie au clic */
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 244, 233, 0.97);
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  transform: translateX(100%); /* Initialement caché */
+  transition: transform 0.3s ease;
+}
+
+/* Le menu mobile se déplace à gauche lorsqu'il est ouvert */
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+
+@media (max-width: 768px) {
   .nav-content ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 20px;
+    display: none; /* Masquer le menu horizontal sur les petits écrans */
   }
-  
-  .nav-content li {
-    margin: 0;
-  }
-  
-  .nav-content .link-styled {
-    /* color: rgba(217,149,38,255); */
-    /* color : #b52125; */
-    color: rgb(0, 0, 0);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* font-weight: bold; */
-    /* margin-top: 5px; */
-    text-decoration: none;
-    display: block;
-    padding: 12px 16px;
-    border-radius: 25px;
-    position: relative;
-    white-space: nowrap;
-    font-size: 17px;
-  }
-  
-  .nav-content .link-styled::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    transition: 0.2s;
-    border-radius: 25px;
-  }
-  
-  .nav-content .link-styled:hover::before {
-    background: linear-gradient(to bottom, rgba(251, 247, 229, 0.97), rgba(251, 247, 229, 0.97));
-    box-shadow: 0px 3px 10px 0px black;
-    transform: scale(1.2);
-  }
-  
-  .nav-content .link-styled:hover {
-    color: black;
-  }
-  
+}

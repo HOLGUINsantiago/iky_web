@@ -19,6 +19,11 @@ const UserMenu = ({
     setMenuVisible(!menuVisible); // Bascule entre afficher et masquer le menu
   };
 
+  // Fonction pour fermer le menu
+  const closeMenu = () => {
+    setMenuVisible(false);
+  };
+
   // Fermer le menu si on clique à l'extérieur du menu
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -39,9 +44,13 @@ const UserMenu = ({
   return (
     <div className="user-menu-container">
       <div
-        className="user-dropdown sh"
+        className={`user-dropdown sh`}
         ref={menuRef} // Référence sur le conteneur du menu
       >
+        <button className="close-btn-user" onClick={closeMenu}>
+          ×
+        </button>
+
         <div className="user-info">
           <div className="user-name">{user?.username}</div>
 

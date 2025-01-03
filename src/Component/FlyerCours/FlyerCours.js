@@ -7,19 +7,23 @@ const GlowingHoverCard = () => {
     {
       day: "Martes",
       courses: [
-        { course: "Yoga", time: "10:00 AM - 11:30 AM", link: "/yoga" },
-        { course: "Yoga", time: "07:20 PM - 8:50 PM", link: "/yoga" },
+        { course: "Yoga", time: "9:00 AM - 11 AM", link: "/yoga" },
+        { course: "Yoga", time: "07:20 PM - 08:45 PM", link: "/yoga" },
       ],
     },
     {
       day: "Jueves",
-      courses: [{ course: "Yoga", time: "10:00 AM - 11:30 AM", link: "/yoga" }],
+      courses: [{ course: "Yoga", time: "9:00 AM - 11:00 AM", link: "/yoga" }],
     },
     {
       day: "Sabado",
       courses: [
-        { course: "Yoga", time: "08:00 AM - 09:30 AM", link: "/yoga" },
-        { course: "Vraja Yoga", time: "11:00 AM - 12:30 PM", link: "/iky" },
+        { course: "Yoga", time: "08:00 AM - 10:00 AM", link: "/yoga" },
+        {
+          course: "Ikynesis / feldenkrais",
+          time: "11:00 AM - 13:00 PM",
+          link: "/iky",
+        },
       ],
     },
   ];

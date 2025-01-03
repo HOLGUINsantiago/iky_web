@@ -23,7 +23,7 @@ import CardEspacios from "../pageCosmovision/Espacios/Espacios.js";
 import MapDescrption from "../pageCosmovision/NuestroCentro/MapDescription.js";
 import NuestroProfesores from "../pageCosmovision/NuestroProfessores/NuestroProfesores.js";
 import Video from "../Component/CompoVideos/YoutubeVideo.js";
-import FormacionYoga from "../pageAcerca/FormacionYoga/FormacionYoga.js";
+import FormaciónYoga from "../pageAcerca/FormaciónYoga/FormaciónYoga.js";
 import CaminoMaya from "../pageAcerca/CaminoMaya/CaminoMaya.js";
 import MetodoFeldenkrais from "../pageAcerca/MetodoFeldenkrais/MetodoFeldenkrais.js";
 import Ripey from "../pageRipey/Ripey/Ripey.js";
@@ -71,7 +71,7 @@ const cardsData = [
   {
     id: 1,
     hoverText: "",
-    description: "Maestro en Feldenkrais",
+    description: "Maestro del Método Feldenkrais®",
     backgroundImage: Diplomas1,
     width: "300px",
     height: "100px",
@@ -80,7 +80,7 @@ const cardsData = [
     id: 2,
     hoverText: "",
     description:
-      "Certificacion de guia espiritual maya por el govierno de Guatemala",
+      "Certificación de guía espiritual maya por el gobierno de Guatemala",
     backgroundImage: Diplomas2,
 
     width: "250px",
@@ -95,12 +95,7 @@ const cardsData = [
     width: "200px",
     height: "100px",
   },
-  {
-    id: 4,
-    hoverText: "",
-    description: "Profesor de yoga",
-    backgroundImage: Diplomas4,
-  },
+
   {
     id: 5,
     hoverText: "",
@@ -110,32 +105,38 @@ const cardsData = [
   {
     id: 6,
     hoverText: "",
-    description: "Profesor de yoga para mujer embarazadas",
+    description: "Profesor de yoga para embarazadas",
     backgroundImage: Diplomas6,
   },
   {
     id: 7,
     hoverText: "",
-    description: "Certicicacion de sanacion pranica",
+    description: "Certificación de sanación pránica",
     backgroundImage: Diplomas7,
   },
   {
     id: 8,
     hoverText: "",
-    description: "Certificado de Reiki",
+    description: "Maestro Reiki",
     backgroundImage: Diplomas8,
   },
   {
     id: 9,
     hoverText: "",
-    description: "Instrutor de Tai Chi y Chi Kung",
+    description: "Instructor de Tai Chi y Chi Kung",
     backgroundImage: Diplomas9,
   },
   {
     id: 10,
     hoverText: "",
-    description: "Certificacion en yoga nidra",
+    description: "Certificación en yoga nidra",
     backgroundImage: Diplomas10,
+  },
+  {
+    id: 4,
+    hoverText: "",
+    description: "Profesor de yoga",
+    backgroundImage: Diplomas4,
   },
 ];
 
@@ -143,16 +144,16 @@ const cardsDataEspacios = [
   {
     id: 1,
     imageSrc: Salon1,
-    hoverText: "Salon principal",
+    hoverText: "Salón principal",
     description:
-      "En un espacio abierto rodeado de naturaleza se encuentra un salon principal donde se entregan las clases de yoga y de kankueb.",
+      "En un espacio abierto rodeado de naturaleza se encuentra un Salón principal donde se entregan las clases de yoga y de kankueb.",
   },
   {
     id: 2,
     imageSrc: petitSalon,
-    hoverText: "Salon central",
+    hoverText: "Salón central",
     description:
-      "Este salon se encuentra en el interior de las instalaciones y tiene vista hacia el pequeño jardin. Con aire condicionado este salon se usa para las grabaciones y las clases de ikynesis. ",
+      "Este Salón se encuentra en el interior de las instalaciones y tiene vista hacia el pequeño Jardín. Con aire condicionado este Salón se usa para las grabaciones y las clases de ikynesis. ",
   },
   {
     id: 3,
@@ -170,9 +171,9 @@ const cardsDataEspacios = [
   {
     id: 5,
     imageSrc: Jardin4,
-    hoverText: "Jardin",
+    hoverText: "Jardín",
     description:
-      "Esta es la vista que tienen todos los estudiantes desde el salon principal.",
+      "Esta es la vista que tienen todos los estudiantes desde el Salón principal.",
   },
   {
     id: 6,
@@ -184,8 +185,8 @@ const cardsDataEspacios = [
   {
     id: 7,
     imageSrc: Instalacion2,
-    hoverText: "Jardin pequeño",
-    description: "Entrada peatonal de Ishka.",
+    hoverText: "Jardín pequeño",
+    description: "Entrada peatonal de Ishka Center.",
   },
   {
     id: 8,
@@ -214,8 +215,8 @@ const sectionsCRKan = [
   },
   {
     id: 2,
-    name: "Formacion en yoga",
-    content: <FormacionYoga />,
+    name: "Formación en yoga",
+    content: <FormaciónYoga />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
@@ -244,7 +245,7 @@ const sectionsCRKan = [
   },
   {
     id: 4,
-    name: "Formacion en Feldenkrais",
+    name: "Formación en Método Feldenkrais® de Autoconciencia a Través del Movimiento",
     content: <MetodoFeldenkrais />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
@@ -259,14 +260,8 @@ const sectionsCRKan = [
   },
   {
     id: 5,
-    name: "Biografia",
-    content: (
-      <BiographyCard
-        nom="Carlos HOLGUIN"
-        titre="Profesor de Yoga"
-        photoUrl={Carlos}
-      />
-    ),
+    name: "Experiencia",
+    content: <BiographyCard nom="Carlos HOLGUIN" titre="" photoUrl={Carlos} />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
@@ -304,7 +299,7 @@ const sectionsYoga = [
   },
   {
     id: 2,
-    name: "Clases",
+    name: "",
     content: <Clases />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
@@ -316,6 +311,11 @@ const sectionsYoga = [
         allowed: true,
       },
     ],
+  },
+  {
+    id: 4,
+    name: "Profesorado e intructorado",
+    content: <ProfesoradoInstructorado />,
   },
   {
     id: 3,
@@ -331,11 +331,6 @@ const sectionsYoga = [
         allowed: true,
       },
     ],
-  },
-  {
-    id: 4,
-    name: "Profesorado y intructorado",
-    content: <ProfesoradoInstructorado />,
   },
   {
     id: 5,
@@ -378,7 +373,7 @@ const sectionsIkynesis = [
   },
   {
     id: 2,
-    name: "Método Feldenkrais",
+    name: "Método Feldenkrais®",
     content: loremIpsum({ count: 20, units: "paragraphs" }),
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
@@ -474,7 +469,7 @@ const sectionsKankueb = [
   },
   {
     id: 2,
-    name: "Cosmovision y Calendario Maya",
+    name: "Cosmovisión y Calendario Maya",
     content: <CosmovisionMaya />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
@@ -600,7 +595,7 @@ const sectionsIshka = [
   },
   {
     id: 2,
-    name: "Método Feldenkrais",
+    name: "Método Feldenkrais®",
     content: loremIpsum({ count: 20, units: "paragraphs" }),
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },

@@ -1,0 +1,43 @@
+.container-Kankueb {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center; /* Centrer verticalement dans le conteneur parent */
+    align-items: center;
+    flex-direction: column;
+}
+  
+.card-Kankueb {
+    position: relative;
+    width: 100%; /* Prendre toute la largeur */
+    height: auto;
+    transition: 0.3s ease;
+    box-sizing: border-box;
+    background-color: transparent; /* Supprimer le fond gris */
+    color: #f9f6f6;
+}
+  
+.kankueb-section {
+    width: 100%; /* Assurer que chaque section prenne toute la largeur */
+}
+  
+.kankueb-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 0;
+}
+  
+.kankueb-header h3 {
+    margin: 0;
+    font-size: 14px;
+}
+  
+.kankueb-text {
+    margin: 10px 0;
+    padding-left: 10px;
+    line-height: 1.6;
+    color: white;
+}

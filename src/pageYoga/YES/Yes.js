@@ -75,20 +75,15 @@ const Yes = () => {
           <span
             className={`wave wave-spagnol wave-4 ${hovered === "E" ? "visible" : ""}`}
           >
-            g
+            ñ
           </span>
           <span
             className={`wave wave-spagnol wave-5 ${hovered === "E" ? "visible" : ""}`}
           >
-            n
-          </span>
-          <span
-            className={`wave wave-spagnol wave-6 ${hovered === "E" ? "visible" : ""}`}
-          >
             o
           </span>
           <span
-            className={`wave wave-spagnol wave-7 ${hovered === "E" ? "visible" : ""}`}
+            className={`wave wave-spagnol wave-6 ${hovered === "E" ? "visible" : ""}`}
           >
             l
           </span>

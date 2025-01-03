@@ -13,10 +13,10 @@ function MosaiqueRipey() {
 
   const items = [
     "Diplomas",
-    "Formacion en yoga",
+    "Formación en yoga",
     "Camino maya",
-    "Formacion en Feldenkrais",
-    "Biografia",
+    "Formación en Método Feldenkrais®",
+    "Experiencia",
     "C.R.Kan",
     "",
     "",

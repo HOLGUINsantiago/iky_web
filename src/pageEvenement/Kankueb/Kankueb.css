@@ -1,12 +1,13 @@
 .kankueb-container {
   position: relative;
   text-align: justify;
-  display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+  display: flex;
+  flex-direction: column; /* Pour permettre une disposition en colonne */
   align-items: flex-start;
   padding: 50px;
-  background-color: transparent; /* Fond transparent pour le texte */
-  z-index: 1; /* Assure que le texte est au-dessus de la superposition */
-  height: 100%;
+  background-color: transparent;
+  z-index: 1;
+  width: 100%;
 }
 
 .kankueb-container::before {
@@ -18,37 +19,41 @@
   height: 600px;
   z-index: -1;
   background-image: url("../../assets/images/serp.png");
-  background-size: cover; /* L'image couvre toute la zone */
-  background-position: center top; /* Centre l'image horizontalement */
+  background-size: cover;
+  background-position: center top;
   background-repeat: no-repeat;
-  opacity: 0.3; /* Image semi-transparente */
-  filter: brightness(80%) blur(0px); /* Applique un filtre de luminosité et flou */
+  opacity: 0.3;
+  filter: brightness(80%) blur(0px);
 }
 
+/* Section contenant les images et le premier bloc de texte */
 .kankueb-header {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row; /* Les images et le texte sont alignés horizontalement */
   width: 100%;
+  margin-bottom: 20px; /* Espacement entre le header et le reste du texte */
 }
 
 .kankueb-image-container {
   display: flex;
-  flex-direction: column; /* Les images seront empilées verticalement */
-  justify-content: center;
-  align-items: flex-start; /* Les images seront alignées à gauche */
-  margin-right: 70px; /* Espacement entre les images et le texte */
+  flex-direction: column; /* Les images sont empilées verticalement */
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-right: 20px; /* Espacement entre les images et le texte */
+  flex-shrink: 0; /* Empêche les images de rétrécir */
 }
 
 .kankueb-image {
   width: 200px; /* Taille des images */
   height: auto;
-  margin-bottom: 0px; /* Espacement entre les images */
-  border: 2px solid white; /* Bordure blanche entre les images */
+  margin-bottom: 15px; /* Espacement entre les images */
+  border: 2px solid white;
+  border-radius: 8px; /* Coins arrondis pour les images */
 }
 
 .kankueb-content {
   flex-grow: 1; /* Permet au texte de prendre tout l'espace restant */
-  max-width: 80%; /* Augmente la largeur du texte */
+  text-align: justify;
 }
 
 .kankueb-title {
@@ -63,6 +68,7 @@
   color: #c5c4c4;
   margin-bottom: 15px;
   text-align: justify;
+  line-height: 1.8;
 }
 
 .kankueb-list {
@@ -78,4 +84,10 @@
 
 .kankueb-list strong {
   color: beige;
+}
+
+/* Texte additionnel sous le header */
+.kankueb-body {
+  margin-top: 20px; /* Espacement entre le header et le reste du texte */
+  width: 100%;
 }

@@ -52,7 +52,7 @@ function Footer() {
 
             <li>
               <a
-                href="https://www.instagram.com/chakrarajakan/"
+                href="https://www.instagram.com/yoga.iky/?hl=fr"
                 target="_blank"
                 rel="noopener noreferrer"
               >

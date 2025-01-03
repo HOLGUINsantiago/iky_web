@@ -13,9 +13,9 @@ function MosaiqueYoga() {
 
   const items = [
     "Systema Iky",
-    "Clases",
+    "",
     "Cursos, retiros y talleres",
-    "Profesorado y intructorado",
+    "Profesorado e intructorado",
     "Profondizaciones y especializaciones",
     "",
     "",

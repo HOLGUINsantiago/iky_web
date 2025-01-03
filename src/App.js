@@ -21,7 +21,7 @@ import EventList from "./Component/NewEvenement/Evenement.js";
 import EventDetail from "./Component/NewEvenement/EventDetails.js";
 import backgroundImage from "./assets/images/YogaBack.jpg";
 import flyer from "./assets/images/post_instruct.png";
-
+import Confirmation from "./Component/PageConfirmation.js";
 // Données des événements
 const events = [
   {
@@ -134,6 +134,7 @@ function App() {
             />
           ))}
           <Route path="/videos" element={<Categorie />} />
+          <Route path="/confirm/*" element={<Confirmation />} />
           <Route path="/events" element={<EventList />} />
           <Route path="/event/:id" element={<EventDetail events={events} />} />
         </Routes>

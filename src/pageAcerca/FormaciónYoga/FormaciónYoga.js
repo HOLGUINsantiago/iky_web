@@ -1,12 +1,12 @@
 import React from "react";
-import "./FormacionYoga.css";
+import "./FormaciónYoga.css";
 import photo1 from "../../assets/photoPageRipey/FormacionYoga/431A0466.jpg";
 import photo2 from "../../assets/photoPageRipey/FormacionYoga/431A0527.jpg";
 
-const FormacionYoga = () => {
+const FormaciónYoga = () => {
   return (
     <div>
-      <p className="text-formacionYoga">
+      <p className="text-FormaciónYoga">
         <img src={photo1} alt="Hatha Yoga" className="img-right" />
         C.R. Kan inició su aprendizaje de yoga en octubre de 1993, cuando
         cursaba su último año de estudio de leyes en la Universidad Externado de
@@ -35,12 +35,12 @@ const FormacionYoga = () => {
         Gran Fraternidad Universal, quien lo inició en técnicas más profundas y
         le evidenció la escuela de Satyananda Yoga, quien posteriormente se
         convertiría en su gurú. También estudió varios meses entre el 2000 y el
-        2001 con el profesor Goranga Lila en el templo la secta Hare Krishna en
-        Bogotá.
+        2001 con el profesor Goranga Lila en el templo de la secta Hare Krishna
+        en Bogotá.
         <br />
         <br />
         Durante 2004, también en Bogotá, fue formado en tantra kriya yoga por la
-        maestra kaula Tutare Devi Dasi, quien lo inició como profesor de hatha
+        maestra kaula Tutare Devi Dasi, quien lo inició como maestro de hatha
         yoga en julio de ese mismo año.
         <br />
         <br />
@@ -56,10 +56,10 @@ const FormacionYoga = () => {
         En febrero de 2007 se certificó como instructor de yoga integral con
         Yogui Maurya y como instructor de power yoga con Marcela Larrosa en la
         Escuela Yogakai en Buenos Aires, Argentina. En febrero de 2009 se
-        certificó en la misma escuela como profesor de yoga clásico, con
-        posgrado en yoga para niños y para maternas. Al mismo tiempo se
-        certificó con el maestro Aníbal Bonelli como instructor de taichi y
-        chikung en la escuela Naturaleza Tai de Argentina.
+        certificó en la misma escuela como maestro de yoga clásico, con posgrado
+        en yoga para niños y para maternas. Al mismo tiempo se certificó con el
+        maestro Aníbal Bonelli como instructor de taichi y chikung en la escuela
+        Naturaleza Tai de Argentina.
         <br />
         <br />
         El 21 de mayo de 2012 en Bogotá, recibió diksha patra de manos de la
@@ -72,8 +72,8 @@ const FormacionYoga = () => {
         Academia de Yoga Satyananda de Bogotá. En el año 2020 continuó en la
         misma escuela aprobando en diciembre Estudios Yóguicos 2 y en enero de
         2024 inició el nivel de profesorado con la misma institución, después de
-        20 años de estar ejerciendo con constancia y permanencia como profesor
-        de yoga.
+        20 años de estar ejerciendo con constancia y permanencia como maestro de
+        yoga.
         <br />
         <br />
         Durante sus más de 30 años de estudio y práctica del yoga ha tomado
@@ -84,4 +84,4 @@ const FormacionYoga = () => {
   );
 };
 
-export default FormacionYoga;
+export default FormaciónYoga;

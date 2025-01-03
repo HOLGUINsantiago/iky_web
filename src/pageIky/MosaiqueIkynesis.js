@@ -13,7 +13,7 @@ function Mosaique() {
 
   const items = [
     "Yoga del movimiento",
-    "Método Feldenkrais",
+    "Método Feldenkrais®",
     "Cursos, retiros y talleres",
     "Sesiones individuales",
     "IKYnesis",

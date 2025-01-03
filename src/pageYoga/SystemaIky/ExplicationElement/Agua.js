@@ -27,7 +27,8 @@ function AguaExplanation() {
         movimiento.
       </p>
       <p>
-        <strong>Línea de yoga clásico que integra:</strong> Bhakti Yoga.
+        <strong>Línea de yoga clásico que integra:</strong> Laya Yoga y Bhakti
+        Yoga.
       </p>
       <p>
         <strong>Materias:</strong> Antropokinesis y anatomía para el movimiento.
