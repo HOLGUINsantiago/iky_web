@@ -224,6 +224,7 @@ const lorem = new LoremIpsum({
 
 function Home() {
   const programsRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -245,6 +246,20 @@ function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const checkScreenSize = () => {
+      console.log(window.innerWidth);
+      setIsMobile(window.innerWidth <= 1000);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
   return (
     <div>
       <div className="home-container">
@@ -262,8 +277,8 @@ function Home() {
         <div className="first-part">
           <div className="titulo-container">
             <h1 className="ishka-big">
-              IKY: EL MÁS COMPLETO Y AVANZADO SISTEMA DE EMPODERAMIENTO Y
-              CRECIMIENTO PERSONAL
+              EL MÁS COMPLETO Y AVANZADO SISTEMA DE EMPODERAMIENTO Y CRECIMIENTO
+              PERSONAL
               <br />
               DE LOS TIEMPOS ACTUALES
             </h1>

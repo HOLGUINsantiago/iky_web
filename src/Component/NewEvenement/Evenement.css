@@ -3,6 +3,7 @@
   max-width: 1200px;
   margin: 50px auto;
   animation: fadeInUp 0.6s ease-in-out;
+  padding: 0 15px; /* Ajout de padding pour les petits écrans */
 }
 
 .h1-newEvent {
@@ -17,17 +18,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 100px;
-}
-
-@keyframes slide-in-left {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  justify-content: center; /* Centrer les éléments dans la grille */
 }
 
 .event-item {
@@ -41,10 +32,10 @@
   transform: translateX(-100%);
   transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
   text-align: center;
-  width: 320px;
+  width: 320px; /* Fixe une largeur par défaut */
   overflow: hidden;
   position: relative;
-  padding-bottom: 30px; 
+  padding-bottom: 30px;
   cursor: pointer;
 }
 
@@ -56,7 +47,7 @@
 .event-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-  background-color: #21140e; 
+  background-color: #21140e;
 }
 
 .event-image {
@@ -80,9 +71,10 @@
 .event-item:hover .event-image,
 .event-item:hover .event-title,
 .event-item:hover .progress-bar-container {
-  opacity: 0; /* Cache l'image, le titre et la jauge de progression */
+  opacity: 0;
 }
 
+/* Hover Overlay */
 .hover-overlay {
   position: absolute;
   top: 50%;
@@ -90,22 +82,20 @@
   transform: translate(-50%, -50%);
   color: #DC9424;
   font-size: 18px;
-  /* font-weight: bold; */
   opacity: 0;
   transition: opacity 0.3s ease;
-  pointer-events: none; /* Empêche l'interaction avec ce texte */
+  pointer-events: none;
 }
 
 .event-item:hover .hover-overlay {
-  opacity: 1; /* Affiche le texte "Ver más" */
+  opacity: 1;
 }
 
 /* Container principal de la barre de progression */
 .progress-bar-container {
-  width: 100%; /* Étend la jauge sur toute la largeur */
+  width: 100%;
   height: 15px;
   background-color: #bfaaaa;
- 
   overflow: hidden;
   position: absolute;
   bottom: 0;
@@ -118,9 +108,7 @@
 .progress-bar {
   height: 100%;
   background-color: #b42424;
-  /* background-color: #DC9424; */
   transition: width 0.3s ease;
-  
 }
 
 /* Texte du temps restant */
@@ -133,5 +121,74 @@
   color: white;
   pointer-events: none;
   white-space: nowrap;
-  z-index: 2; 
+  z-index: 2;
+}
+
+/* MEDIA QUERY POUR LES PETITS ÉCRANS */
+@media (max-width: 768px) {
+  .events-grid {
+    gap: 20px; /* Réduit l'écart entre les éléments */
+    justify-content: center;
+  }
+
+  .event-item {
+    width: 100%; /* Permet aux éléments de s'étendre sur toute la largeur de l'écran */
+    max-width: 300px; /* Limite la largeur des éléments */
+    margin-bottom: 20px; /* Ajoute un espace entre les éléments */
+    padding-bottom: 20px; /* Ajuste l'espacement en bas */
+  }
+
+  .event-image {
+    height: 120px; /* Réduit la hauteur de l'image */
+  }
+
+  .event-title {
+    font-size: 16px; /* Réduit la taille du texte pour les petits écrans */
+    margin: 12px 0 6px 0;
+  }
+
+  .progress-bar-container {
+    height: 12px; /* Réduit la hauteur de la barre de progression */
+  }
+
+  .time-left-text {
+    font-size: 10px; /* Réduit la taille du texte restant */
+  }
+
+  .event-item:hover .event-image,
+  .event-item:hover .event-title {
+    opacity: 1; /* Supprime l'effet de disparition au survol sur mobile */
+  }
+
+  .hover-overlay {
+    font-size: 16px; /* Réduit la taille de la police de "View More" */
+  }
+}
+
+/* MEDIA QUERY POUR LES TRÈS PETITS ÉCRANS (par exemple, les téléphones très petits) */
+@media (max-width: 480px) {
+  .event-item {
+    width: 100%; /* Utilise toute la largeur de l'écran */
+    max-width: 250px; /* Limite encore la largeur */
+  }
+
+  .event-image {
+    height: 100px; /* Réduit encore la taille de l'image */
+  }
+
+  .event-title {
+    font-size: 14px; /* Réduit encore la taille du titre */
+  }
+
+  .progress-bar-container {
+    height: 10px; /* Réduit la hauteur de la barre */
+  }
+
+  .time-left-text {
+    font-size: 8px; /* Réduit encore le texte */
+  }
+
+  .hover-overlay {
+    font-size: 14px; /* Petite taille pour le texte "Voir plus" */
+  }
 }

@@ -23,6 +23,7 @@
 
 .content{
   background-color: #21140e;
+  padding: 1%;
 }
 
 
@@ -242,7 +243,7 @@
   padding-right: 50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   /* Conteneur principal */
   .home-container {
     height: auto; /* Ajuste la hauteur en fonction du contenu */
@@ -322,6 +323,7 @@
     width: 60px; /* Réduction de la largeur */
     margin-top: 30px;
   }
+  
 
   /* Première partie */
   .first-part {
@@ -353,6 +355,23 @@
     height: auto;
     margin-right: 0;
   }
+
+  .right-side-vision {
+    display: none;
+  }
+
+  .right-side-vision img {
+  display: none;
+  }
+
+  .left-side-vision-text {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }  
+
+  .left-side-vision p {
+    padding: 0px;
+  } 
 }
-
-

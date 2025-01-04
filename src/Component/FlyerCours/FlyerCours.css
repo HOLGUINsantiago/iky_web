@@ -92,12 +92,7 @@
     text-align: right;
   }
   
-  @media (max-width: 768px) {
-    .card {
-      width: 90%;
-      padding: 10px;
-    }
-  
+  @media (max-width: 1000px) {
     .day {
       font-size: 16px;
     }

@@ -1,85 +1,88 @@
-/* Container de la page de détail */
-.event-detail-container {
-    height: 200vh;
-  }
-  
-  .event-detail {
-    position: relative;
-    width: 100%;  
-    height: 100vh; /* Pour occuper toute la hauteur de la fenêtre */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Cadre contenant les détails de l'événement */
-  .event-info-container {
-    position: fixed;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    padding: 30px;
-    width: 500px;
-    max-width: 90%;
-    text-align: justify;
-    font-size: 16px;
-    color: rgb(255, 0, 0);
-    transition: color 0.3s ease-in-out;
-    margin-left: 50px;
-  }
-  
-  .event-info-container h1 {
-    color: white;
-  }
-  
-  /* Changement de style après défilement */
-  .event-info-container.scrolled {
-    color: rgb(154, 154, 154); 
-    z-index: 1000;/* Change la couleur du texte en noir */
-  }
-  
-  .event-info-container.scrolled h1 {
-    color: black;
-  }
-  
-  /* Section avec le fond blanc */
-  .content-below {
-    height: 100vh; /* Hauteur de la section avec le fond blanc */
-    padding: 50px 20px;
-    background-color: rgb(206, 206, 206);
-    position: relative; /* Assure que les éléments positionnés absolument sont relatifs à ce conteneur */
-  }
-  
-  .flyer-image {
-    position: absolute;
-    bottom: 50px; /* Espace depuis le bas du conteneur */
-    right: 150px; /* Espace depuis la droite du conteneur */
-    width: 500px; /* Ajustez la taille selon vos besoins */
-    height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+/* Pour les grands écrans, on laisse inchangé le CSS existant */
 
-  .register-button {
-    position: absolute;
-    bottom: 70px; /* Espace depuis le bas du conteneur */
-    left: 20%; /* Espace depuis la gauche du conteneur */
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #B42424; /* Couleur de fond du bouton */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .register-button:hover {
-    background-color: #B42424; /* Couleur de fond au survol du bouton */
-  }
-  
- /* Style de la fenêtre modale */
+/* Conteneur principal */
+.event-detail-container {
+  height: 200vh;
+}
+
+.event-detail {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Pour occuper toute la hauteur de la fenêtre */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cadre contenant les détails de l'événement */
+.event-info-container {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  padding: 30px;
+  width: 500px;
+  max-width: 90%;
+  text-align: justify;
+  font-size: 16px;
+  color: rgb(255, 0, 0);
+  transition: color 0.3s ease-in-out;
+  margin-left: 50px;
+}
+
+.event-info-container h1 {
+  color: white;
+}
+
+/* Changement de style après défilement */
+.event-info-container.scrolled {
+  color: rgb(154, 154, 154);
+  z-index: 1000;
+  /* Change la couleur du texte en noir */
+}
+
+.event-info-container.scrolled h1 {
+  color: black;
+}
+
+/* Section avec le fond blanc */
+.content-below {
+  height: 100vh;
+  padding: 50px 20px;
+  background-color: rgb(206, 206, 206);
+  position: relative;
+}
+
+.flyer-image {
+  position: absolute;
+  bottom: 50px;
+  right: 150px;
+  width: 500px;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-button {
+  position: absolute;
+  bottom: 70px;
+  left: 20%;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #B42424;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #B42424;
+}
+
+/* Fenêtre modale */
 .modal-event {
   position: fixed;
   top: 0;
@@ -89,11 +92,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
 
-/* Style du contenu de la fenêtre modale */
 .modal-event-content {
   background-color: white;
   padding: 20px;
@@ -103,7 +105,6 @@
   animation: modal-fade-in 0.3s ease-out;
 }
 
-/* Animation d'apparition de la modale */
 @keyframes modal-fade-in {
   from {
     opacity: 0;
@@ -115,7 +116,6 @@
   }
 }
 
-/* Bouton pour fermer la modale */
 .close-button {
   background-color: #ff5c5c;
   color: white;
@@ -126,4 +126,103 @@
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+/* ** Responsivité : Pour les petits écrans ** */
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  /* Modification de la hauteur de l'image de fond */
+  .event-detail {
+    height: 40vh; /* Réduit la hauteur de l'image pour les petits écrans */
+  }
+
+  /* Ajustement du conteneur d'information */
+  .event-info-container {
+    position: relative;
+    top: auto;
+    left: 0;
+    transform: none;
+    padding: 20px;
+    width: 90%;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .event-info-container h1 {
+    font-size: 18px;
+  }
+
+  .content-below {
+    height: auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+  }
+
+  .flyer-image {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: none;
+  }
+
+  /* Modification du bouton d'inscription */
+  .register-button {
+    width: 80%;
+    margin: 20px auto;
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  /* Modale d'inscription */
+  .modal-event-content {
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+  }
+
+  .close-button {
+    top: 10px;
+    right: 10px;
+    padding: 8px;
+  }
+}
+
+/* Tablettes et petits écrans (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Ajustement de l'image de fond */
+  .event-detail {
+    height: 50vh; /* Réduit la hauteur de l'image de fond */
+  }
+
+  /* Ajustement du conteneur d'information */
+  .event-info-container {
+    top: 20%;
+    left: 5%;
+    font-size: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .event-info-container h1 {
+    font-size: 20px;
+  }
+
+  .flyer-image {
+    width: 75%;
+    max-width: 250px;
+    margin: 20px auto;
+  }
+
+  /* Bouton d'inscription */
+  .register-button {
+    width: 80%;
+    margin: 20px auto;
+    padding: 12px 0;
+    font-size: 16px;
+  }
 }
