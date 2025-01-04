@@ -170,6 +170,8 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
                 key={section.id}
                 section={section}
                 ref={(el) => (sectionRefs.current[index] = el)}
+                isSmallScreen={isSmallScreen}
+                isFirstSection={index === 0}
               />
             ))}
           </div>
