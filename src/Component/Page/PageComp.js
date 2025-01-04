@@ -14,7 +14,7 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
   const [loading, setLoading] = useState(true); // État de chargement
   const sectionRefs = useRef([]);
   const mosaiqueRef = useRef(null);
-
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -55,6 +55,19 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 1000);
+    };
+
+    // Llamar una vez al montar para asegurarte de que el estado es correcto
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -68,41 +81,37 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  const containerStyle = {
-    "--background-image": `url(${backgroundImage})`,
-  };
-
   // ISLA DINAMICA
   useEffect(() => {
-    const mosaiqueObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const ratio = entry.intersectionRatio;
-            if (ratio >= 0.6 && ratio <= 1) {
-              setIsDynamicIsland(false);
-            } else {
-              setIsDynamicIsland(true);
-            }
+    if (isSmallScreen) {
+      setIsDynamicIsland(true); // Forzar la isla dinámica en pantallas pequeñas
+    } else {
+      const handleScroll = () => {
+        const element = mosaiqueRef.current;
+
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Verifica si el elemento está completamente fuera del viewport
+          if (rect.bottom < 0 || rect.top > window.innerHeight) {
+            setIsDynamicIsland(true); // Mostrar la isla dinámica si está fuera del viewport
+          } else {
+            setIsDynamicIsland(false); // Ocultar la isla dinámica si está visible
           }
-        });
-      },
-      {
-        rootMargin: "0px",
-        threshold: [0.6, 0.1],
-      },
-    );
+        }
+      };
 
-    if (mosaiqueRef.current) {
-      mosaiqueObserver.observe(mosaiqueRef.current);
+      // Escucha eventos de scroll
+      window.addEventListener("scroll", handleScroll);
+
+      // Ejecutar la verificación al cargar
+      handleScroll();
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
     }
+  }, [isSmallScreen]);
 
-    return () => {
-      if (mosaiqueRef.current) {
-        mosaiqueObserver.unobserve(mosaiqueRef.current);
-      }
-    };
-  }, []);
 
   useEffect(() => {
     sectionRefs.current = sectionRefs.current.slice(0, sections.length);
@@ -139,7 +148,7 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
         style={{
           position: "relative",
           backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
+          backgroundSize: isSmallScreen ? "contain" : "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           zIndex: 0,
@@ -161,6 +170,8 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
                 key={section.id}
                 section={section}
                 ref={(el) => (sectionRefs.current[index] = el)}
+                isSmallScreen={isSmallScreen}
+                isFirstSection={index === 0}
               />
             ))}
           </div>

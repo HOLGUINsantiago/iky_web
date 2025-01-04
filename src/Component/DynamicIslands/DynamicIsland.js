@@ -206,9 +206,8 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
     <div className="box">
       {isNavShow && (
         <div
-          className={`isla-dinamica ${isSectionMenuOpen ? "menu-open" : ""} ${
-            isRecomendacionesMenuOpen ? "recomendaciones-open" : ""
-          } `}
+          className={`isla-dinamica ${isSectionMenuOpen ? "menu-open" : ""} ${isRecomendacionesMenuOpen ? "recomendaciones-open" : ""
+            } `}
           ref={islaRef}
         >
           <div className="shape">
@@ -265,10 +264,10 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
                                   section.allowed
                                     ? setVentanaRecActiva(section.url)
                                     : window.open(
-                                        section.url,
-                                        "_blank",
-                                        "noopener,noreferrer"
-                                      );
+                                      section.url,
+                                      "_blank",
+                                      "noopener,noreferrer"
+                                    );
                                   setIsRecomendacionesMenuOpen(false);
                                 }}
                               >
@@ -309,9 +308,8 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
               )}
             </div>
             <div
-              className={`isla-dinamica-right ${
-                isSectionMenuOpen ? "menu-open" : ""
-              }`}
+              className={`isla-dinamica-right ${isSectionMenuOpen ? "menu-open" : ""
+                }`}
               ref={rightRef}
               onMouseEnter={handleMouseEnterSection}
               onMouseLeave={handleMouseLeaveSection}

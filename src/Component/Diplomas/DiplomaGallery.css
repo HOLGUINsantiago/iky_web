@@ -1,11 +1,10 @@
-
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
-.text-diplome{
+.text-diplome {
   color: white;
   font-size: 16px;
-  margin-bottom : 30px ;
+  margin-bottom: 30px;
 }
 
 .card-container-diplomas {
@@ -26,7 +25,8 @@
   gap: 50px;
 }
 
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
   width: 40px;
   height: 40px;
   z-index: 1;
@@ -45,7 +45,8 @@
   right: 10px;
 }
 
-.slick-prev:before, .slick-next:before {
+.slick-prev:before,
+.slick-next:before {
   font-size: 24px;
   color: #fff;
 }
@@ -57,8 +58,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Assure que l'image couvre entièrement le conteneur */
-  z-index: -1; /* Assure que l'image est en arrière-plan */
+  object-fit: cover;
+  /* Assure que l'image couvre entièrement le conteneur */
+  z-index: -1;
+  /* Assure que l'image est en arrière-plan */
 }
 
 .card-diplomas .front-content-diplomas {
@@ -80,7 +83,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  margin: 0; /* Assurez-vous que le paragraphe n'a pas de marge par défaut */
+  margin: 0;
+  /* Assurez-vous que le paragraphe n'a pas de marge par défaut */
 }
 
 .card-diplomas .content-diplomas {
@@ -117,13 +121,15 @@
 .card-diplomas .content-diplomas .heading-diplomas {
   font-size: 32px;
   font-weight: 700;
-  margin: 0; /* Assurez-vous que le heading n'a pas de marge par défaut */
+  margin: 0;
+  /* Assurez-vous que le heading n'a pas de marge par défaut */
 }
 
 .card-diplomas .content-diplomas .heading-diplomas {
   font-size: 32px;
   font-weight: 700;
-  margin: 0; /* Assurez-vous que le heading n'a pas de marge par défaut */
+  margin: 0;
+  /* Assurez-vous que le heading n'a pas de marge par défaut */
 }
 
 
@@ -153,4 +159,62 @@
 
 .expand-button-diplomas:hover {
   background-color: #f89b29;
+}
+
+.simple-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.simple-list li {
+  cursor: pointer;
+  padding: 15px;
+  /* border-bottom: 1px solid #ccc; */
+  background-color: rgb(26, 41, 6);
+  transition: background-color 0.3s ease;
+  color: wheat;
+}
+
+.simple-list li:hover {
+  background-color: #7c7575;
+}
+
+.full-screen-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.full-screen-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: 80%;
+  right: 20px;
+  background: #733f3f;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #f0f0f0;
 }

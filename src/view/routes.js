@@ -31,7 +31,6 @@ import ExempleDiplomas from "../pageRipey/Ripey/DiplomasExemple/DiplomasExemple.
 import Simon from "../assets/images/profil/Simon.jpg";
 import SystemaIKY from "../pageYoga/SystemaIky/SystemaIKY.js";
 import YogaDef from "../pageYoga/YogaDef.js";
-import Clases from "../pageYoga/Clases/Clases.js";
 import Kankueb from "../pageEvenement/Kankueb/Kankueb.js";
 
 import YogaBack from "../assets/images/YogaBack.jpg";
@@ -277,13 +276,22 @@ const sectionsCRKan = [
 
 const sectionsYoga = [
   {
-    id: 0,
+    id: 1,
     name: "Definición de Yoga",
     content: <YogaDef />,
-    recommendations: [],
+    recommendations: [
+      { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
+      { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
+      {
+        title: "1 Link 1",
+        url: "https://biojava.org/docs/api6.1.0/org/biojava/nbio/core/alignment/template/Profile.html",
+        porcentaje: 50,
+        allowed: true,
+      },
+    ],
   },
   {
-    id: 1,
+    id: 2,
     name: "Systema Iky",
     content: <SystemaIKY />,
     recommendations: [
@@ -298,9 +306,9 @@ const sectionsYoga = [
     ],
   },
   {
-    id: 2,
-    name: "",
-    content: <Clases />,
+    id: 3,
+    name: "Profesorado e intructorado",
+    content: <ProfesoradoInstructorado />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
@@ -314,11 +322,6 @@ const sectionsYoga = [
   },
   {
     id: 4,
-    name: "Profesorado e intructorado",
-    content: <ProfesoradoInstructorado />,
-  },
-  {
-    id: 3,
     name: "Cursos, retiros y talleres",
     content: <Yes />,
     recommendations: [
@@ -351,13 +354,13 @@ const sectionsYoga = [
 
 const sectionsIkynesis = [
   {
-    id: 0,
+    id: 1,
     name: "Ikynesis",
     content: <IKYNESIS />,
     recommendations: [],
   },
   {
-    id: 1,
+    id: 2,
     name: "Yoga del movimiento",
     content: loremIpsum({ count: 20, units: "paragraphs" }),
     recommendations: [
@@ -372,7 +375,7 @@ const sectionsIkynesis = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "Método Feldenkrais®",
     content: loremIpsum({ count: 20, units: "paragraphs" }),
     recommendations: [
@@ -387,7 +390,7 @@ const sectionsIkynesis = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: "Cursos, retiros y talleres",
     content: loremIpsum({ count: 20, units: "paragraphs" }),
     recommendations: [
@@ -402,7 +405,7 @@ const sectionsIkynesis = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     name: "Sesiones individuales",
     content: loremIpsum({ count: 20, units: "paragraphs" }),
     recommendations: [
