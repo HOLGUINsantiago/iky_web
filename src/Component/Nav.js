@@ -11,23 +11,6 @@ function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
 
-  // Fonction pour gérer le défilement
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    if (currentScrollY > lastScrollY && currentScrollY > 100 && !isMobile) {
-      setNavVisible(false);
-    } else {
-      setNavVisible(true);
-    }
-    setLastScrollY(currentScrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
 
   useEffect(() => {
     const checkScreenSize = () => {
