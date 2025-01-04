@@ -7,6 +7,7 @@ import TierraExplanation from "./ExplicationElement/Tierra.js";
 import AireExplanation from "./ExplicationElement/Aire.js";
 import AguaExplanation from "./ExplicationElement/Agua.js";
 import EterExplanation from "./ExplicationElement/Eter.js";
+import Clases from "../Clases/Clases.js";
 
 function SistemaIKY() {
   const [activeComponent, setActiveComponent] = useState(null);
@@ -33,7 +34,7 @@ function SistemaIKY() {
     setShiftMandala(400); // Décale le mandala vers la droite
   };
 
-  const handleMouseLeave = () => {};
+  const handleMouseLeave = () => { };
 
   const handleCloseExplanation = () => {
     setActiveComponent(null);
@@ -236,6 +237,8 @@ function SistemaIKY() {
             </div>
           )}
         </div>
+
+        <Clases />
       </div>
     </>
   );

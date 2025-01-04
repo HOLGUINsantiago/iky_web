@@ -39,6 +39,7 @@
     "lorem-ipsum": "^2.0.8",
     "moment": "^2.30.1",
     "owl.carousel": "^2.3.4",
+    "page_web_iky": "file:",
     "primeicons": "^7.0.0",
     "primereact": "^10.8.0",
     "prop-types": "^15.8.1",
