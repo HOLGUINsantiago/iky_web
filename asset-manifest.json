@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ea27b915.css",
-    "main.js": "/static/js/main.78f60a77.js",
+    "main.css": "/static/css/main.90dabfe1.css",
+    "main.js": "/static/js/main.6f22380c.js",
     "static/js/453.579ea4ad.chunk.js": "/static/js/453.579ea4ad.chunk.js",
     "static/media/EcoHotel_Brochure.pdf": "/static/media/EcoHotel_Brochure.8c449279a6d5ceac6181.pdf",
     "static/media/Jardin1.jpg": "/static/media/Jardin1.2e3612cf252cec2ae217.jpg",
@@ -14,7 +14,6 @@
     "static/media/Calendar_CHOLQ_IJ.png": "/static/media/Calendar_CHOLQ_IJ.3c7edadbe2f179ed70aa.png",
     "static/media/dance.JPG": "/static/media/dance.f2955023574ebbe3dd16.JPG",
     "static/media/imageKankueb.JPG": "/static/media/imageKankueb.4995ba5f09f8a52c0e72.JPG",
-    "static/media/CERT_IKY_profesor.pdf": "/static/media/CERT_IKY_profesor.0d3fa11c9114396a8dd6.pdf",
     "static/media/Certificado_LAURA.jpg": "/static/media/Certificado_LAURA.af46ebd190441096150a.jpg",
     "static/media/Jardin4.jpeg": "/static/media/Jardin4.73855aed74943ced6fcd.jpeg",
     "static/media/instalacion2.jpeg": "/static/media/instalacion2.11f46c5246a0e11d0c8b.jpeg",
@@ -85,12 +84,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.ea27b915.css.map": "/static/css/main.ea27b915.css.map",
-    "main.78f60a77.js.map": "/static/js/main.78f60a77.js.map",
+    "main.90dabfe1.css.map": "/static/css/main.90dabfe1.css.map",
+    "main.6f22380c.js.map": "/static/js/main.6f22380c.js.map",
     "453.579ea4ad.chunk.js.map": "/static/js/453.579ea4ad.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea27b915.css",
-    "static/js/main.78f60a77.js"
+    "static/css/main.90dabfe1.css",
+    "static/js/main.6f22380c.js"
   ]
 }
