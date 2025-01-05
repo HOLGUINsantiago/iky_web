@@ -12,6 +12,16 @@ import Clases from "../Clases/Clases.js";
 function SistemaIKY() {
   const [activeComponent, setActiveComponent] = useState(null);
   const [shiftMandala, setShiftMandala] = useState(0); // État pour gérer le décalage
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1000);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const updateMandalaShift = () => {
@@ -34,7 +44,7 @@ function SistemaIKY() {
     setShiftMandala(400); // Décale le mandala vers la droite
   };
 
-  const handleMouseLeave = () => { };
+  const handleMouseLeave = () => {};
 
   const handleCloseExplanation = () => {
     setActiveComponent(null);
@@ -160,83 +170,174 @@ function SistemaIKY() {
           los elementos.
         </p>
 
-        <div
-          className="mandala-container"
-          style={{ transform: `translateX(${shiftMandala}px)` }}
-        >
-          <img src={mandalaIky} alt="Mandala IKY" className="mandala-iky-img" />
+        {!isMobile && (
           <div
-            className="interactive-area area-1"
-            onMouseEnter={() => handleMouseEnter(<FireExplanation />)}
-            onMouseLeave={handleMouseLeave}
-            style={{
-              top: "10%",
-              left: "42%",
-              width: "16%",
-              height: "25%",
-            }} // Ajuste des positions et dimensions
-          ></div>
+            className="mandala-container"
+            style={{ transform: `translateX(${shiftMandala}px)` }}
+          >
+            <img
+              src={mandalaIky}
+              alt="Mandala IKY"
+              className="mandala-iky-img"
+            />
+            <div
+              className="interactive-area area-1"
+              onMouseEnter={() => handleMouseEnter(<FireExplanation />)}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                top: "10%",
+                left: "42%",
+                width: "16%",
+                height: "25%",
+              }} // Ajuste des positions et dimensions
+            ></div>
 
-          <div
-            className="interactive-area area-2"
-            onMouseEnter={() => handleMouseEnter(<AireExplanation />)}
-            onMouseLeave={handleMouseLeave}
-            style={{
-              top: "35%",
-              left: "31%",
-              width: "12%",
-              height: "30%",
-            }} // Ajuste des positions et dimensions
-          ></div>
+            <div
+              className="interactive-area area-2"
+              onMouseEnter={() => handleMouseEnter(<AireExplanation />)}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                top: "35%",
+                left: "31%",
+                width: "12%",
+                height: "30%",
+              }} // Ajuste des positions et dimensions
+            ></div>
 
-          <div
-            className="interactive-area area-3"
-            onMouseEnter={() => handleMouseEnter(<EterExplanation />)}
-            onMouseLeave={handleMouseLeave}
-            style={{
-              top: "38%",
-              left: "44%",
-              width: "12%",
-              height: "25%",
-            }} // Ajuste des positions et dimensions
-          ></div>
+            <div
+              className="interactive-area area-3"
+              onMouseEnter={() => handleMouseEnter(<EterExplanation />)}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                top: "38%",
+                left: "44%",
+                width: "12%",
+                height: "25%",
+              }} // Ajuste des positions et dimensions
+            ></div>
 
-          <div
-            className="interactive-area area-4"
-            onMouseEnter={() => handleMouseEnter(<AguaExplanation />)}
-            onMouseLeave={handleMouseLeave}
-            style={{
-              top: "35%",
-              left: "56%",
-              width: "12%",
-              height: "30%",
-            }} // Ajuste des positions et dimensions
-          ></div>
+            <div
+              className="interactive-area area-4"
+              onMouseEnter={() => handleMouseEnter(<AguaExplanation />)}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                top: "35%",
+                left: "56%",
+                width: "12%",
+                height: "30%",
+              }} // Ajuste des positions et dimensions
+            ></div>
 
-          <div
-            className="interactive-area area-5"
-            onMouseEnter={() => handleMouseEnter(<TierraExplanation />)}
-            onMouseLeave={handleMouseLeave}
-            style={{
-              top: "63%",
-              left: "42%",
-              width: "16%",
-              height: "25%",
-            }} // Ajuste des positions et dimensions
-          ></div>
-          {/* Ajoute plus de zones interactives ici */}
-          {activeComponent && (
-            <div className="mandala-tooltip">
-              <button
-                className="tooltip-close"
-                onClick={handleCloseExplanation}
-              >
-                ×
-              </button>
-              {activeComponent}
+            <div
+              className="interactive-area area-5"
+              onMouseEnter={() => handleMouseEnter(<TierraExplanation />)}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                top: "63%",
+                left: "42%",
+                width: "16%",
+                height: "25%",
+              }} // Ajuste des positions et dimensions
+            ></div>
+            {/* Ajoute plus de zones interactives ici */}
+            {activeComponent && (
+              <div className="mandala-tooltip">
+                <button
+                  className="tooltip-close"
+                  onClick={handleCloseExplanation}
+                >
+                  ×
+                </button>
+                {activeComponent}
+              </div>
+            )}
+          </div>
+        )}
+
+        {isMobile && (
+          <div className="mandala-wrapper">
+            <div className="mandala-container">
+              <img
+                src={mandalaIky}
+                alt="Mandala IKY"
+                className="mandala-iky-img"
+              />
+              <div
+                className="interactive-area area-1"
+                onMouseEnter={() => handleMouseEnter(<FireExplanation />)}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  top: "10%",
+                  left: "38%",
+                  width: "23%",
+                  height: "28%",
+                }}
+              ></div>
+
+              <div
+                className="interactive-area area-2"
+                onMouseEnter={() => handleMouseEnter(<AireExplanation />)}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  top: "35%",
+                  left: "12%",
+                  width: "26%",
+                  height: "30%",
+                }}
+              ></div>
+
+              <div
+                className="interactive-area area-3"
+                onMouseEnter={() => handleMouseEnter(<EterExplanation />)}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  top: "38%",
+                  left: "38%",
+                  width: "24%",
+                  height: "25%",
+                }}
+              ></div>
+
+              <div
+                className="interactive-area area-4"
+                onMouseEnter={() => handleMouseEnter(<AguaExplanation />)}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  top: "35%",
+                  left: "62%",
+                  width: "25%",
+                  height: "30%",
+                }}
+              ></div>
+
+              <div
+                className="interactive-area area-5"
+                onMouseEnter={() => handleMouseEnter(<TierraExplanation />)}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                  top: "63%",
+                  left: "38%",
+                  width: "25%",
+                  height: "25%",
+                }}
+              ></div>
+              {/* Agregar más zonas interactivas si es necesario */}
             </div>
-          )}
-        </div>
+            {activeComponent && (
+              <div className="mandala-tooltip-wrapper">
+                <div className="mandala-tooltip">
+                  <button
+                    className="tooltip-close"
+                    onClick={handleCloseExplanation}
+                  >
+                    ×
+                  </button>
+                  {activeComponent}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
 
         <Clases />
       </div>

@@ -1,14 +1,25 @@
 .container-diplomas {
-    display: flex;
-    justify-content: center; /* Centre horizontalement l'image */
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-exemple {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .container-diplomas {
+    flex-direction: column;
   }
-  
+
   .img-exemple {
-    margin-top: 50px;
-    margin-bottom: 40px;
-    max-width: 500px; /* Assure que l'image ne dépasse pas la largeur du conteneur */
-    height: auto; /* Garde les proportions de l'image */
-    display: block; /* Supprime l'espace blanc en bas de l'image si c'est un élément inline-block */
+    max-width: 90%;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
-  
+}

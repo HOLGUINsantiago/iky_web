@@ -1,13 +1,12 @@
-
 .professor-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 40px;
-}
-
-.professor-card {
+  }
+  
+  .professor-card {
     position: relative;
     width: 280px;
     background: #21140e;
@@ -19,44 +18,44 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Espace entre les éléments */
-    align-items: center; /* Centre horizontalement */
-    height: 400px; 
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
     margin: 40px;
     overflow: hidden;
-}
-
-.professor-card:hover {
+  }
+  
+  .professor-card:hover {
     filter: drop-shadow(0px 0px 30px #DC9424);
-}
-
-.profile-picture {
-    width: 150px; /* Taille de l'image */
+  }
+  
+  .profile-picture {
+    width: 150px;
     height: 150px;
-    border-radius: 50%; /* Rendre l'image ronde */
+    border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 10px;
-}
-
-.profile-picture img {
+  }
+  
+  .profile-picture img {
     width: 100%;
     height: 110%;
     object-fit: cover;
-}
-
-.professor-info {
+  }
+  
+  .professor-info {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-}
-
-.professor-info h3{
+  }
+  
+  .professor-info h3 {
     margin-top: 10px;
     font-size: 1.2em;
-}
-
-.styled-button {
+  }
+  
+  .styled-button {
     width: 165px;
     height: 39px;
     cursor: pointer;
@@ -66,7 +65,7 @@
     border: none;
     position: relative;
     background: #100720;
-    transition: 0.3s ease; 
+    transition: 0.3s ease;
   }
   
   .styled-button::after {
@@ -82,12 +81,11 @@
   }
   
   .styled-button:hover {
-    transform: scale(0.9) rotate(3deg); /* Appliquez l'effet lorsque la souris passe dessus */
+    transform: scale(0.9) rotate(3deg);
     background: radial-gradient(circle farthest-corner at 10% 20%, #b42424 17.8%, #DC9424 100.2%);
-}
+  }
   
-
-.modal {
+  .modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -98,9 +96,9 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-
-.modal-content {
+  }
+  
+  .modal-content {
     background-color: rgb(32, 40, 61);
     padding: 20px;
     color: white;
@@ -108,13 +106,13 @@
     max-width: 500px;
     width: 100%;
     position: relative;
-}
-
-.modal-content h3 {
+  }
+  
+  .modal-content h3 {
     margin-top: 20px;
-}
-
-.close-button {
+  }
+  
+  .close-button-lista {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -123,44 +121,95 @@
     font-size: 1.5rem;
     cursor: pointer;
     color: white;
-}
-
-
-.modal-profile-picture {
+  }
+  
+  .modal-profile-picture {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-left: 20px;
-}
-
-.download-link {
+  }
+  
+  .download-link {
     display: block;
     margin-top: 20px;
     color: #007bff;
     text-decoration: none;
-}
-
-.download-link:hover {
+  }
+  
+  .download-link:hover {
     text-decoration: underline;
-}
-
-.text-listaRipey{
+  }
+  
+  .text-listaRipey {
     text-align: justify;
     padding-top: 30px;
     line-height: 1.8;
     font-size: 18px;
     color: white;
     padding-left: 50px;
-}
-
-.profesores-description{
+  }
+  
+  .profesores-description {
     text-align: justify;
-}
-
-.map-container-ripey{
+  }
+  
+  .map-container-ripey {
     padding-top: 50px;
     padding-bottom: 50px;
     display: flex;
     justify-content: center;
-}
+  }
+  
+  @media (max-width: 1000px) {
+    .map-container-ripey {
+        padding-top: 20px; 
+        padding-bottom: 20px; 
+        padding-left: 0px; 
+        padding-right: 0px; 
+      }
+
+    .professor-list {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .professor-card {
+      width: 90%;
+      height: auto;
+      margin: 20px 0;
+    }
+  
+    .profile-picture {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .professor-info h3 {
+      font-size: 1em;
+    }
+  
+    .styled-button {
+      width: 100%;
+      height: 35px;
+      font-size: 12px;
+    }
+  
+    .modal-content {
+      max-width: 80%;
+      width: 100%;
+    }
+  
+    .modal-profile-picture {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .text-listaRipey {
+      font-size: 16px;
+      padding-left: 20px;
+    }
+  }
+  

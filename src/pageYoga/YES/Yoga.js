@@ -53,7 +53,7 @@ const YogaSummary = () => {
           </li>
         </ul>
       </div>
-      <div className="session-details">
+      <div className="session-details-yoga">
         <h3>Detalles de las Sesiones</h3>
         <p className="p-yoga">
           Cada día, participarás en una variedad de sesiones, que incluyen:

@@ -158,7 +158,7 @@ const ProfessorList = () => {
         {selectedProfessor && (
           <div className="modal">
             <div className="modal-content">
-              <button className="close-button" onClick={closeModal}>
+              <button className="close-button-lista" onClick={closeModal}>
                 &times;
               </button>
               <div className="modal-header">

@@ -6,30 +6,32 @@ const EventList = ({ events }) => {
   const navigate = useNavigate();
   const eventRefs = useRef([]);
 
-  // Fonction handleViewMore pour naviguer à l'événement sélectionné
+  console.log("eventos", events);
+
+  // Navegar a la página del evento seleccionado
   const handleViewMore = (id) => {
     navigate(`/event/${id}`);
   };
 
-  // Fonction pour calculer le nombre de jours restants
-  const calculateDaysRemaining = (eventDate) => {
+  // Calcula el número de días restantes
+  const calculateDaysRemaining = (eventEndDate) => {
     const today = new Date();
-    const eventDateObj = new Date(eventDate);
+    const eventEndDateObj = new Date(eventEndDate);
 
-    // Ignorer les heures/minutes
     today.setHours(0, 0, 0, 0);
-    eventDateObj.setHours(0, 0, 0, 0);
+    eventEndDateObj.setHours(0, 0, 0, 0);
 
-    const timeDiff = eventDateObj - today;
-    const daysRemaining = Math.ceil(timeDiff / (1000 * 3600 * 24)); // Calculer la différence en jours
-    return Math.max(daysRemaining, 0); // Toujours un minimum de 0
+    const timeDiff = eventEndDateObj - today;
+    const daysRemaining = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    return Math.max(daysRemaining, 0);
   };
-  // Fonction pour calculer la largeur de la barre de progression
-  const calculateProgress = (eventDate) => {
-    const daysRemaining = calculateDaysRemaining(eventDate);
-    const maxDays = 30; // Vous pouvez ajuster cela selon le nombre de jours maximal avant un événement (par exemple, un mois)
+
+  // Calcula la anchura de la barra de progreso
+  const calculateProgress = (eventEndDate) => {
+    const daysRemaining = calculateDaysRemaining(eventEndDate);
+    const maxDays = 30; // Ajustar según el rango máximo esperado
     const progress = (daysRemaining / maxDays) * 100;
-    return Math.min(progress, 100); // Assurez-vous que la barre ne dépasse pas 100%
+    return Math.min(progress, 100);
   };
 
   useEffect(() => {
@@ -61,34 +63,41 @@ const EventList = ({ events }) => {
     };
   }, []);
 
+  // Verificar si `events` tiene datos antes de renderizar
+  if (!events || events.length === 0) {
+    return <div>Cargando eventos...</div>;
+  }
+
   return (
     <div className="event-list">
       <div className="events-grid">
         {events.map((event, index) => {
-          const progress = calculateProgress(event.eventDate); // Récupération du pourcentage de progression
+          const eventStartDate = event.fechas?.fechaInicio;
+          const eventEndDate = event.fechas?.fechaFinalTotal;
+          const progress = calculateProgress(eventEndDate);
 
           return (
             <div
-              key={event.id}
+              key={event.idEvento}
               className="event-item"
-              onClick={() => handleViewMore(event.id)} // Appel de la navigation
-              ref={(el) => (eventRefs.current[index] = el)} // Associe la référence à la carte
+              onClick={() => handleViewMore(event.idEvento)}
+              ref={(el) => (eventRefs.current[index] = el)}
             >
               <img
-                src={event.eventImage}
-                alt={`${event.title} Aperçu`}
+                src={event.imagenCobertura}
+                alt={`${event.resumen} Aperçu`}
                 className="event-image"
               />
-              <h2 className="event-title">{event.title}</h2>
+              <h2 className="event-title">{event.resumen}</h2>
 
-              {/* Barre de progression */}
+              {/* Barra de progreso */}
               <div className="progress-bar-container">
                 <div
                   className="progress-bar"
-                  style={{ width: `${progress}%` }} // Applique la largeur calculée
+                  style={{ width: `${progress}%` }}
                 />
                 <div className="time-left-text">
-                  {calculateDaysRemaining(event.eventDate)} jours restants
+                  {calculateDaysRemaining(eventEndDate)} días restantes
                 </div>
               </div>
             </div>

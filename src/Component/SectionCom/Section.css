@@ -1,3 +1,4 @@
+/* Styles pour les grands écrans (pas besoin de modifier ici) */
 .section {
   padding-right: 70px;
   padding-left: 70px;
@@ -6,11 +7,23 @@
 .title-section {
   font-size: 2.2rem;
   margin: 0px;
-  /* padding-top: 40px; */
   color: #ffffff;
   display: flex;
   justify-content: center;
   font-weight: none;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
+/* Styles pour les petits écrans */
+@media (max-width: 1000px) {
+  .section {
+    padding-right: 30px; /* Réduit la marge à gauche et à droite pour les petits écrans */
+    padding-left: 30px;
+    line-height: 1.8; /* Augmente l'espace entre les lignes pour améliorer la lisibilité */
+  }
+
+  .title-section {
+    font-size: 1.8rem; /* Réduit la taille du texte sur petits écrans */
+    line-height: 2; /* Augmente l'espacement entre les lignes de titre */
+  }
 }

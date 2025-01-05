@@ -1,69 +1,112 @@
 /* src/components/Footer.css */
 
 .footer {
-    background-color: #212121;
-    color: #fff;
-    padding: 20px 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
+  background-color: #212121;
+  color: #fff;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 120px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  background-color: #222;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Responsive design pour les petits écrans */
+@media (max-width: 768px) {
+  /* Changer l'orientation des sections du footer */
   .footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    flex-direction: column; /* Empile les sections au lieu de les mettre côte à côte */
+    padding: 0 10px;
   }
-  
+
+  /* Réduire les marges des sections */
   .footer-section {
-    flex: 1;
-    margin: 0 120px;
+    margin: 10px 0;
   }
-  
+
+  /* Adapter la taille du texte des titres des sections */
   .footer-section h4 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem; /* Plus petit pour les petits écrans */
   }
-  
+
+  /* Agrandir les liens sociaux pour une meilleure visibilité */
+  .social-links {
+    justify-content: center; /* Centrer les icônes */
+    margin-top: 10px;
+  }
+
+  .social-links a {
+    font-size: 1.2rem; /* Réduire la taille des icônes */
+  }
+
+  /* Ajouter du padding au bas pour éviter que le texte touche l'écran */
+  .footer-bottom {
+    padding: 20px;
+    font-size: 0.75rem;
+  }
+
   .footer-section ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer-section a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-section a:hover {
-    text-decoration: underline;
-  }
-  
-  .social-links {
     display: flex;
-    gap: 10px;
-  }
-  
-  .social-links a {
-    color: #fff;
-    font-size: 1.5rem;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    padding: 10px;
-    background-color: #222;
-  }
-  
-  .footer-bottom p {
-    margin: 0;
-    font-size: 0.875rem;
-  }
-  
+    align-items: flex-start;
+    
+    flex-direction: column;
+}
+}

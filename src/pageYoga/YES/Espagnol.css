@@ -1,46 +1,96 @@
 .espagnol-summary {
-    padding: 20px;
-    margin: 50px auto; /* Centrer le composant */
-    top: 50px;
-    width: 1000px; /* Limiter la largeur maximale */
-    font-family: Arial, sans-serif;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    opacity: 0; /* Initialement invisible */
-    transform: translateY(20px); /* Déplace le composant vers le bas */
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  padding: 20px;
+  margin: 50px auto;
+  top: 50px;
+  width: 1000px;
+  font-family: Arial, sans-serif;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.espagnol-summary.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.h2-espagnol {
+  text-align: center;
+  color: #333;
+}
+
+.session-details {
+  margin-top: 20px;
+}
+
+.session-details h3 {
+  color: #555;
+}
+
+.session-detail ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.li-espagnol {
+  margin-bottom: 10px;
+}
+
+.p-espagnol {
+  line-height: 1.6;
+  color: #666;
+}
+
+
+@media (max-width: 1300px) {
+  .espagnol-summary {
+      width: 95%; /* Rétrécissement de la largeur */
+      min-height: 80%; /* Ajout d'une hauteur minimale pour s'assurer d'un bon affichage */
+      padding: 20px 10px; 
+      margin-top: 0px;
+      margin-bottom: 0px;
   }
-  
-  /* Classe pour afficher le composant avec un délai */
-  .espagnol-summary.visible {
-    opacity: 1; /* Visible lorsque la classe 'visible' est ajoutée */
-    transform: translateY(0); /* Remet le composant à sa position d'origine */
+
+  .h2-espagnol  {
+      font-size: 1.3rem;
   }
-  
-  .h2-espagnol {
-    text-align: center;
-    color: #333;
-  }
-  
-  .session-details {
-    margin-top: 20px;
-  }
-  
-  .session-details h3 {
-    color: #555;
-  }
-  
-  ul {
-    list-style-type: none; /* Retire les puces */
-    padding-left: 0; /* Retire le padding par défaut */
-  }
-  
+
   .li-espagnol {
-    margin-bottom: 10px;
+    font-size: 1rem;
   }
-  
-  .p-espagnol {
-    line-height: 1.6;
-    color: #666;
+
+  .espagnol-methods h3,
+  .session-details h3 {
+      font-size: 1.1rem;
   }
-  
+
+  .p-espagnol  {
+      font-size: 1rem; /* Légère réduction de la taille du texte */
+  }
+}
+
+@media (max-width: 768px) {
+  .espagnol-summary {
+      width: 90%; /* Réduction encore plus importante de la largeur */
+      min-height: 70%; /* Plus de hauteur minimale */
+      padding: 25px 15px; /* Ajout de plus de padding vertical */
+      margin-top: 50px; /* Réduction de l'espace en haut */
+      margin-bottom: 40px; /* Réduction de l'espace en bas */
+  }
+
+  .h2-espagnol  {
+      font-size: 1.4rem; /* Réduction de la taille du titre principal */
+  }
+
+  .espagnol-methods h3,
+  .session-details h3 {
+      font-size: 1.1rem; /* Réduction des sous-titres */
+  }
+
+  .p-espagnol  {
+      font-size: 0.85rem; /* Réduction de la taille des paragraphes */
+  }
+}
+

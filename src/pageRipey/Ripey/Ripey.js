@@ -26,7 +26,26 @@ const Ripey = () => {
         Para una mayor claridad la codificación está organizada de la siguiente
         manera:
       </p>
-      <Explication />
+      <ul className="ripey-formation-list">
+        <li>
+          <strong>0100:</strong> Diplomado en Yoga
+        </li>
+        <li>
+          <strong>0101:</strong> Titulación como Profesor de Yoga
+        </li>
+        <li>
+          <strong>0102:</strong> Titulación como Instructor de Yoga
+        </li>
+        <li>
+          <strong>0103:</strong> Grado de Especialización en Yoga
+        </li>
+        <li>
+          <strong>0202:</strong> Titulación como Profesor de Kankueb Dance
+        </li>
+        <li>
+          <strong>0303:</strong> Titulación como Profesor de IKYnesis
+        </li>
+      </ul>
       <p>
         Dígito de 6 cifras: las primeras 2 cifras corresponden al día de la
         graduación, las siguientes 2 cifras al mes y las últimas 2 cifras son
@@ -36,6 +55,9 @@ const Ripey = () => {
         Dígito de 3 cifras: corresponde al orden asignado el día de la
         graduación o del curso.
       </p>
+
+      <h2 className="ripey-note-title">Formaciones</h2>
+
       <h2 className="ripey-note-title">NOTA ACLARATORIA</h2>
       <p>
         IKY sigue los lineamientos de registro de las escuelas de yoga

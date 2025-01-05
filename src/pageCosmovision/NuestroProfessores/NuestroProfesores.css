@@ -87,3 +87,61 @@
   .modal-profesores{
     z-index: 1000;
   }
+  @media (max-width: 768px) {
+    .container-nuestroProfesores {
+      flex-direction: column;
+      margin-top: 50px;
+    }
+  
+    .container-nuestroProfesores .glass {
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+      transform: none;
+      transition: none;
+    }
+  
+    .professor-card-nuestroProfesores {
+      margin-bottom: 20px;
+    }
+  
+    .professor-photo-nuestroProfesores {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 15px;
+      margin-top: 10px;
+    }
+  
+    .professor-info-nuestroProfesores {
+      text-align: center;
+      padding: 0 5px;
+    }
+  
+    .professor-name-nuestroProfesores {
+      font-size: 0.9em;
+    }
+  
+    .professor-profession-nuestroProfesores {
+      font-size: 0.7em;
+    }
+  
+    .see-more-button-nuestroProfesores {
+      margin-top: 10px;
+      padding: 8px 12px;
+      font-size: 18px;
+    }
+  
+    .container-nuestroProfesores:hover .glass {
+      transform: none;
+      margin: 20px 0;
+    }
+  
+    .glass {
+      transition: none;
+    }
+  
+    .container-nuestroProfesores .glass {
+      backdrop-filter: none;
+    }
+  }
+  

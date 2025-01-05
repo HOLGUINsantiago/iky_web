@@ -1,112 +1,103 @@
 /* src/PhotoMosaic.css */
+
+/* Style par défaut pour les grands écrans */
 .photo-mosaic {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 200px);
-    gap: 10px;
-    padding-bottom: 100px;
-  }
-  
-  .photo-item {
-    position: relative;
-  }
-  
-  .photo-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 2px solid #ddd;
-    margin-top: 80px;
-    margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Grille avec 6 colonnes */
+  grid-template-rows: repeat(4, 200px);
+  gap: 10px;
+  padding-bottom: 100px;
+}
 
-  }
-  
-  .wave-title {
-    position: absolute;
-    bottom: 50px;
-    font-weight: none;
-    left: 10px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
-    padding: 10px;
-    font-size: 2rem;
-    display: inline-block;
+.photo-item {
+  position: relative;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.wave-title {
+  position: absolute;
+  bottom: 50px;
+  font-weight: none;
+  left: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  padding: 10px;
+  font-size: 2rem;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 10;
+}
+
+.wave-title.show {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Animation pour chaque lettre */
+.wave-title span {
+  opacity: 0;
+  display: inline-block;
+  animation: letterFade 0.5s ease forwards;
+}
+
+.wave-title.show span {
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes letterFade {
+  0% {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    z-index: 10;
+    transform: translateY(10px);
   }
-  
-  .wave-title.show {
+  100% {
     opacity: 1;
     transform: translateY(0);
-    animation: fadeIn 1s ease forwards;
   }
-  
-  /* Animation pour chaque lettre */
-  .wave-title span {
-    opacity: 0;
-    display: inline-block;
-    animation: letterFade 0.5s ease forwards;
-  }
-  
-  .wave-title.show span {
-    animation-delay: calc(0.1s * var(--i));
-  }
-  
-  @keyframes letterFade {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}
 
-/* Styles pour le paragraphe */
 .wave-paragraph {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
-    padding: 10px;
-    font-size: 1rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    z-index: 9;
-  }
-  
-  .wave-title.show + .wave-paragraph {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 1s; /* Attendre que le titre soit complètement apparu */
-  }
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 9;
+}
 
+.wave-title.show + .wave-paragraph {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s; /* Attendre que le titre soit complètement apparu */
+}
 
-
-  .more-info-section-ishka {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white; 
-    padding: 20px;
-  }
-  
+.more-info-section-ishka {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
 
 .more-info-text-ishka {
   font-size: 1.2em;
   margin-bottom: 20px;
-}
-
-.more-info-buttons-ishka {
-  display: flex;
-  gap: 10px;
 }
 
 .info-button-ishka {
@@ -155,4 +146,67 @@
   transform: scale(0.9);
 }
 
+@media (max-width: 1200px){
+  .wave-title {
+    bottom: 60px;
+    padding: 10px;
+    font-size: 1.3rem;
+    
+  }
 
+}
+/* src/PhotoMosaic.css */
+
+/* Styles généraux restent inchangés */
+
+/* Animation d'apparition des images pour petits écrans */
+@media (max-width: 768px) {
+  .photo-mosaic {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+  }
+
+  .photo-item {
+    opacity: 0;
+    transform: translateX(-100px);  /* Les images commenceront hors de la vue (gauche) */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .photo-item.visible {
+    opacity: 1;
+    transform: translateX(0);  /* Les images glissent sur leur position normale */
+  }
+
+  .photo-item img {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .wave-paragraph {
+    font-size: 1em;
+  }
+
+  .wave-title {
+    bottom: 60px;
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .more-info-text-ishka {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  .info-button-ishka {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+   
+    padding: 0.5em 1.5em;
+    
+  }
+}

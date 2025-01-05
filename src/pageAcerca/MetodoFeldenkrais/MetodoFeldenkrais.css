@@ -17,3 +17,17 @@
     border: 1px solid rgb(133, 129, 129); /* Ajoute un cadre noir autour de la photo */
     background-color: rgb(26 41 6); 
   }
+
+  @media (max-width: 1000px) {
+    .text-metodoFeldenkrais {
+      padding: 5px; /* Réduit le padding pour les petits écrans */
+      font-size: 16px; /* Réduit la taille de la police */
+    }
+  
+    .img-feldenkrais {
+      float: none; /* Empêche l'image de flotter et la place au-dessus ou en dessous du texte */
+      margin: 0 auto 20px; /* Centrer l'image et donner un espacement en bas */
+      width: 100%; /* L'image prend toute la largeur disponible */
+      max-width: 350px; /* Garde une taille d'image maximale */
+    }
+  }

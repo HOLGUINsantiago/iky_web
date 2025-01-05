@@ -27,3 +27,15 @@
   filter: invert(1) sepia(1) saturate(10000%) hue-rotate(180deg); /* Applique la couleur à l'image */
   opacity: 0.7; /* Rendre l'image un peu transparente si nécessaire */
 }
+
+@media (max-width: 1000px) {
+  .text-caminoMaya {
+    padding: 5px; /* Moins de padding pour les petits écrans */
+    font-size: 18px; /* Réduit la taille de la police */
+    background-size: 350px 350px; /* Réduit la taille de l'image de fond pour qu'elle s'adapte mieux */
+  }
+
+  .text-caminoMaya::before {
+    background-size: 350px 350px; /* Même réduction de la taille de l'image dans le ::before */
+  }
+}

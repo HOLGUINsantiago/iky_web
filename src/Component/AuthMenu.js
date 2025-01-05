@@ -59,7 +59,7 @@ function AuthMenu() {
           className="profile-logo-home"
         />
       </div>
-      {/* {menuOpen && !isAuthenticated && (
+      {menuOpen && !isAuthenticated && (
         <div className="auth-menu">
           <ul className="auth-list-styled">
             <li>
@@ -74,14 +74,14 @@ function AuthMenu() {
             </li>
           </ul>
         </div>
-      )} */}
-      {menuOpen && !isAuthenticated && (
+      )}
+      {/* {menuOpen && !isAuthenticated && (
         <UserMenu
           user={user}
           handleLogout={handleLogout}
           toggleMenu={toggleMenu}
         />
-      )}
+      )} */}
 
       {loginVisible && (
         <div className="login-sidebar">
