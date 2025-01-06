@@ -448,7 +448,7 @@ const sectionsISHKA = [
   },
   {
     id: 5,
-    name: "Eco-Hotel",
+    name: "Eco-Living",
     content: <PhotoEcoHotel />,
     recommendations: [],
   },
