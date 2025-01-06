@@ -16,7 +16,7 @@ function MosaiqueRipey() {
     "Espacios",
     "Nuestro profesores",
     "Calendario",
-    "Eco-Hotel",
+    "Eco-Living",
     "",
     "Ishka Center",
   ];
@@ -33,9 +33,8 @@ function MosaiqueRipey() {
 
         return (
           <div
-            className={`menu-item-ishka ${item ? "with-text" : ""} ${
-              isSpecial ? "special-effect" : ""
-            }`}
+            className={`menu-item-ishka ${item ? "with-text" : ""} ${isSpecial ? "special-effect" : ""
+              }`}
             style={{ transform: `rotate(-45deg)` }}
             key={index}
             onClick={() => sectionId && handleClick(sectionId)}
