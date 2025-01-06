@@ -19,25 +19,33 @@ const photos = [
 
 const PhotoMosaic = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [visibleItems, setVisibleItems] = useState([]);
+  const [titleVisible, setTitleVisible] = useState(false); // Ajouté pour gérer l'affichage du titre
 
+  // Fonction pour vérifier la visibilité des éléments
   useEffect(() => {
     const handleScroll = () => {
-      const title = document.querySelector(".wave-title");
-      const titlePosition = title.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.3;
+      const items = document.querySelectorAll(".photo-item");
+      items.forEach((item, index) => {
+        const rect = item.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
 
-      if (titlePosition < screenPosition) {
-        title.classList.add("show");
-      } else {
-        title.classList.remove("show");
+        if (isVisible && !visibleItems.includes(index)) {
+          setVisibleItems((prev) => [...prev, index]);
+        }
+      });
+
+      // Vérifier la visibilité du titre "Descubre nuestro EcoHotel"
+      const title = document.querySelector(".wave-title");
+      if (title && title.getBoundingClientRect().top < window.innerHeight) {
+        setTitleVisible(true);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    handleScroll(); // Appel initial pour gérer les éléments déjà visibles
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [visibleItems]);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -57,21 +65,28 @@ const PhotoMosaic = () => {
   return (
     <>
       <div className="photo-mosaic">
-        {photos.map((photo) => (
-          <div key={photo.id} className="photo-item" style={photo.style}>
+        {photos.map((photo, index) => (
+          <div
+            key={photo.id}
+            className={`photo-item ${visibleItems.includes(index) ? "visible" : ""}`}
+            style={photo.style}
+          >
             <img src={photo.src} alt={`Photo ${photo.id}`} />
-            {photo.id === 1 && (
-              <>
-                <h1 className="wave-title">{splitTitle}</h1>
-                <p className="wave-paragraph">
-                  Descubre un lugar excepcional donde la naturaleza y el confort
-                  se unen...
-                </p>
-              </>
-            )}
           </div>
         ))}
       </div>
+
+      {/* Le titre est affiché uniquement lorsque le titre devient visible */}
+      {titleVisible && (
+        <>
+          <h1 className="wave-title">{splitTitle}</h1>
+          <p className="wave-paragraph">
+            Descubre un lugar excepcional donde la naturaleza y el confort se
+            unen...
+          </p>
+        </>
+      )}
+
       <div className="more-info-section-ishka">
         <p className="more-info-text-ishka">
           Si deseas conocer más sobre nuestro EcoHotel, ver más fotos y

@@ -1,27 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-// import Home from "./pageHome/HomePage.js";
 import Home from "./pageHome/Home.js";
 import Loader from "./Component/loaders/Loaders.js"; // Import du Loader
 import LoginPage from "./pageLogin/LoginPage.js";
 import SignupPage from "./pageSignup/SignupPage.js";
 import Page from "./Component/Page/PageComp.js";
 import routes from "./view/routes.js";
-import PageVideo from "./Component/PageVideos/PageVideo.js";
 import Categorie from "./Component/PageVideos/CategorieVideo/CategorieVideo.js";
 import ScrollToTop from "./ScrollToTop.js";
 import EventList from "./Component/NewEvenement/Evenement.js";
 import EventDetail from "./Component/NewEvenement/EventDetails.js";
+import Confirmation from "./Component/PageConfirmation.js";
 import backgroundImage from "./assets/images/YogaBack.jpg";
 import flyer from "./assets/images/post_instruct.png";
-import Confirmation from "./Component/PageConfirmation.js";
+
 // Données des événements
 const events = [
   {
@@ -32,6 +26,7 @@ const events = [
     details: "Détails de l'événement 1",
     backgroundImage: backgroundImage,
     flyerImage: flyer,
+    isInstructorado: false,
   },
   {
     id: 2,
@@ -41,6 +36,7 @@ const events = [
     details: "Détails de l'événement 2",
     backgroundImage: "url_image_background_2",
     flyerImage: "url_image_flyer_2",
+    isInstructorado: true,
   },
   // Ajoute d'autres événements ici
 ];
@@ -48,31 +44,53 @@ const events = [
 function App() {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
-
+  const [eventosReal, setEventosReal] = useState([]);
   const apiUrl = process.env.REACT_APP_API_URL;
 
-  useEffect(() => {
-    const token = localStorage.getItem("authToken");
+  const token = localStorage.getItem("authToken");
 
-    if (token) {
-      // Vérifier si le token est valide
-      fetch(apiUrl + "/api/estudiantes", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-        .then((response) => response.json())
+  useEffect(() => {
+    const fetchEventos = () => {
+      fetch(
+        "https://gateway-service-latest.onrender.com/api/eventos/profesor/13",
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`); // Manejar respuestas con errores
+          }
+          return response.json(); // Convertir la respuesta a JSON
+        })
         .then((data) => {
-          // Si l'utilisateur est valide, mettre à jour l'état
-          sessionStorage.setItem("user", data);
+          // Agregar el atributo `isInstructorado` según la condición
+          const updatedData = data.map((event) => ({
+            ...event,
+            isInstructorado:
+              event.resumen.includes("Instructorado") ||
+              event.resumen.includes("Profesorado"),
+          }));
+
+          // Actualizar el estado
+          setEventosReal(updatedData);
+
+          // Usa directamente updatedData para verificar el resultado
+          console.log("Datos con isInstructorado (local):", updatedData);
+
+          setIsLoading(false); // Cambiamos el estado de carga una vez que los datos se obtienen
         })
         .catch((error) => {
-          console.error("Erreur lors de la vérification du token:", error);
-          localStorage.removeItem("authToken");
+          console.error("Error al obtener los eventos:", error); // Manejar errores de red o datos
+          setIsLoading(false); // Cambiar estado de carga a falso incluso si hubo un error
         });
-    }
-  });
+    };
+
+    fetchEventos(); // Llamamos la función fetchEventos dentro del useEffect
+  }, []);
+
+  // Monitorizar cambios en eventosReal
+  useEffect(() => {
+    console.log("Estado actualizado de eventosReal:", eventosReal);
+  }, [eventosReal]);
+  // Dependencias vacías, se ejecuta al montar el componente
 
   useEffect(() => {
     const handleLoad = () => setIsLoading(false);
@@ -116,7 +134,7 @@ function App() {
       <div className="components">
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home events={eventosReal} />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           {routes.map((route, idx) => (
@@ -136,7 +154,10 @@ function App() {
           <Route path="/videos" element={<Categorie />} />
           <Route path="/confirm/*" element={<Confirmation />} />
           <Route path="/events" element={<EventList />} />
-          <Route path="/event/:id" element={<EventDetail events={events} />} />
+          <Route
+            path="/event/:id"
+            element={<EventDetail events={eventosReal} />}
+          />
         </Routes>
       </div>
     </div>

@@ -52,3 +52,36 @@
     margin-top: 10px;
   }
   
+  @media (max-width: 768px) {
+    .modal-content-nuestroProfesores {
+      width: 90%;
+      max-width: none;
+      padding: 15px;
+      font-size: 18px;
+      margin: 10px;
+    }
+  
+    .modal-photo-nuestroProfesores {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .modal-close-nuestroProfesores {
+      font-size: 1.2em;
+      top: 5px;
+      right: 5px;
+    }
+  
+    .modal-name-nuestroProfesores {
+      font-size: 1em;
+    }
+  
+    .modal-profession-nuestroProfesores {
+      font-size: 0.8em;
+    }
+  
+    .modal-nuestroProfesores {
+      margin-top: 5px;
+    }
+  }
+  

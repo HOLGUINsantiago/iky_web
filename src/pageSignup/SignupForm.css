@@ -3,6 +3,9 @@
   display: flex;
   justify-content: center; /* Centrer le formulaire horizontalement */
   align-items: center; /* Centrer le formulaire verticalement */
+  padding: 20px; /* Ajout de padding pour les petits écrans */
+  height: 100vh; /* S'assurer que le container occupe tout l'écran */
+  box-sizing: border-box;
 }
 
 /* Container pour Nom et Prénom */
@@ -12,13 +15,12 @@
   gap: 12px; /* Espace entre les deux champs */
 }
 
-/* Assurez-vous que les champs partagent l'espace correctement */
 .name-container input {
   flex: 1;
   min-width: 0; /* Évite les problèmes de débordement */
 }
 
-/* Autres ajustements si nécessaire */
+/* Autres ajustements */
 .input-group {
   display: flex;
   flex-direction: column;
@@ -27,47 +29,42 @@
 
 /* Styles du formulaire */
 .form {
-  background: #fff;
   max-width: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .form h1 {
-  font-size: 24px; /* Taille légèrement réduite pour plus de discrétion */
-  font-weight: 600; /* Poids de police plus léger */
+  font-size: 24px;
+  font-weight: 600;
   color: #333;
   margin-bottom: 10px;
-  
+  text-align: center; /* Centrage du texte */
 }
 
 .form p {
   font-size: 14px;
   color: #666;
   margin-bottom: 20px;
+  text-align: center; /* Centrage du texte */
 }
 
-.form ::placeholder{
+.form ::placeholder {
   font-size: 14px;
-
-}
-/* Styles des champs de saisie */
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 12px; /* Espacement légèrement augmenté pour plus d'aération */
 }
 
+/* Champs de saisie */
 .input-group input {
   padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 6px; 
+  border-radius: 6px;
   font-size: 16px;
-  background-color: #f9f9f9; 
+  background-color: #f9f9f9;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s, box-shadow 0.3s; 
-  width: 264px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%; /* Largeur dynamique */
 }
 
 .input-group input:focus {
@@ -76,28 +73,28 @@
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.2); /* Ombre légère pour le focus */
 }
 
-/* Styles du bouton */
+/* Bouton */
 .button-signupForm {
   padding: 12px;
   border: none;
-  border-radius: 6px; /* Coins légèrement arrondis */
+  border-radius: 6px;
   background-color: #B42424;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s; /* Transition fluide pour hover */
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .button-signupForm:hover {
   background-color: #B42424;
-  transform: translateY(-2px); /* Léger effet de survol */
+  transform: translateY(-2px); /* Léger effet de hover */
 }
 
 .button-signupForm:active {
-  transform: translateY(0); /* Retour à la position initiale lors du clic */
+  transform: translateY(0); /* Retour à la position initiale */
 }
 
-
+/* Modal */
 .modal-signup {
   position: fixed;
   top: 0;
@@ -111,7 +108,7 @@
   z-index: 1000;
 }
 
-.modal-content-signup  {
+.modal-content-signup {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -121,17 +118,17 @@
   width: 100%;
 }
 
-.modal-content-signup  h2 {
+.modal-content-signup h2 {
   font-size: 22px;
   margin-bottom: 10px;
 }
 
-.modal-content-signup  p {
+.modal-content-signup p {
   font-size: 16px;
   margin-bottom: 20px;
 }
 
-.modal-content-signup  button {
+.modal-content-signup button {
   padding: 10px 20px;
   background: #b42424;
   color: white;
@@ -141,6 +138,87 @@
   font-size: 16px;
 }
 
-.modal-content-signup  button:hover {
+.modal-content-signup button:hover {
   background: #a11f1f;
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-width: 768px) {
+  /* Formulaire */
+  .form {
+    max-width: 100%; /* Prend toute la largeur disponible */
+    padding: 15px; /* Réduction des marges */
+    border-radius: 5px;
+  }
+
+  .form h1 {
+    font-size: 20px; /* Réduction de la taille des titres */
+  }
+
+  .form p {
+    font-size: 12px; /* Réduction de la taille des paragraphes */
+  }
+
+  .input-group {
+    gap: 10px; /* Réduction de l'espacement */
+  }
+
+  .input-group input {
+    padding: 10px; /* Réduction de la hauteur */
+    font-size: 14px; /* Réduction de la taille du texte */
+  }
+
+  .button-signupForm {
+    padding: 10px; /* Réduction du padding */
+    font-size: 14px; /* Réduction de la taille de la police */
+  }
+
+  /* Nom et Prénom */
+  .name-container {
+    flex-direction: column; /* Empile les champs en colonne */
+    gap: 8px; /* Réduction de l'espacement */
+  }
+
+  /* Modal */
+  .modal-content-signup {
+    padding: 15px; /* Réduction du padding */
+    border-radius: 5px; /* Coins légèrement arrondis */
+  }
+
+  .modal-content-signup h2 {
+    font-size: 18px; /* Taille réduite */
+  }
+
+  .modal-content-signup p {
+    font-size: 14px; /* Taille réduite */
+  }
+
+  .modal-content-signup button {
+    padding: 8px 15px; /* Bouton plus compact */
+    font-size: 14px; /* Taille réduite */
+  }
+}
+
+.close-btn-signup {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: #B42424;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.close-btn-signup:hover {
+  color: #8C1C1C;
+}
+
+@media (min-width: 768px) {
+  .close-btn-signup {
+    display: none;
+  }
 }

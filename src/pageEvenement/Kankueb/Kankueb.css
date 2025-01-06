@@ -49,8 +49,10 @@
   margin-bottom: 15px; /* Espacement entre les images */
   border: 2px solid white;
   border-radius: 8px; /* Coins arrondis pour les images */
+  max-width: 100%; /* Assure que les images ne débordent pas du conteneur */
 }
 
+/* Texte du contenu */
 .kankueb-content {
   flex-grow: 1; /* Permet au texte de prendre tout l'espace restant */
   text-align: justify;
@@ -90,4 +92,69 @@
 .kankueb-body {
   margin-top: 20px; /* Espacement entre le header et le reste du texte */
   width: 100%;
+}
+
+/* Adaptation pour les petits écrans (max-width: 1000px) */
+@media (max-width: 1000px) {
+  /* Container principal */
+  .kankueb-container {
+    padding: 5px; /* Réduit le padding pour les petits écrans */
+    width: 100%;
+  }
+
+  .kankueb-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    z-index: -1;
+    background-image: url("../../assets/images/serp.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    filter: brightness(80%) blur(0px);
+  }
+
+  /* Section contenant les images et le texte */
+  .kankueb-header {
+    flex-direction: column; /* Empile les images et le texte verticalement sur les petits écrans */
+    align-items: center; /* Centrer le contenu */
+  }
+
+  .kankueb-image-container {
+    margin-right: 0; /* Retirer la marge à droite sur les petits écrans */
+    margin-bottom: 0; /* Retirer les marges inutiles */
+    flex-direction: column; /* Disposer les images verticalement */
+    align-items: center; /* Centrer les images */
+  }
+
+  .kankueb-image {
+    width: 90px; /* Réduit la taille des images pour les petits écrans */
+    height: auto;
+    margin-bottom: 10px; /* Espacement entre les images */
+    border-radius: 8px; /* Coins arrondis */
+  }
+
+  .kankueb-title {
+    font-size: 1.8rem; /* Réduit la taille du titre */
+    text-align: center; /* Centre le titre sur petits écrans */
+  }
+
+  .kankueb-text {
+    font-size: 18px; /* Réduit la taille du texte */
+    line-height: 1.5; /* Ajuste l'espacement entre les lignes */
+  }
+
+  .kankueb-list {
+    margin-left: 0; /* Retirer le margin-left pour les petits écrans */
+    padding-left: 20px; /* Ajouter du padding à gauche pour une meilleure lisibilité */
+  }
+
+  /* Ne pas afficher l'image de fond sur les petits écrans */
+  /* .kankueb-container::before {
+    background-image: none;
+  } */
 }

@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import ikylogo from "../assets/images/iky.png";
 import "./Nav.css";
 
-function Nav() {
+function Nav({ showDirect = false }) {
   const [scrollingDown, setScrollingDown] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [navVisible, setNavVisible] = useState(true);
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(showDirect);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
-
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -31,6 +30,10 @@ function Nav() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleChangePage = () => {
+    if (isMenuOpen) setIsMenuOpen(false);
+  };
+
   return (
     <div
       className={`nav-content${navVisible ? "" : " nav-hidden"}${isMobile ? "-mobile" : ""}${isMenuOpen ? "-open" : ""}`}
@@ -45,38 +48,84 @@ function Nav() {
             <div className={`mobile-menu${isMenuOpen ? "-open" : ""}`}>
               <ul>
                 <li>
-                  <Link to="/" className="link-styled">
+                  <Link
+                    to="/"
+                    className="link-styled"
+                    onClick={handleChangePage}
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="link-styled">
+                  <Link
+                    to="/about"
+                    className="link-styled"
+                    onClick={handleChangePage}
+                  >
                     C.R.Kan
                   </Link>
                 </li>
                 <li>
-                  <Link to="/yoga" className="link-styled">
+                  <Link
+                    to="/yoga"
+                    className="link-styled"
+                    onClick={handleChangePage}
+                  >
                     Yoga
                   </Link>
                 </li>
                 <li>
-                  <Link to="/iky" className="link-styled">
+                  <Link
+                    to="/iky"
+                    className="link-styled"
+                    onClick={handleChangePage}
+                  >
                     IKYnesis
                   </Link>
                 </li>
                 <li>
-                  <Link to="/kankueb" className="link-styled">
+                  <Link
+                    to="/kankueb"
+                    className="link-styled"
+                    onClick={handleChangePage}
+                  >
                     Kankueb
                   </Link>
                 </li>
                 <li>
-                  <Link to="/ripey" className="link-styled">
+                  <Link
+                    to="/ripey"
+                    className="link-styled"
+                    onClick={handleChangePage}
+                  >
                     RIPEY
                   </Link>
                 </li>
                 <li>
-                  <Link to="/ishka" className="link-styled">
+                  <Link
+                    to="/ishka"
+                    className="link-styled"
+                    onClick={handleChangePage}
+                  >
                     Ishka Center
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/login"
+                    className="link-styled"
+                    onClick={handleChangePage}
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/signup"
+                    className="link-styled"
+                    onClick={handleChangePage}
+                  >
+                    Sign Up
                   </Link>
                 </li>
               </ul>

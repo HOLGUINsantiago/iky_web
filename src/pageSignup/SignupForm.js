@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./SignupForm.css";
 
 function SignupForm() {
@@ -11,11 +12,10 @@ function SignupForm() {
   const [naissance, setFechaNacimiento] = useState("");
   const [ubicacionDada, setDireccion] = useState("");
   const [errorContrasena, setErrorContrasena] = useState("");
-
   const [modalError, setModalError] = useState(false);
-
   const [modalVisible, setModalVisible] = useState(false);
 
+  const navigate = useNavigate(); // Déclaration de useNavigate pour la redirection
   const apiUrl = process.env.REACT_APP_API_URL;
 
   const handleCreateCuenta = () => {
@@ -48,10 +48,11 @@ function SignupForm() {
       })
       .catch((error) => {
         console.error("Erreur:", error);
-        setModalError(false);
-        setModalVisible(true);
+        setModalError(true);
+        setModalVisible(true); // Afficher le modal en cas d'erreur
       });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password !== confirmarContrasena) {
@@ -64,10 +65,17 @@ function SignupForm() {
 
   const handleCloseModal = () => {
     setModalVisible(false);
+    navigate("/"); // Redirige vers la page d'accueil après la fermeture du modal
   };
 
   return (
     <div className="container">
+      <span
+        className="close-btn-signup"
+        onClick={() => navigate("/")} // Redirection vers la page d'accueil
+      >
+        &#10005;
+      </span>
       <form className="form" onSubmit={handleSubmit} autoComplete="off">
         <h1>Crear una cuenta</h1>
         <p>¡Bienvenido! Regístrate para no perderte nada.</p>

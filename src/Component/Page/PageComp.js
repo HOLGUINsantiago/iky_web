@@ -67,7 +67,6 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -83,35 +82,30 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
 
   // ISLA DINAMICA
   useEffect(() => {
-    if (isSmallScreen) {
-      setIsDynamicIsland(true); // Forzar la isla dinámica en pantallas pequeñas
-    } else {
-      const handleScroll = () => {
-        const element = mosaiqueRef.current;
+    const handleScroll = () => {
+      const element = mosaiqueRef.current;
 
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          // Verifica si el elemento está completamente fuera del viewport
-          if (rect.bottom < 0 || rect.top > window.innerHeight) {
-            setIsDynamicIsland(true); // Mostrar la isla dinámica si está fuera del viewport
-          } else {
-            setIsDynamicIsland(false); // Ocultar la isla dinámica si está visible
-          }
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        // Verifica si el elemento está completamente fuera del viewport
+        if (rect.bottom < 0 || rect.top > window.innerHeight) {
+          setIsDynamicIsland(true); // Mostrar la isla dinámica si está fuera del viewport
+        } else {
+          setIsDynamicIsland(false); // Ocultar la isla dinámica si está visible
         }
-      };
+      }
+    };
 
-      // Escucha eventos de scroll
-      window.addEventListener("scroll", handleScroll);
+    // Escucha eventos de scroll
+    window.addEventListener("scroll", handleScroll);
 
-      // Ejecutar la verificación al cargar
-      handleScroll();
+    // Ejecutar la verificación al cargar
+    handleScroll();
 
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [isSmallScreen]);
-
 
   useEffect(() => {
     sectionRefs.current = sectionRefs.current.slice(0, sections.length);
@@ -147,10 +141,10 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
         className="acerca-container-globalPage"
         style={{
           position: "relative",
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: isSmallScreen ? "contain" : "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundImage: isSmallScreen ? "" : `url(${backgroundImage})`,
+          backgroundSize: isSmallScreen ? "" : "cover",
+          backgroundPosition: isSmallScreen ? "" : "center",
+          backgroundRepeat: isSmallScreen ? "" : "no-repeat",
           zIndex: 0,
         }}
       >

@@ -1,9 +1,8 @@
-/* SearchBar.css */
 .searchBar-container {
   display: flex;
-  justify-content: center; /* Centre les barres de recherche horizontalement */
-  align-items: center; /* Centre les barres de recherche verticalement */
-  gap: 40px; 
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
   margin-top: 30px;
 }
 
@@ -14,7 +13,7 @@
 }
 
 .input {
-  width: 230px; /* Ajustez la largeur si nécessaire */
+  width: 230px;
   height: 40px;
   line-height: 28px;
   padding: 0 1rem;
@@ -22,27 +21,47 @@
   border: 2px solid #8e8e8e;
   border-radius: 8px;
   outline: none;
-  background-color: #21140e; /* Couleur de fond */
-  color: white; /* Couleur du texte */
+  background-color: #21140e;
+  color: white;
   transition: 0.3s ease;
 }
 
 .input::placeholder {
-  color: #ffffff; /* Couleur des placeholders */
+  color: #ffffff;
 }
 
 .input:focus,
 .input:hover {
   outline: none;
-  border-color: #8e8e8e; /* Couleur de la bordure en focus/hover */
-  background-color: #21140e; /* Couleur de fond en focus/hover */
+  border-color: #8e8e8e;
+  background-color: #21140e;
   box-shadow: 0 0 0 4px rgb(180 36 36 / 10%);
 }
 
 .icon {
   position: absolute;
   left: 1rem;
-  fill: #8e8e8e; /* Couleur de l'icône */
+  fill: #8e8e8e;
   width: 1rem;
   height: 1rem;
+}
+
+@media (max-width: 768px) {
+  .searchBar-container {
+    flex-direction: column; 
+    gap: 5px;
+    margin-top: 5px;
+  }
+
+  .input {
+    width: 100%; 
+    max-width: 300px; 
+    height: 35px; 
+  }
+
+  .icon {
+    left: 0.8rem; 
+    width: 0.8rem;
+    height: 0.8rem;
+  }
 }

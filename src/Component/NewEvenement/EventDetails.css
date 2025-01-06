@@ -1,10 +1,3 @@
-/* Pour les grands écrans, on laisse inchangé le CSS existant */
-
-/* Conteneur principal */
-.event-detail-container {
-  height: 200vh;
-}
-
 .event-detail {
   position: relative;
   width: 100%;
@@ -20,16 +13,15 @@
 .event-info-container {
   position: fixed;
   top: 50%;
-  left: 20px;
   transform: translateY(-50%);
   padding: 30px;
   width: 500px;
   max-width: 90%;
   text-align: justify;
   font-size: 16px;
-  color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
   transition: color 0.3s ease-in-out;
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
 .event-info-container h1 {
@@ -39,39 +31,52 @@
 /* Changement de style après défilement */
 .event-info-container.scrolled {
   color: rgb(154, 154, 154);
-  z-index: 1000;
-  /* Change la couleur du texte en noir */
+  z-index: 1000; /* Change la couleur du texte en noir */
 }
 
 .event-info-container.scrolled h1 {
   color: black;
 }
 
-/* Section avec le fond blanc */
 .content-below {
-  height: 100vh;
+  height: 80vh; /* Hauteur de la section avec le fond blanc */
   padding: 50px 20px;
   background-color: rgb(206, 206, 206);
-  position: relative;
+  position: relative; /* Assure que les éléments positionnés absolument sont relatifs à ce conteneur */
+}
+
+.carousel-event{
+  position: absolute;
+  width: 30vw;
+  right: 10%;
 }
 
 .flyer-image {
-  position: absolute;
-  bottom: 50px;
-  right: 150px;
-  width: 500px;
-  height: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 100%;
 }
 
+.slider-container {
+  height: 80vw; /* Hauteur de la section avec le fond blanc */
+  width: auto;
+  right: 0;
+  left: 50%;
+  position: relative;
+}
+
+.slider-container .slick-slide {
+  display: flex;
+}
+
+
+/* Styles pour le bouton d'inscription */
 .register-button {
   position: absolute;
-  bottom: 70px;
+  bottom: 20%;
   left: 20%;
   padding: 10px 20px;
   font-size: 16px;
   color: white;
-  background-color: #B42424;
+  background-color: #B42424; /* Couleur de fond du bouton */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -79,10 +84,10 @@
 }
 
 .register-button:hover {
-  background-color: #B42424;
+  background-color: #B42424; /* Couleur de fond au survol du bouton */
 }
 
-/* Fenêtre modale */
+/* Style de la fenêtre modale */
 .modal-event {
   position: fixed;
   top: 0;
@@ -92,10 +97,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
   z-index: 1000;
 }
 
+/* Style du contenu de la fenêtre modale */
 .modal-event-content {
   background-color: white;
   padding: 20px;
@@ -105,6 +111,7 @@
   animation: modal-fade-in 0.3s ease-out;
 }
 
+/* Animation d'apparition de la modale */
 @keyframes modal-fade-in {
   from {
     opacity: 0;
@@ -116,6 +123,7 @@
   }
 }
 
+/* Bouton pour fermer la modale */
 .close-button {
   background-color: #ff5c5c;
   color: white;
@@ -128,101 +136,62 @@
   right: 10px;
 }
 
-/* ** Responsivité : Pour les petits écrans ** */
-
-/* Mobile portrait */
-@media (max-width: 480px) {
-  /* Modification de la hauteur de l'image de fond */
-  .event-detail {
-    height: 40vh; /* Réduit la hauteur de l'image pour les petits écrans */
-  }
-
-  /* Ajustement du conteneur d'information */
-  .event-info-container {
-    position: relative;
-    top: auto;
-    left: 0;
-    transform: none;
-    padding: 20px;
-    width: 90%;
-    font-size: 14px;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    margin: 20px auto;
-  }
-
-  .event-info-container h1 {
-    font-size: 18px;
-  }
-
-  .content-below {
-    height: auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-  }
-
-  .flyer-image {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    width: 80%;
-    margin: 20px auto;
-    box-shadow: none;
-  }
-
-  /* Modification du bouton d'inscription */
-  .register-button {
-    width: 80%;
-    margin: 20px auto;
-    font-size: 14px;
-    padding: 12px 0;
-  }
-
-  /* Modale d'inscription */
-  .modal-event-content {
-    width: 80%;
-    max-width: 400px;
-    padding: 20px;
-  }
-
-  .close-button {
-    top: 10px;
-    right: 10px;
-    padding: 8px;
-  }
-}
-
-/* Tablettes et petits écrans (max-width: 768px) */
+/* Mobile et petits écrans */
 @media (max-width: 768px) {
-  /* Ajustement de l'image de fond */
+  /* Conteneur principal */
   .event-detail {
-    height: 50vh; /* Réduit la hauteur de l'image de fond */
+    flex-direction: column;
+    background-image: none !important;
+    height: 50vh;
   }
 
-  /* Ajustement du conteneur d'information */
+  .content-below{
+    display: flex;
+    justify-content: center;
+    height: auto;
+  }
+
+  .carousel-event {
+    position: relative;
+    width: 80%;
+    right: 0;
+  }
+
   .event-info-container {
-    top: 20%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border-radius: 10px;
     left: 5%;
-    font-size: 15px;
-    padding: 20px;
-    text-align: center;
+    width: 80%;
+    margin: 0;
+    position: relative;
   }
 
   .event-info-container h1 {
-    font-size: 20px;
+    font-size: 1.6em;
+    margin-bottom: 8px;
+    color: rgb(0, 0, 0);
   }
+  
 
-  .flyer-image {
-    width: 75%;
-    max-width: 250px;
-    margin: 20px auto;
-  }
 
-  /* Bouton d'inscription */
-  .register-button {
-    width: 80%;
-    margin: 20px auto;
-    padding: 12px 0;
+  .event-info-container p {
     font-size: 16px;
+    color: black;
+  }
+
+  .register-button {
+    position: relative;
+        width: 100%;
+        max-width: 250px;
+        padding: 10px;
+        font-size: 14px;
+        bottom: -35px;
+        left: 0;
+  }
+  .button{
+    display: flex;
+    justify-content: center;
   }
 }

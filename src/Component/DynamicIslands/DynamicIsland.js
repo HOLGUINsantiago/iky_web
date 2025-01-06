@@ -28,7 +28,7 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
           if (entry.isIntersecting) {
             const sectionId = entry.target.getAttribute("id");
             const section = sections.find(
-              (sec) => sec.id === parseInt(sectionId)
+              (sec) => sec.id === parseInt(sectionId),
             );
             if (section) {
               setCurrentSection(section.id);
@@ -40,7 +40,7 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
       {
         rootMargin: "-40% 0px -60% 0px",
         threshold: 0,
-      }
+      },
     );
     sectionRefs.current
       .filter((section) => section)
@@ -148,6 +148,8 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
     currentRecommendations,
     showRecommendationTitle,
     isRecomendacionesMenuOpen,
+    isNavShow,
+    currentSection,
   ]);
 
   const handleMouseEnterSection = () => {
@@ -203,160 +205,169 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
   };
 
   return (
-    <div className="box">
-      {isNavShow && (
-        <div
-          className={`isla-dinamica ${isSectionMenuOpen ? "menu-open" : ""} ${isRecomendacionesMenuOpen ? "recomendaciones-open" : ""
+    <div className="isla">
+      <div className="box">
+        {isNavShow && (
+          <div
+            className={`isla-dinamica ${isSectionMenuOpen ? "menu-open" : ""} ${
+              isRecomendacionesMenuOpen ? "recomendaciones-open" : ""
             } `}
-          ref={islaRef}
-        >
-          <div className="shape">
-            {!isSectionMenuOpen && (
-              <div
-                className="isla-dinamica-left"
-                ref={leftRef}
-                onMouseEnter={handleMouseEnterRecomendaciones}
-                onMouseLeave={handleMouseLeaveRecomendaciones}
-              >
-                <div className="isla-dinamica-left-content">
-                  {sections[currentSection - 1].recommendations.length > 0 && (
-                    <div className="recommendations">
-                      {!showRecommendationTitle &&
-                        currentRecommendations.length > 1 &&
-                        !isRecomendacionesMenuOpen && (
-                          <p>{currentRecommendations.length} recomendaciones</p>
-                        )}
-                      {!showRecommendationTitle &&
-                        currentRecommendations.length === 1 && (
-                          <p>{currentRecommendations[0].title}</p>
-                        )}
-                      {!showRecommendationTitle &&
-                        currentRecommendations.length === 0 && (
-                          <p>Esperando recomendaciones</p>
-                        )}
-                      {showRecommendationTitle && (
-                        <p>
-                          {currentRecommendations.map((rec, index) => (
-                            <span key={index}>
-                              <a href={rec.url} className="no-link">
-                                {rec.title}
-                              </a>
-                              {index < currentRecommendations.length - 1 &&
-                                " , "}
-                            </span>
-                          ))}
-                        </p>
-                      )}
-                    </div>
-                  )}
-                  {currentRecommendations.length != 0 &&
-                    isRecomendacionesMenuOpen && (
-                      <div
-                        className="menu"
-                        style={{ minWidth: `${islaWidth}px` }}
-                        ref={menuRef}
-                      >
-                        <ul>
-                          {currentRecommendations.map((section) => (
-                            <li key={section.title}>
-                              <a
-                                onClick={() => {
-                                  section.allowed
-                                    ? setVentanaRecActiva(section.url)
-                                    : window.open(
-                                      section.url,
-                                      "_blank",
-                                      "noopener,noreferrer"
-                                    );
-                                  setIsRecomendacionesMenuOpen(false);
-                                }}
-                              >
-                                {section.title}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  {currentRecommendations.length != 0 &&
-                    ventanaRecActiva != null && (
-                      <div
-                        className="menu"
-                        style={{ minWidth: `${islaWidth}px` }}
-                        ref={menuRef}
-                      >
-                        <iframe
-                          src={ventanaRecActiva}
-                          style={{
-                            width: "60vw",
-                            height: "35vw",
-                            border: "none",
-                          }}
-                          title="Contenido de la ventana activa"
-                          onMouseOut={() => setVentanaRecActiva(null)}
-                        ></iframe>
-                      </div>
-                    )}
-                </div>
-              </div>
-            )}
-            <div className="isla-dinamica-middle">
+            ref={islaRef}
+          >
+            <div className="shape">
               {!isSectionMenuOpen && (
-                <button className="btn" onClick={handleMenuPress}>
-                  <i className="fa fa-bars"></i>
-                </button>
-              )}
-            </div>
-            <div
-              className={`isla-dinamica-right ${isSectionMenuOpen ? "menu-open" : ""
-                }`}
-              ref={rightRef}
-              onMouseEnter={handleMouseEnterSection}
-              onMouseLeave={handleMouseLeaveSection}
-            >
-              {!isSectionMenuOpen && !showSectionName && (
-                <div className="section-info">
-                  {currentSection}/{sections.length}
-                </div>
-              )}
-              {!isSectionMenuOpen && !showSectionName && (
-                <div className="section-info">{progress.toFixed(2)}%</div>
-              )}
-              {!isSectionMenuOpen && showSectionName && (
-                <div className="section-name">{sectionName}</div>
-              )}
-
-              {isSectionMenuOpen && (
                 <div
-                  className="menu"
-                  style={{ minWidth: `${islaWidth}px` }}
-                  ref={menuRef}
+                  className="isla-dinamica-left"
+                  ref={leftRef}
+                  onMouseEnter={handleMouseEnterRecomendaciones}
+                  onMouseLeave={handleMouseLeaveRecomendaciones}
                 >
-                  <ul>
-                    {sections.map((section) => (
-                      <li key={section.id}>
-                        <a
-                          href={`#section-${section.id}`}
-                          onClick={() => {
-                            setCurrentSection(section.id);
-                            sectionRefs.current[section.id - 1].scrollIntoView({
-                              behavior: "smooth",
-                            });
-                            setIsSectionMenuOpen(false);
-                          }}
+                  <div className="isla-dinamica-left-content">
+                    {sections[currentSection - 1].recommendations.length >
+                      0 && (
+                      <div className="recommendations">
+                        {!showRecommendationTitle &&
+                          currentRecommendations.length > 1 &&
+                          !isRecomendacionesMenuOpen && (
+                            <p>
+                              {currentRecommendations.length} recomendaciones
+                            </p>
+                          )}
+                        {!showRecommendationTitle &&
+                          currentRecommendations.length === 1 && (
+                            <p>{currentRecommendations[0].title}</p>
+                          )}
+                        {!showRecommendationTitle &&
+                          currentRecommendations.length === 0 && (
+                            <p>Esperando recomendaciones</p>
+                          )}
+                        {showRecommendationTitle && (
+                          <p>
+                            {currentRecommendations.map((rec, index) => (
+                              <span key={index}>
+                                <a href={rec.url} className="no-link">
+                                  {rec.title}
+                                </a>
+                                {index < currentRecommendations.length - 1 &&
+                                  " , "}
+                              </span>
+                            ))}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                    {currentRecommendations.length != 0 &&
+                      isRecomendacionesMenuOpen && (
+                        <div
+                          className="menu"
+                          style={{ minWidth: `${islaWidth}px` }}
+                          ref={menuRef}
                         >
-                          {section.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+                          <ul>
+                            {currentRecommendations.map((section) => (
+                              <li key={section.title}>
+                                <a
+                                  onClick={() => {
+                                    section.allowed
+                                      ? setVentanaRecActiva(section.url)
+                                      : window.open(
+                                          section.url,
+                                          "_blank",
+                                          "noopener,noreferrer",
+                                        );
+                                    setIsRecomendacionesMenuOpen(false);
+                                  }}
+                                >
+                                  {section.title}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    {currentRecommendations.length != 0 &&
+                      ventanaRecActiva != null && (
+                        <div
+                          className="menu"
+                          style={{ minWidth: `${islaWidth}px` }}
+                          ref={menuRef}
+                        >
+                          <iframe
+                            src={ventanaRecActiva}
+                            style={{
+                              width: "60vw",
+                              height: "35vw",
+                              border: "none",
+                            }}
+                            title="Contenido de la ventana activa"
+                            onMouseOut={() => setVentanaRecActiva(null)}
+                          ></iframe>
+                        </div>
+                      )}
+                  </div>
                 </div>
               )}
+              <div className="isla-dinamica-middle">
+                {!isSectionMenuOpen && (
+                  <button className="btn" onClick={handleMenuPress}>
+                    <i className="fa fa-bars"></i>
+                  </button>
+                )}
+              </div>
+              <div
+                className={`isla-dinamica-right ${
+                  isSectionMenuOpen ? "menu-open" : ""
+                }`}
+                ref={rightRef}
+                onMouseEnter={handleMouseEnterSection}
+                onMouseLeave={handleMouseLeaveSection}
+              >
+                {!isSectionMenuOpen && !showSectionName && (
+                  <div className="section-info">
+                    {currentSection}/{sections.length}
+                  </div>
+                )}
+                {!isSectionMenuOpen && !showSectionName && (
+                  <div className="section-info">{progress.toFixed(2)}%</div>
+                )}
+                {!isSectionMenuOpen && showSectionName && (
+                  <div className="section-name">{sectionName}</div>
+                )}
+
+                {isSectionMenuOpen && (
+                  <div
+                    className="menu"
+                    style={{ minWidth: `${islaWidth}px` }}
+                    ref={menuRef}
+                  >
+                    <ul>
+                      {sections.map((section) => (
+                        <li key={section.id}>
+                          <a
+                            href={`#section-${section.id}`}
+                            onClick={() => {
+                              setCurrentSection(section.id);
+                              sectionRefs.current[
+                                section.id - 1
+                              ].scrollIntoView({
+                                behavior: "smooth",
+                              });
+                              setIsSectionMenuOpen(false);
+                            }}
+                          >
+                            {section.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      )}
-      {!isNavShow && <Nav />}
+        )}
+      </div>
+      {!isNavShow && <Nav showDirect={true} />}
     </div>
   );
 };
@@ -373,9 +384,9 @@ IslaDinamica.propTypes = {
           url: PropTypes.string.isRequired,
           porcentaje: PropTypes.number,
           allowed: PropTypes.bool,
-        })
+        }),
       ).isRequired,
-    })
+    }),
   ).isRequired,
   sectionRefs: PropTypes.object.isRequired,
 };

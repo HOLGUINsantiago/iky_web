@@ -1,0 +1,39 @@
+.menu-mobile-ishka {
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100vh;
+  z-index: 999; 
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+}
+
+
+.menu-item-mobile-ishka:first-child{
+    font-size: 3em;
+    padding: 0;
+    width: 100%;
+}
+
+.menu-item-mobile-ishka {
+  color: rgb(255, 255, 255); /* Texto en negro */
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item-mobile-ishka:hover {
+  background-color: #dc9424;
+}
+
+.content-after-menu-ishka {
+  padding-top: 120px;
+}

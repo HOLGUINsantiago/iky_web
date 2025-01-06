@@ -1,8 +1,17 @@
+body {
+  overflow-x: hidden; /* Empêche les débordements horizontaux */
+}
+
 .clases-container {
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes par défaut */
   grid-gap: 30px; /* Espacement entre les colonnes et les rangées */
+}
+.clases-container {
+  max-width: 100%;
+  box-sizing: border-box; /* Inclure padding et border dans les dimensions */
+  overflow: hidden; /* Empêche les débordements */
 }
 
 .clases-title {
@@ -22,22 +31,19 @@
 
 /* Animation pour la colonne gauche (vient de la gauche) */
 .clases-section.left {
-  transform: translateX(-100vw);
-  color: white;/* Hors de l'écran à gauche */
+  transform: translateX(-100vw); /* Hors de l'écran à gauche */
+  color: white;
 }
 
 .clases-section.left.visible {
   opacity: 1;
-  transform: translateX(0);
-  color: white;/* Hors de l'écran à gauche */
-  /* Revient à sa position initiale */
+  transform: translateX(0); /* Revient à sa position initiale */
 }
 
 /* Animation pour la colonne droite (vient de la droite) */
 .clases-section.right {
-  transform: translateX(100vw);
-  color: white;/* Hors de l'écran à gauche */
-  /* Hors de l'écran à droite */
+  transform: translateX(100vw); /* Hors de l'écran à droite */
+  color: white;
 }
 
 .clases-section.right.visible {
@@ -48,46 +54,73 @@
 /* Pour les petits écrans, revenir à une seule colonne */
 @media (max-width: 768px) {
   .clases-container {
-      grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+    grid-template-columns: 1fr; 
+    padding: 0;
+    grid-gap: 0;
   }
 
   .clases-title {
-      grid-column: span 1; /* Le titre prend la largeur d'une seule colonne */
+    grid-column: span 1; /* Le titre prend la largeur d'une seule colonne */
+    font-size: 1.5rem; /* Réduire légèrement la taille du titre */
+    margin-bottom: 15px;
   }
 
   /* Animation fluide en venant du bas pour les petits écrans */
   .clases-section.left,
   .clases-section.right {
-      transform: translateY(100px); /* Hors de l'écran en bas */
+    transform: translateY(100px); /* Hors de l'écran en bas */
   }
 
   .clases-section.visible {
-      opacity: 1;
-      transform: translateY(0); /* Revient à sa position initiale */
+    opacity: 1;
+    transform: translateY(0); /* Revient à sa position initiale */
   }
+
+  .clases-section ul {
+    text-align: left;
+  }
+
+  .clases-section li {
+    text-align: left;
+    font-size: 14px; /* Réduction de la taille de la police si nécessaire */
+  }
+
+  
+  .clases-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+
+  .clases-image {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0; 
+  }
+
 }
 
 
-/* Style pour les petites images */
 .clases-images {
   display: flex;
-  justify-content: space-between; /* Espacement égal entre les images */
+  justify-content: space-between;
+  align-items: center;
   opacity: 0;
-  transform: translateX(100vw); /* Hors de l'écran à droite */
-  transition: opacity 2s ease, transform 2s ease; /* Transition fluide à 2 secondes */
-  margin-top: 30px;
+  transform: translateX(100vw);
+  transition: opacity 2s ease, transform 2s ease;
+  margin-top: 20px;
 }
 
 .clases-images.visible {
   opacity: 1;
-  transform: translateX(0); /* Revient à sa position initiale */
+  transform: translateX(0);
 }
 
 .clases-image {
-  width: 130px; /* Ajuste la taille des images selon tes besoins */
-  height: 130px;
-}
-
-.clases-image:last-child {
-  margin-right: 0; /* Pas d'espace à droite de la dernière image */
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
 }

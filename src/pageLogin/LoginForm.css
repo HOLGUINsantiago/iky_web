@@ -3,6 +3,28 @@
   display: flex;
   justify-content: center; /* Centre le formulaire horizontalement */
   align-items: center; /* Centre le formulaire verticalement */
+  padding: 20px; /* Ajout d'un padding pour les petits écrans */
+  height: 100vh; /* S'assure que le container occupe tout l'écran */
+  box-sizing: border-box;
+}
+
+/* Style pour la croix de fermeture */
+.close-btn-login {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: #B42424;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.close-btn-login:hover {
+  color: #8C1C1C;
 }
 
 /* Styles du formulaire */
@@ -12,7 +34,7 @@
   width: 100%;
   padding: 20px;
   display: flex;
-  flex-direction: column; /* Dispose les éléments en colonne */
+  flex-direction: column; 
 }
 
 /* Styles des titres et paragraphes */
@@ -21,12 +43,15 @@
   font-weight: 600;
   color: #333;
   margin-bottom: 10px;
+  padding-top: 10%;
+  text-align: center; /* Centrage du titre pour les petits écrans */
 }
 
 .login-form p, .forgot-password-form p {
   font-size: 14px;
   color: #666;
   margin-bottom: 20px;
+  text-align: center; /* Centrage du texte descriptif */
 }
 
 .input-group {
@@ -98,4 +123,64 @@
   font-size: 14px;
   margin-top: 15px;
   text-align: center;
+}
+
+/* Ajustement pour les petits écrans */
+@media (max-width: 768px) {
+  /* Centrage de la croix pour les petits écrans */
+  .close-btn-login {
+    top: 15px;
+    left: 15px;
+    font-size: 18px; /* Taille réduite */
+  }
+
+  /* Ajustement du formulaire */
+  .login-form, .forgot-password-form {
+    max-width: 100%; /* Occupe tout l'espace disponible */
+    padding: 15px; /* Réduction du padding */
+    border-radius: 5px; /* Moins d'arrondi */
+  }
+
+  /* Réduction des tailles des titres */
+  .login-form h1, .forgot-password-form h1 {
+    font-size: 20px; /* Taille réduite */
+  }
+
+  /* Réduction des paragraphes */
+  .login-form p, .forgot-password-form p {
+    font-size: 12px; /* Taille réduite */
+  }
+
+  /* Réduction des marges et tailles des inputs */
+  .input-group {
+    margin-bottom: 10px; /* Moins d'espacement */
+  }
+
+  .input-group input {
+    padding: 10px; /* Réduction de la hauteur */
+    font-size: 14px; /* Taille de police réduite */
+  }
+
+  /* Bouton de connexion réduit */
+  .button-login {
+    padding: 10px; /* Réduction de la hauteur */
+    font-size: 14px; /* Taille de police réduite */
+  }
+
+  /* Texte centré pour petits écrans */
+  .forgot-password-link, .back-to-login {
+    text-align: center; /* Texte centré */
+  }
+
+  /* Message de confirmation réduit */
+  .confirmation-message {
+    font-size: 12px; /* Taille réduite */
+  }
+}
+
+
+@media (min-width: 768px) {
+  .close-btn-login {
+    display: none;
+  }
 }

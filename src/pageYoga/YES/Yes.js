@@ -117,8 +117,7 @@ const Yes = () => {
         </div>
       </div>
 
-      {/* Affichage des détails du cours uniquement quand une lettre est sélectionnée */}
-      <div className="details-container">
+      <div className={`details-container-${selected}`}>
         {selected === "Y" && <YogaDetails />}
         {selected === "E" && <SpanishDetails />}
         {selected === "S" && <SalsaDetails />}

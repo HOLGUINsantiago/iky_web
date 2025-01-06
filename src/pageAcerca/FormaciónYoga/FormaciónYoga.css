@@ -13,6 +13,7 @@
   margin-bottom: 20px; /* Espace sous les images */
 }
 
+/* Styles pour les grands écrans (pas de changement ici) */
 .img-right {
   float: left; /* Positionne l'image à droite */
   margin-left: 20px; /* Espace entre l'image et le texte */
@@ -33,4 +34,31 @@
   padding: 7px; /* Ajoute de l'espace entre la photo et le cadre */
   border: 1px solid rgb(133, 129, 129); /* Ajoute un cadre noir autour de la photo */
   background-color: rgb(26 41 6);
+}
+
+/* Media query pour les petits écrans (moins de 1000px) */
+@media (max-width: 1000px) {
+  .text-FormaciónYoga {
+    padding: 5px; /* Moins de padding pour les petits écrans */
+    font-size: 18px; /* Réduit la taille de la police */
+  }
+
+  .img-right,
+  .img-left {
+    width: 100%; /* Les images prennent toute la largeur de leur conteneur */
+    height: auto; /* Garder les proportions des images */
+    margin: 0 auto 20px auto; /* Centre les images avec un espace en bas */
+    float: none; /* Supprimer le float pour les images */
+    border: none;
+    border: 1px solid rgb(133, 129, 129); /* Ajoute un cadre noir autour de la photo */
+  background-color: rgb(26 41 6);/* Pas de bordure sur les petites images */
+  }
+
+  .img-left {
+    margin-bottom: 20px; /* Marge sous les images pour les espacer */
+  }
+
+  .img-right {
+    margin-top: 20px; /* Marge au-dessus des images */
+  }
 }

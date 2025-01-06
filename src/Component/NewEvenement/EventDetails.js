@@ -1,18 +1,42 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import LoginComponent from "../../pageLogin/LoginForm"; // Assurez-vous que ce chemin est correct pour votre formulaire de connexion
+import LoginComponent from "../../pageLogin/LoginForm"; // Asegúrate de que esta ruta sea correcta
 import "./EventDetails.css";
 import PaymentModal from "./inscription/Paiement";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Carousel from "../../pageHome/Carousel";
 
 const EventDetail = ({ events }) => {
   const [scrolling, setScrolling] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showLogin, setShowLogin] = useState(false); // Pour afficher ou masquer le formulaire de login
-  const [showConfirmation, setShowConfirmation] = useState(false); // Pour afficher le message de confirmation
-  const [paymentFormVisible, setPaymentFormVisible] = useState(false); // Pour afficher le formulaire de paiement
+  const [showLogin, setShowLogin] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [paymentFormVisible, setPaymentFormVisible] = useState(false);
   const { id } = useParams();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
 
-  const event = events ? events.find((e) => e.id === parseInt(id)) : null;
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    vertical: true,
+  };
+
+  const event = events ? events.find((e) => e.idEvento === parseInt(id)) : null;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1000);
+    };
+
+    window.addEventListener("resize", handleResize);
+    console.log(window.innerWidth);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,36 +57,30 @@ const EventDetail = ({ events }) => {
     return <div>Evento no encontrado</div>;
   }
 
-  // Afficher "Gratis" si le prix est 0, sinon afficher le prix avec "COP"
-  const formattedPrice = event.price === 0 ? "Gratis" : `${event.price} COP`;
+  const formattedPrice = event.precio === 0 ? "Gratis" : `${event.precio} COP`;
 
-  // Lorsque l'utilisateur clique sur "Iniciar sesión", afficher le formulaire de connexion
   const handleInscription = () => {
     if (!isLoggedIn) {
-      setShowLogin(true); // Afficher le formulaire de connexion
+      setShowLogin(true);
     } else {
-      if (event.price === 0) {
-        // Si l'événement est gratuit, afficher un message de confirmation
+      if (event.precio === 0) {
         setShowConfirmation(true);
       } else {
-        // Si l'événement est payant, afficher le formulaire de paiement
         setPaymentFormVisible(true);
       }
     }
   };
 
-  // Lorsque l'utilisateur se connecte avec succès, mettre à jour l'état
   const handleLoginSuccess = () => {
     setIsLoggedIn(true);
     setShowLogin(false);
-    if (event.price === 0) {
+    if (event.precio === 0) {
       setShowConfirmation(true);
     } else {
       setPaymentFormVisible(true);
     }
   };
 
-  // Gérer la déconnexion
   const handleLogout = () => {
     setIsLoggedIn(false);
     setShowConfirmation(false);
@@ -71,34 +89,45 @@ const EventDetail = ({ events }) => {
 
   return (
     <div className="event-detail-container">
-      {/* Image de fond */}
       <div
         className="event-detail"
-        style={{ backgroundImage: `url(${event.backgroundImage})` }}
+        style={{ backgroundImage: `url(${event.imagenCobertura})` }}
       >
         <div className={`event-info-container ${scrolling ? "scrolled" : ""}`}>
-          <h1>{event.title}</h1>
+          <h1>{event.resumen}</h1>
           <p>
-            <strong>Ubicación:</strong> {event.location || "Por definir"}
+            <strong>Ubicación:</strong>{" "}
+            {event.ubicacion?.adress || "Por definir"}
           </p>
+
           <p>
             <strong>Precio:</strong> {formattedPrice}
           </p>
           <p>
-            <strong>Detalles:</strong> {event.details}
+            <strong>Detalles:</strong> {event.detalles}
           </p>
+          {isMobile && (
+            <div className="button">
+              <button className="register-button" onClick={handleInscription}>
+                Inscríbete
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Contenu dessous */}
       <div className="content-below">
-        <img src={event.flyerImage} alt="Flyer" className="flyer-image" />
-        <button className="register-button" onClick={handleInscription}>
-          Inscríbete
-        </button>
+        {!isMobile && (
+          <button className="register-button" onClick={handleInscription}>
+            Inscríbete
+          </button>
+        )}
+
+        <div className="carousel-event">
+          <Carousel images={Object.values(event.imagenes)} />
+        </div>
       </div>
 
-      {/* Affichage du formulaire de login dans une modale */}
       {showLogin && (
         <div className="modal-event">
           <div className="modal-event-content">
@@ -113,17 +142,17 @@ const EventDetail = ({ events }) => {
         </div>
       )}
 
-      {/* Affichage du message de confirmation après inscription gratuite */}
+      {/* Mensaje de confirmación */}
       {showConfirmation && (
         <div className="modal">
           <div className="modal-content">
-            <p>Un email de confirmation vous a été envoyé à votre adresse.</p>
-            <button onClick={handleLogout}>Se déconnecter</button>
+            <p>Un email de confirmación te ha sido enviado.</p>
+            <button onClick={handleLogout}>Cerrar sesión</button>
           </div>
         </div>
       )}
 
-      {/* Affichage du formulaire de paiement si l'événement est payant */}
+      {/* Formulario de pago */}
       {paymentFormVisible && isLoggedIn && (
         <div className="modal-event">
           <div className="modal-event-content">

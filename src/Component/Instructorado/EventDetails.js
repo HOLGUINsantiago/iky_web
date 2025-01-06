@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import LoginComponent from "../../pageLogin/LoginForm"; // Assurez-vous que ce chemin est correct pour votre formulaire de connexion
-import "./EventDetails.css";
+import "../../Component/NewEvenement/EventDetails.css";
 import PaymentModal from "../NewEvenement/inscription/Paiement.js";
 
 const EventDetail = ({ events }) => {

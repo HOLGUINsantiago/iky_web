@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Route, Routes } from "react-router-dom";
-
 import Nav from "../Component/Nav.js";
 import AuthMenu from "../Component/AuthMenu.js";
 import TextWithModal from "./TextWithModal.js";
@@ -10,7 +9,7 @@ import "./Home.css";
 import mandalaBlack from "../assets/images/mandalas/mandala.png";
 import logoImage from "../assets/images/logo/ISHKA_logo_2021_fin-01.png";
 import Carousel from "./Carousel.js";
-
+import Loader from "../Component/loaders/Loaders.js";
 import Programmas from "./Programmes/ProgrammeCarrousel.js";
 import Footer from "../Component/Footer/Footer.js";
 import ProximosEventos from "../Component/NewEvenement/Evenement.js";
@@ -140,66 +139,6 @@ const programs3 = [
   },
 ];
 
-const Eventos = [
-  {
-    id: 1,
-    title: "Conférence React 2024",
-    price: 10000, // Prix comme un nombre en pesos colombiens
-    location: "Paris, France",
-    eventDate: new Date("2025-11-25T10:00:00"),
-    eventImage: essai,
-    flyerImage: flyer1,
-    details: "Détails de l'événement...",
-    shortDescription:
-      "Rejoignez-nous pour une conférence passionnante sur React.",
-    backgroundImage: essai,
-    longDescription: "Détails complets de l'événement...",
-  },
-  {
-    id: 2,
-    title: "Conférence React 2024",
-    price: 0, // Gratuit
-    location: "Lyon, France",
-    eventDate: new Date("2024-12-12T10:00:00"),
-    eventImage: image,
-    flyerImage: flyer1,
-    details:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    shortDescription: "Rejoignez-nous pour une conférence passionnante.",
-    longDescription: "Détails complets de l'événement...",
-  },
-];
-
-const EventosInstructorado = [
-  {
-    id: 1,
-    title: "Instructorado 1",
-    price: 10000, // Prix comme un nombre en pesos colombiens
-    location: "Paris, France",
-    eventDate: new Date("2025-11-25T10:00:00"),
-    eventImage: essai,
-    flyerImage: flyer1,
-    details: "Détails de l'événement...",
-    shortDescription:
-      "Rejoignez-nous pour une conférence passionnante sur React.",
-    backgroundImage: essai,
-    longDescription: "Détails complets de l'événement...",
-  },
-  {
-    id: 2,
-    title: "Instructorado 2",
-    price: 0, // Gratuit
-    location: "Lyon, France",
-    eventDate: new Date("2024-12-12T10:00:00"),
-    eventImage: image,
-    flyerImage: flyer1,
-    details:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    shortDescription: "Rejoignez-nous pour une conférence passionnante.",
-    longDescription: "Détails complets de l'événement...",
-  },
-];
-
 const images = [
   image1,
   image2,
@@ -222,8 +161,9 @@ const lorem = new LoremIpsum({
   },
 });
 
-function Home() {
+function Home({ events }) {
   const programsRef = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
 
   useEffect(() => {
@@ -246,19 +186,44 @@ function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Écoutez la taille de l'écran pour vérifier si c'est un petit écran
   useEffect(() => {
-    const checkScreenSize = () => {
-      console.log(window.innerWidth);
+    const handleResize = () => {
       setIsMobile(window.innerWidth <= 1000);
     };
 
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => {
-      window.removeEventListener("resize", checkScreenSize);
-    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Bloquez le défilement lorsque le menu est ouvert sur mobile
+  useEffect(() => {
+    if (isMobile && isMenuOpen) {
+      // Bloquer le défilement
+      document.body.style.overflow = "hidden";
+    } else {
+      // Réactiver le défilement
+      document.body.style.overflow = "auto";
+    }
+
+    // Nettoyage
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen, isMobile]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  // Verificar si `events` tiene datos antes de renderizar
+  if (!events || events.length === 0) {
+    return (
+      <div className="container-loader">
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -339,13 +304,15 @@ function Home() {
           <div className="eventos-wrapper">
             {/* Ligne 1 : Instructorado */}
             <div className="eventos-instructorado">
-              <EvenementInstructorado events={EventosInstructorado} />
+              <EvenementInstructorado
+                events={events.filter((ev) => ev.isInstructorado)}
+              />
               <Routes>
                 <Route
                   path="/event/:id"
                   element={
                     <EvenementInstructoradoDetails
-                      events={EventosInstructorado}
+                      events={events.filter((ev) => ev.isInstructorado)}
                     />
                   }
                 />
@@ -354,11 +321,17 @@ function Home() {
 
             {/* Ligne 2 : Autres événements */}
             <div className="eventos-otros">
-              <ProximosEventos events={Eventos} />
+              <ProximosEventos
+                events={events.filter((ev) => !ev.isInstructorado)}
+              />
               <Routes>
                 <Route
                   path="/event/:id"
-                  element={<ProximosEventosDetails events={Eventos} />}
+                  element={
+                    <ProximosEventosDetails
+                      events={events.filter((ev) => !ev.isInstructorado)}
+                    />
+                  }
                 />
                 <Route path="/login" element={<LoginComponent />} />
                 <Route path="/paiement" element={<Paiement />} />

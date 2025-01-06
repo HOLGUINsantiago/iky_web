@@ -1,5 +1,4 @@
 .home-container {
-    width: 100%;
     height: 100vh; /* Hauteur de l'image de fond */
     overflow: hidden;
     display: flex;
@@ -13,7 +12,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url('../assets/images/backgrounds/3FD006E5-591C-4D1F-B913-DA8B3E895010.JPG');
     background-size: cover;
     background-position: center;
@@ -22,8 +21,7 @@
 }
 
 .content{
-  background-color: #21140e;
-  padding: 1%;
+  background-color: #21140e;   
 }
 
 
@@ -68,6 +66,19 @@
   margin-bottom: 50px;
 }
 
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
 
 .separator{
     height: 20vh;
@@ -187,6 +198,8 @@
   height: 92vh;
 }
 
+
+
 .left-side-vision {
   width: 45vw;
   display: flex;
@@ -244,6 +257,13 @@
 }
 
 @media (max-width: 1000px) {
+
+  .menu-wrapper{
+    position: fixed;
+    z-index: 1000000;
+    left: 0;
+    top: 0;
+  }
   /* Conteneur principal */
   .home-container {
     height: auto; /* Ajuste la hauteur en fonction du contenu */
@@ -374,4 +394,21 @@
   .left-side-vision p {
     padding: 0px;
   } 
+
+  .vision-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(24 23 23 / 58%);  /* Couleur sombre semi-transparente */
+    filter: brightness(100%) contrast(90%); /* Réduit la luminosité et ajuste le contraste */
+    z-index: 1; /* Place le filtre en dessous du contenu */
+  }
+  
+  .vision-container > * {
+    position: relative;
+    z-index: 2; /* Met le texte au-dessus du filtre */
+  }
 }
