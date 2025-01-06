@@ -1,0 +1,230 @@
+[
+    {
+        "idEvento": 64,
+        "googleIdEventOnline": null,
+        "googleIdEventPresencial": "f971e6qg6joicr3s2j97d48lfk",
+        "googleIdCalendar": null,
+        "url": "https://www.instagram.com/p/DC4RUQwOnR9/?img_index=1",
+        "profesor": {
+            "idProfesor": 13,
+            "user": null,
+            "password": null,
+            "mail": null,
+            "nom": null,
+            "prenom": null,
+            "naissance": null,
+            "calendarIdPresencial": null,
+            "calendarIdOnline": null,
+            "pais": null,
+            "inscripciones": null,
+            "ubicacion": null,
+            "ubicacionDada": null,
+            "secretCodeInstagram": null,
+            "accessTokenInstagram": null,
+            "instagramUserId": null
+        },
+        "acceso": [
+            "PRIVADO"
+        ],
+        "messageNotificacionDirect": "false",
+        "messageNotificacionApp": "false",
+        "sms": false,
+        "online": false,
+        "presencial": true,
+        "mail": false,
+        "apps": false,
+        "resumen": "Instructorado de yoga intégral y meditación clasica y moderna clásica ",
+        "descripcion": "¡Conecta con tu cuerpo y tu energía en nuestro INSTRUCTORADO de Yoga y Meditación de 21 DÍAS! ✨ Profundiza en la biomecánica y danza meditativa kankueb para una práctica segura y transformadora. 🗓 Del 11 de enero al 2 de febrero, vive una experiencia única de aprendizaje y crecimiento personal. 📌 Te esperamos en Ishka Center para iniciar juntos este viaje hacia el bienestar.  Inscríbete ya. ¡No te arrepentirás!",
+        "recurrencia": "DIARIO",
+        "dateAjout": "2025-01-05T17:10:16",
+        "fechas": {
+            "idFecha": null,
+            "year": 2025,
+            "month": 1,
+            "dayOfMonth": 11,
+            "hourInicio": 6,
+            "minuteInicio": 30,
+            "hourFin": 17,
+            "minuteFin": 30,
+            "zonaHoraria": "Europe/Paris",
+            "recurrencia": "DIARIO",
+            "yearFINAL": 2025,
+            "monthFINAL": 2,
+            "dayOfMonthFINAL": 2,
+            "fechaPersParent": null,
+            "eliminado": null,
+            "cambio": null,
+            "indisponibleEstudiante": null,
+            "excepcionesCambio": [],
+            "excepcionesEliminacion": [],
+            "fechaInicio": "2025-01-11T06:30:00+01:00",
+            "fechaFin": "2025-01-11T17:30:00+01:00",
+            "fechaFinalTotal": "2025-02-02T17:30:00+01:00",
+            "fechasModificadas": [
+                {
+                    "2025-02-02T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-02-03T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-02-01T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-14T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-15T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-11T06:30:00+01:00": "2025-01-11T17:30:00+01:00"
+                },
+                {
+                    "2025-01-12T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-13T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-22T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-23T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-20T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-21T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-18T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-19T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-16T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-17T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-30T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-31T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-28T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-29T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-26T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-27T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-24T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-25T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                }
+            ],
+            "fechas": [
+                {
+                    "2025-02-02T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-02-03T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-02-01T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-14T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-15T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-11T06:30:00+01:00": "2025-01-11T17:30:00+01:00"
+                },
+                {
+                    "2025-01-12T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-13T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-22T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-23T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-20T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-21T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-18T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-19T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-16T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-17T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-30T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-31T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-28T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-29T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-26T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-27T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-24T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                },
+                {
+                    "2025-01-25T06:30:00+01:00": "2025-01-12T17:30:00+01:00"
+                }
+            ]
+        },
+        "ubicacion": {
+            "id": null,
+            "adress": "Cra. 129 #25- 181, Barrio Pance, Cali, Valle del Cauca, Colombia",
+            "localidad": "Cali",
+            "latitud": 3.3292047,
+            "longitud": -76.5238129
+        },
+        "ubicacionDada": "Ishka Center, Cali, Colombia",
+        "precio": "1250",
+        "imagenes": {
+            "0": "https://iky-container.s3.eu-north-1.amazonaws.com/public/profesores/3f9e453e-df23-41ce-b45f-76f63e669e2c-Capture%20d%27%C3%A9cran%202024-12-31%20171041.png",
+            "1": "https://iky-container.s3.eu-north-1.amazonaws.com/public/profesores/fb43b903-d776-4e52-857b-1b19522db64e-Capture%20d%27%C3%A9cran%202024-12-31%20171033.png",
+            "2": "https://iky-container.s3.eu-north-1.amazonaws.com/public/profesores/14f2bff2-415b-4722-8152-7e5e460fab7c-Capture%20d%27%C3%A9cran%202024-12-31%20171010.png"
+        },
+        "imagenCobertura": "https://iky-container.s3.eu-north-1.amazonaws.com/public/profesores/2d08a6c3-5a52-4454-b044-6b56626eaf7e-2024-04-05.png",
+        "instagramPost": true,
+        "instagramAuthLink": null
+    }
+]

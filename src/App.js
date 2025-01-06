@@ -16,29 +16,15 @@ import Confirmation from "./Component/PageConfirmation.js";
 import backgroundImage from "./assets/images/YogaBack.jpg";
 import flyer from "./assets/images/post_instruct.png";
 
-// Données des événements
-const events = [
-  {
-    id: 1,
-    title: "Événement 1",
-    eventDate: "2024-12-01",
-    location: "Lieu 1",
-    details: "Détails de l'événement 1",
-    backgroundImage: backgroundImage,
-    flyerImage: flyer,
-    isInstructorado: false,
-  },
-  {
-    id: 2,
-    title: "Événement 2",
-    eventDate: "2024-12-02",
-    location: "Lieu 2",
-    details: "Détails de l'événement 2",
-    backgroundImage: "url_image_background_2",
-    flyerImage: "url_image_flyer_2",
-    isInstructorado: true,
-  },
-  // Ajoute d'autres événements ici
+
+const urlList = [
+  "https://gateway-service-latest.onrender.com/api/profesores/standup",
+  "https://profesores-service-latest.onrender.com/api/profesores/standup",
+  "https://estudiantes-service-latest.onrender.com/api/estudiantes/standup",
+  "https://calendarios-service-latest.onrender.com/api/calendarios/reactivo/standup",
+  "https://subscripciones-service-latest.onrender.com/api/calendarios/subscripciones/standup",
+  "https://estudiantes-service-latest.onrender.com/api/estudiantes/standup",
+  "https://eventos-services-latest.onrender.com/api/eventos/standup"
 ];
 
 function App() {
@@ -48,6 +34,28 @@ function App() {
   const apiUrl = process.env.REACT_APP_API_URL;
 
   const token = localStorage.getItem("authToken");
+
+  const fetchData = async () => {
+    try {
+      for (const url of urlList) {
+        const response = await fetch(url);
+        if (response.ok) {
+          const data = await response.json();
+        } else {
+        }
+      }
+    } catch (error) {
+      console.error("Error al realizar las solicitudes:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+
+    const intervalId = setInterval(fetchData, 2 * 60 * 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   useEffect(() => {
     const fetchEventos = () => {
