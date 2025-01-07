@@ -20,15 +20,14 @@ import Paiement from "../Component/NewEvenement/inscription/Paiement.js";
 import EvenementInstructorado from "../Component/Instructorado/EvenementInstructorado.js";
 import EvenementInstructoradoDetails from "../Component/Instructorado/EventDetails.js";
 
-import image1 from "../assets/images/backgrounds/IMG_1948.jpeg";
-import image2 from "../assets/images/IMG_0648.jpeg";
-import image3 from "../assets/images/backgrounds/IMG_4322.jpeg";
-import image4 from "../assets/images/photosCarousel/178948B9-4FDB-4B3D-957D-74D532C4877E.jpg";
-import image10 from "../assets/images/photosCarousel/IMG_0648.jpeg";
-import image5 from "../assets/images/photosCarousel/IMG_1610.jpeg";
-import image7 from "../assets/images/photosCarousel/IMG_1887.jpeg";
-import image8 from "../assets/images/photosCarousel/IMG_5006.jpg";
-import image9 from "../assets/images/photosCarousel/IMG_7266.jpg";
+import image1 from "../assets/images/backgrounds/IMG_1948-min.jpeg";
+import image3 from "../assets/images/backgrounds/IMG_4322-min.jpeg";
+import image4 from "../assets/images/photosCarousel/178948B9-4FDB-4B3D-957D-74D532C4877E-min.jpg";
+import image10 from "../assets/images/photosCarousel/IMG_0648-min.jpeg";
+import image2 from "../assets/images/photosCarousel/IMG_1610.jpeg";
+import image7 from "../assets/images/photosCarousel/IMG_1887-min.jpeg";
+import image8 from "../assets/images/photosCarousel/IMG_5006-min.jpg";
+import image9 from "../assets/images/photosCarousel/IMG_7266-min.jpg";
 
 import essai from "../assets/images/backgrounds/IMG_1948.jpeg";
 import image from "../assets/images/IMG_0648.jpeg";

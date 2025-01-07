@@ -1,62 +1,65 @@
 .home-container {
-    height: 100vh; /* Hauteur de l'image de fond */
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  height: 100vh;
+  /* Hauteur de l'image de fond */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url('../assets/images/backgrounds/3FD006E5-591C-4D1F-B913-DA8B3E895010.JPG');
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-    opacity: 0.9;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../assets/images/backgrounds/3FD006E5-591C-4D1F-B913-DA8B3E895010-min.JPG');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.9;
 }
 
-.content{
-  background-color: #21140e;   
+.content {
+  background-color: #21140e;
 }
 
 
 
-.logo-wrapper{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
 }
 
-.logo-wrapper img{
-    width: 40%;
-    
+.logo-wrapper img {
+  width: 40%;
+
 }
 
 .auth-menu-wrapper {
-    position: absolute;
-    right: 70px;
-    top: 0px;
-    z-index: 10;
+  position: absolute;
+  right: 70px;
+  top: 0px;
+  z-index: 10;
 }
 
 
 .titulo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra el contenido horizontalmente */
-    box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el ancho total */
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centra el contenido horizontalmente */
+  box-sizing: border-box;
+  /* Asegura que el padding y el borde estén incluidos en el ancho total */
+
 }
 
 .ishka-big {
-  font-size:3vw; 
+  font-size: 3vw;
   color: white;
   display: flex;
   justify-content: center;
@@ -80,120 +83,135 @@
   z-index: 1000;
 }
 
-.separator{
-    height: 20vh;
+.separator {
+  height: 20vh;
 }
 
-.planning{
+.planning {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .carusel-fotos {
-    width: 50%;
-    margin: 0 auto;
-    background-color: #21140e;
-    background: linear-gradient(137deg, #b42424 0%, #DC9424 100%);
-    filter: drop-shadow(0px 0px 20px #DC9424);
-    overflow: hidden;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #21140e;
+  background: linear-gradient(137deg, #b42424 0%, #DC9424 100%);
+  filter: drop-shadow(0px 0px 20px #DC9424);
+  overflow: hidden;
 }
 
 .text-wrapper {
-    background-color: #21140e;
-    border-radius: 10px;
-    width: 100%;
-    z-index: 2;
-    justify-content: center;
+  background-color: #21140e;
+  border-radius: 10px;
+  width: 100%;
+  z-index: 2;
+  justify-content: center;
 }
 
 .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 6vw;
-    color: #dc9424;
-    margin : 0px;
-    margin-left: -8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6vw;
+  color: #dc9424;
+  margin: 0px;
+  margin-left: -8%;
 }
 
 .title-home {
-    display: flex;
-    justify-content: center;
-    color: #ffffff ;
-    font-size: 50px;
-    font-weight: normal;
-    background-color: #21140e;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: normal;
+  background-color: #21140e;
 }
 
 .programmes-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #21140e;
-    gap :6vw;
-    position: relative;
-    border-radius: 0px;
-    padding-bottom: 15vh;
-  }
-  
-  .programmas-card {
-    opacity: 0;
-    transform: translateX(-100vw); /* Positionne les cartes hors de l'écran à gauche */
-    transition: all 0.5s ease;
-    position: absolute; /* Permet aux cartes de se positionner en fonction du conteneur */
-    left: 50%;
-    transform: translateX(-50%); /* Centre les cartes horizontalement */
-  }
-  
-  .eventos-wrapper {
-    display: flex;
-    flex-direction: column; /* Les lignes s'empilent verticalement */
-    gap: 30px;
-    justify-content: flex-start;
-    margin-bottom: 30px;
-    background-color: #21140e;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #21140e;
+  gap: 6vw;
+  position: relative;
+  border-radius: 0px;
+  padding-bottom: 15vh;
+}
 
-  .eventos-instructorado,
+.programmas-card {
+  opacity: 0;
+  transform: translateX(-100vw);
+  /* Positionne les cartes hors de l'écran à gauche */
+  transition: all 0.5s ease;
+  position: absolute;
+  /* Permet aux cartes de se positionner en fonction du conteneur */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Centre les cartes horizontalement */
+}
+
+.eventos-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* Les lignes s'empilent verticalement */
+  gap: 30px;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  background-color: #21140e;
+}
+
+.eventos-instructorado,
 .eventos-otros {
   display: flex;
   justify-content: flex-start;
-  flex-wrap: wrap; /* Permet l'ajustement des cartes */
-  gap: 20px; 
-  width: 100%; /* Prend toute la largeur */
-  background-color: #21140e; /* Couleur de fond */
+  flex-wrap: wrap;
+  /* Permet l'ajustement des cartes */
+  gap: 20px;
+  width: 100%;
+  /* Prend toute la largeur */
+  background-color: #21140e;
+  /* Couleur de fond */
 }
-  
-.separator-bar {
-    width: 80px;
-    height: 4px; 
-    background-color: #ffffff; 
-    margin: 0 auto;
-    border-radius: 2px;  
-    margin-top: 90px;
-   
-  }
 
-.first-part{
+.separator-bar {
+  width: 80px;
+  height: 4px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  border-radius: 2px;
+  margin-top: 90px;
+
+}
+
+.first-part {
   background-color: #21140e;
   background-image: url('../assets/images/snake.png');
   background-position: center;
-  background-size: contain; 
-  background-repeat: no-repeat; /* Evita quela imagen se repita */
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* Evita quela imagen se repita */
   padding-bottom: 8vw;
 }
 
 .vision-container {
   display: flex;
   padding: 2vw 4vw 0vw 4vw;
-  background-image: url('../assets/images/mandalas/feu.jpg'); /* Verifica que la ruta sea correcta */
-  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-  background-position: center; /* Centra la imagen en el contenedor */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-attachment: scroll; /* Cambia a scroll si fixed no es necesario */
-  height: auto; /* Ajusta la altura según el contenido */
-  position: relative; /* Asegura que los elementos hijos se posicionen correctamente */
+  background-image: url('../assets/images/mandalas/feu.jpg');
+  /* Verifica que la ruta sea correcta */
+  background-size: cover;
+  /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center;
+  /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-attachment: scroll;
+  /* Cambia a scroll si fixed no es necesario */
+  height: auto;
+  /* Ajusta la altura según el contenido */
+  position: relative;
+  /* Asegura que los elementos hijos se posicionen correctamente */
   gap: 14vw;
   height: 92vh;
 }
@@ -205,15 +223,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start; /* Assure que le contenu est collé à gauche */
-  padding: 0; /* Supprime tout padding inutile */
-  margin: 0; /* Supprime tout margin inutile */
+  align-items: flex-start;
+  /* Assure que le contenu est collé à gauche */
+  padding: 0;
+  /* Supprime tout padding inutile */
+  margin: 0;
+  /* Supprime tout margin inutile */
 }
 
 .left-side-vision p {
-  margin: 0; /* Supprime les marges */
+  margin: 0;
+  /* Supprime les marges */
   margin-top: 1vw;
-  padding: 0; /* Supprime les paddings */
+  padding: 0;
+  /* Supprime les paddings */
   color: #ffffff;
   font-size: 1vw;
 }
@@ -221,22 +244,28 @@
 .left-side-vision-text {
   height: 80%;
   display: flex;
-  justify-content: flex-start; /* Aligne le contenu à gauche */
+  justify-content: flex-start;
+  /* Aligne le contenu à gauche */
   align-items: flex-start;
-  padding: 0; /* Supprime les paddings */
-  margin: 0; /* Supprime les marges */
+  padding: 0;
+  /* Supprime les paddings */
+  margin: 0;
+  /* Supprime les marges */
 }
 
 .right-side-vision {
   display: flex;
-  justify-content: flex-start; /* Aligne les éléments à gauche */
+  justify-content: flex-start;
+  /* Aligne les éléments à gauche */
   align-items: flex-start;
   width: 30vw;
 }
 
 .right-side-vision img {
-  max-width: 120%; /* Asegura que la imagen no exceda el contenedor */
-  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  max-width: 120%;
+  /* Asegura que la imagen no exceda el contenedor */
+  height: auto;
+  /* Mantiene la relación de aspecto de la imagen */
   margin-right: 2vw;
 }
 
@@ -246,7 +275,7 @@
   padding: 0vw 10vw 0vw 2vw;
   color: #ffffff;
   margin-left: -1.8vw;
-  font-size: 1vw; 
+  font-size: 1vw;
 }
 
 .left-side-vision-text {
@@ -258,120 +287,155 @@
 
 @media (max-width: 1000px) {
 
-  .menu-wrapper{
+  .menu-wrapper {
     position: fixed;
     z-index: 1000000;
     left: 0;
     top: 0;
   }
+
   /* Conteneur principal */
   .home-container {
-    height: auto; /* Ajuste la hauteur en fonction du contenu */
-    padding: 10px; /* Ajout de padding pour éviter le débordement */
+    height: auto;
+    /* Ajuste la hauteur en fonction du contenu */
+    padding: 10px;
+    /* Ajout de padding pour éviter le débordement */
   }
 
   .home-container::before {
-    background-size: contain; /* Ajuste l'image pour s'adapter */
+    background-size: contain;
+    /* Ajuste l'image pour s'adapter */
     background-position: top;
-    opacity: 0.7; /* Réduit l'opacité pour une meilleure lisibilité */
+    opacity: 0.7;
+    /* Réduit l'opacité pour une meilleure lisibilité */
   }
 
   /* Logo */
   .logo-wrapper img {
-    width: 60%; /* Réduction de la taille du logo */
+    width: 60%;
+    /* Réduction de la taille du logo */
   }
 
   /* Auth menu */
   .auth-menu-wrapper {
-    right: 20px; /* Ajuste la position pour les petits écrans */
+    right: 20px;
+    /* Ajuste la position pour les petits écrans */
     top: 10px;
   }
 
   /* Titre principal */
   .ishka-big {
-    font-size: 6vw; /* Plus petit pour s'adapter aux écrans étroits */
+    font-size: 6vw;
+    /* Plus petit pour s'adapter aux écrans étroits */
     margin: 20px 0;
   }
 
   .separator {
-    height: 10vh; /* Réduction de la hauteur */
+    height: 10vh;
+    /* Réduction de la hauteur */
   }
 
   /* Carrousel */
   .carusel-fotos {
-    width: 90%; /* Occupe presque toute la largeur */
+    width: 90%;
+    /* Occupe presque toute la largeur */
     margin: 20px auto;
   }
 
   /* Titres */
   .title {
-    font-size: 8vw; /* Taille adaptative pour les titres */
-    margin: 0 auto; /* Centrer les titres */
-    margin-left: 0; /* Suppression de la marge gauche */
+    font-size: 8vw;
+    /* Taille adaptative pour les titres */
+    margin: 0 auto;
+    /* Centrer les titres */
+    margin-left: 0;
+    /* Suppression de la marge gauche */
   }
 
   .title-home {
-    font-size: 5vw; /* Ajustement pour s'adapter à l'écran */
+    font-size: 5vw;
+    /* Ajustement pour s'adapter à l'écran */
   }
 
   /* Programmes */
   .programmes-wrapper {
-    gap: 4vw; /* Réduction de l'espace entre les cartes */
+    gap: 4vw;
+    /* Réduction de l'espace entre les cartes */
     padding-bottom: 10vh;
   }
 
   /* Cartes programmes */
   .programmas-card {
-    position: relative; /* Ajuste pour un alignement fluide */
-    transform: translateX(0); /* Centre les cartes */
-    opacity: 1; /* Les rendre visibles */
+    position: relative;
+    /* Ajuste pour un alignement fluide */
+    transform: translateX(0);
+    /* Centre les cartes */
+    opacity: 1;
+    /* Les rendre visibles */
   }
 
   /* Événements */
   .eventos-wrapper {
-    gap: 20px; /* Espacement réduit */
+    gap: 20px;
+    /* Espacement réduit */
     margin-bottom: 20px;
   }
 
-  .eventos-instructorado, .eventos-otros {
-    flex-direction: column; /* Empile les cartes verticalement */
-    gap: 10px; /* Espacement réduit */
+  .eventos-instructorado,
+  .eventos-otros {
+    flex-direction: column;
+    /* Empile les cartes verticalement */
+    gap: 10px;
+    /* Espacement réduit */
   }
 
   /* Barre de séparation */
   .separator-bar {
-    width: 60px; /* Réduction de la largeur */
+    width: 60px;
+    /* Réduction de la largeur */
     margin-top: 30px;
   }
-  
+
 
   /* Première partie */
   .first-part {
-    padding-bottom: 12vw; /* Plus d'espace pour les petits écrans */
-    background-size: cover; /* Étend l'image pour couvrir */
+    padding-bottom: 12vw;
+    /* Plus d'espace pour les petits écrans */
+    background-size: cover;
+    /* Étend l'image pour couvrir */
   }
 
   /* Vision */
   .vision-container {
-    flex-direction: column; /* Colonne pour aligner verticalement */
-    padding: 5vw; /* Plus de padding pour les petits écrans */
-    gap: 5vw; /* Moins d'espace entre les éléments */
-    height: auto; /* Laisse la hauteur ajustée par le contenu */
+    flex-direction: column;
+    /* Colonne pour aligner verticalement */
+    padding: 5vw;
+    /* Plus de padding pour les petits écrans */
+    gap: 5vw;
+    /* Moins d'espace entre les éléments */
+    height: auto;
+    /* Laisse la hauteur ajustée par le contenu */
   }
 
-  .left-side-vision, .right-side-vision {
-    width: 100%; /* Prend toute la largeur de l'écran */
-    align-items: center; /* Centre les éléments */
-    text-align: center; /* Texte centré */
+  .left-side-vision,
+  .right-side-vision {
+    width: 100%;
+    /* Prend toute la largeur de l'écran */
+    align-items: center;
+    /* Centre les éléments */
+    text-align: center;
+    /* Texte centré */
   }
 
   .left-side-vision p {
-    font-size: 3vw; /* Réduction de la taille du texte */
+    font-size: 3vw;
+    /* Réduction de la taille du texte */
     margin: 10px 0;
   }
 
   .right-side-vision img {
-    max-width: 100%; /* Ajuste l'image pour l'écran */
+    max-width: 100%;
+    /* Ajuste l'image pour l'écran */
     height: auto;
     margin-right: 0;
   }
@@ -381,7 +445,7 @@
   }
 
   .right-side-vision img {
-  display: none;
+    display: none;
   }
 
   .left-side-vision-text {
@@ -389,11 +453,11 @@
     display: flex;
     justify-content: center;
     padding: 10px;
-  }  
+  }
 
   .left-side-vision p {
     padding: 0px;
-  } 
+  }
 
   .vision-container::after {
     content: "";
@@ -402,13 +466,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(24 23 23 / 58%);  /* Couleur sombre semi-transparente */
-    filter: brightness(100%) contrast(90%); /* Réduit la luminosité et ajuste le contraste */
-    z-index: 1; /* Place le filtre en dessous du contenu */
+    background: rgb(24 23 23 / 58%);
+    /* Couleur sombre semi-transparente */
+    filter: brightness(100%) contrast(90%);
+    /* Réduit la luminosité et ajuste le contraste */
+    z-index: 1;
+    /* Place le filtre en dessous du contenu */
   }
-  
-  .vision-container > * {
+
+  .vision-container>* {
     position: relative;
-    z-index: 2; /* Met le texte au-dessus du filtre */
+    z-index: 2;
+    /* Met le texte au-dessus du filtre */
   }
 }

@@ -12,7 +12,7 @@ import essai from "../assets/images/backgrounds/IMG_1948.jpeg";
 import image1 from "../assets/images/IMG_0648.jpeg";
 import flyer1 from "../assets/images/iky.png";
 import imageAbout from "../assets/images/backgrounds/IMG_1948.jpeg";
-import imageYoga from "../assets/images/backgrounds/3FD006E5-591C-4D1F-B913-DA8B3E895010.JPG";
+import imageYoga from "../assets/images/backgrounds/3FD006E5-591C-4D1F-B913-DA8B3E895010-min.JPG";
 import CardComponent from "../Component/Diplomas/DiplomaGallery.js";
 import diplome from "../assets/images/post_instruct.png";
 import BiographyCard from "../pageAcerca/Biografia/Biografia.js";
@@ -38,16 +38,16 @@ import imageIkynesis from "../assets/images/imageIkynesis.jpeg";
 import imageKankueb from "../assets/images/imageKankueb.JPG";
 import YogaBackground from "../assets/images/imageYoga.jpg";
 
-import Salon1 from "../assets/images/Salon1.jpg";
-import Jardin1 from "../assets/images/Jardin1.jpg";
-import Jardin2 from "../assets/images/Jardin2.JPG";
-import Instalacion from "../assets/images/instalacion.jpeg";
-import Jardin3 from "../assets/images/Jardin3.jpeg";
-import Jardin4 from "../assets/images/Jardin4.jpeg";
-import Instalacion2 from "../assets/images/instalacion2.jpeg";
-import repos from "../assets/images/repos.jpeg";
+import Salon1 from "../assets/images/Salon1-min.jpg";
+import Jardin2 from "../assets/images/Jardin2-min.JPG";
+import Instalacion from "../assets/images/instalacion-min.jpeg";
+import Jardin3 from "../assets/images/Jardin3-min.jpeg";
+import Jardin4 from "../assets/images/Jardin4-min.jpeg";
+import Instalacion2 from "../assets/images/instalacion2-min.jpeg";
+import repos from "../assets/images/repos-min.jpeg";
+import petitSalon from "../assets/images/IMG_0036-min.jpg";
+
 import imageRipey from "../assets/photoPageRipey1/228DB818-748B-4F33-9EEC-23B60CC17A05.JPG";
-import petitSalon from "../assets/images/IMG_0036.jpg";
 
 import Diplomas1 from "../assets/images/Diplomas/1724187181139.jpg";
 import Diplomas2 from "../assets/images/Diplomas/guia-espiritual.jpg";

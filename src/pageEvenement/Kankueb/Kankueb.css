@@ -2,9 +2,9 @@
   position: relative;
   text-align: justify;
   display: flex;
-  flex-direction: column; /* Pour permettre une disposition en colonne */
+  flex-direction: column;
+  /* Pour permettre une disposition en colonne */
   align-items: flex-start;
-  padding: 50px;
   background-color: transparent;
   z-index: 1;
   width: 100%;
@@ -29,32 +29,42 @@
 /* Section contenant les images et le premier bloc de texte */
 .kankueb-header {
   display: flex;
-  flex-direction: row; /* Les images et le texte sont alignés horizontalement */
+  flex-direction: row;
+  /* Les images et le texte sont alignés horizontalement */
   width: 100%;
-  margin-bottom: 20px; /* Espacement entre le header et le reste du texte */
+  margin-bottom: 20px;
+  /* Espacement entre le header et le reste du texte */
 }
 
 .kankueb-image-container {
   display: flex;
-  flex-direction: column; /* Les images sont empilées verticalement */
+  flex-direction: column;
+  /* Les images sont empilées verticalement */
   justify-content: flex-start;
   align-items: flex-start;
-  margin-right: 20px; /* Espacement entre les images et le texte */
-  flex-shrink: 0; /* Empêche les images de rétrécir */
+  margin-right: 20px;
+  /* Espacement entre les images et le texte */
+  flex-shrink: 0;
+  /* Empêche les images de rétrécir */
 }
 
 .kankueb-image {
-  width: 200px; /* Taille des images */
+  width: 200px;
+  /* Taille des images */
   height: auto;
-  margin-bottom: 15px; /* Espacement entre les images */
+  margin-bottom: 15px;
+  /* Espacement entre les images */
   border: 2px solid white;
-  border-radius: 8px; /* Coins arrondis pour les images */
-  max-width: 100%; /* Assure que les images ne débordent pas du conteneur */
+  border-radius: 8px;
+  /* Coins arrondis pour les images */
+  max-width: 100%;
+  /* Assure que les images ne débordent pas du conteneur */
 }
 
 /* Texte du contenu */
 .kankueb-content {
-  flex-grow: 1; /* Permet au texte de prendre tout l'espace restant */
+  flex-grow: 1;
+  /* Permet au texte de prendre tout l'espace restant */
   text-align: justify;
 }
 
@@ -90,15 +100,18 @@
 
 /* Texte additionnel sous le header */
 .kankueb-body {
-  margin-top: 20px; /* Espacement entre le header et le reste du texte */
+  margin-top: 20px;
+  /* Espacement entre le header et le reste du texte */
   width: 100%;
 }
 
 /* Adaptation pour les petits écrans (max-width: 1000px) */
 @media (max-width: 1000px) {
+
   /* Container principal */
   .kankueb-container {
-    padding: 5px; /* Réduit le padding pour les petits écrans */
+    padding: 5px;
+    /* Réduit le padding pour les petits écrans */
     width: 100%;
   }
 
@@ -120,37 +133,52 @@
 
   /* Section contenant les images et le texte */
   .kankueb-header {
-    flex-direction: column; /* Empile les images et le texte verticalement sur les petits écrans */
-    align-items: center; /* Centrer le contenu */
+    flex-direction: column;
+    /* Empile les images et le texte verticalement sur les petits écrans */
+    align-items: center;
+    /* Centrer le contenu */
   }
 
   .kankueb-image-container {
-    margin-right: 0; /* Retirer la marge à droite sur les petits écrans */
-    margin-bottom: 0; /* Retirer les marges inutiles */
-    flex-direction: column; /* Disposer les images verticalement */
-    align-items: center; /* Centrer les images */
+    margin-right: 0;
+    /* Retirer la marge à droite sur les petits écrans */
+    margin-bottom: 0;
+    /* Retirer les marges inutiles */
+    flex-direction: column;
+    /* Disposer les images verticalement */
+    align-items: center;
+    /* Centrer les images */
   }
 
   .kankueb-image {
-    width: 90px; /* Réduit la taille des images pour les petits écrans */
+    width: 90px;
+    /* Réduit la taille des images pour les petits écrans */
     height: auto;
-    margin-bottom: 10px; /* Espacement entre les images */
-    border-radius: 8px; /* Coins arrondis */
+    margin-bottom: 10px;
+    /* Espacement entre les images */
+    border-radius: 8px;
+    /* Coins arrondis */
   }
 
   .kankueb-title {
-    font-size: 1.8rem; /* Réduit la taille du titre */
-    text-align: center; /* Centre le titre sur petits écrans */
+    font-size: 1.8rem;
+    /* Réduit la taille du titre */
+    text-align: center;
+    /* Centre le titre sur petits écrans */
   }
 
   .kankueb-text {
-    font-size: 18px; /* Réduit la taille du texte */
-    line-height: 1.5; /* Ajuste l'espacement entre les lignes */
+    font-size: 18px;
+    /* Réduit la taille du texte */
+    line-height: 1.5;
+    /* Ajuste l'espacement entre les lignes */
   }
 
   .kankueb-list {
-    margin-left: 0; /* Retirer le margin-left pour les petits écrans */
-    padding-left: 20px; /* Ajouter du padding à gauche pour une meilleure lisibilité */
+    margin-left: 0;
+    /* Retirer le margin-left pour les petits écrans */
+    padding-left: 20px;
+    /* Ajouter du padding à gauche pour une meilleure lisibilité */
   }
 
   /* Ne pas afficher l'image de fond sur les petits écrans */

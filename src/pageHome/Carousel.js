@@ -14,6 +14,7 @@ function Carousel({ images }) {
     autoplaySpeed: 3000,
     adaptiveHeight: true,
     pauseOnHover: false,
+    arrows: false,
   };
 
   return (
