@@ -20,6 +20,21 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
   const rightRef = useRef(null);
   const islaRef = useRef(null);
   const menuRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      console.log(window.innerWidth);
+      setIsMobile(window.innerWidth <= 1000);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -209,9 +224,8 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
       <div className="box">
         {isNavShow && (
           <div
-            className={`isla-dinamica ${isSectionMenuOpen ? "menu-open" : ""} ${
-              isRecomendacionesMenuOpen ? "recomendaciones-open" : ""
-            } `}
+            className={`isla-dinamica ${isSectionMenuOpen ? "menu-open" : ""} ${isRecomendacionesMenuOpen ? "recomendaciones-open" : ""
+              } `}
             ref={islaRef}
           >
             <div className="shape">
@@ -225,37 +239,37 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
                   <div className="isla-dinamica-left-content">
                     {sections[currentSection - 1].recommendations.length >
                       0 && (
-                      <div className="recommendations">
-                        {!showRecommendationTitle &&
-                          currentRecommendations.length > 1 &&
-                          !isRecomendacionesMenuOpen && (
+                        <div className="recommendations">
+                          {!showRecommendationTitle &&
+                            currentRecommendations.length > 1 &&
+                            !isRecomendacionesMenuOpen && (
+                              <p>
+                                {currentRecommendations.length} recomendaciones
+                              </p>
+                            )}
+                          {!showRecommendationTitle &&
+                            currentRecommendations.length === 1 && (
+                              <p>{currentRecommendations[0].title}</p>
+                            )}
+                          {!showRecommendationTitle &&
+                            currentRecommendations.length === 0 && (
+                              <p>Esperando recomendaciones</p>
+                            )}
+                          {showRecommendationTitle && (
                             <p>
-                              {currentRecommendations.length} recomendaciones
+                              {currentRecommendations.map((rec, index) => (
+                                <span key={index}>
+                                  <a href={rec.url} className="no-link">
+                                    {rec.title}
+                                  </a>
+                                  {index < currentRecommendations.length - 1 &&
+                                    " , "}
+                                </span>
+                              ))}
                             </p>
                           )}
-                        {!showRecommendationTitle &&
-                          currentRecommendations.length === 1 && (
-                            <p>{currentRecommendations[0].title}</p>
-                          )}
-                        {!showRecommendationTitle &&
-                          currentRecommendations.length === 0 && (
-                            <p>Esperando recomendaciones</p>
-                          )}
-                        {showRecommendationTitle && (
-                          <p>
-                            {currentRecommendations.map((rec, index) => (
-                              <span key={index}>
-                                <a href={rec.url} className="no-link">
-                                  {rec.title}
-                                </a>
-                                {index < currentRecommendations.length - 1 &&
-                                  " , "}
-                              </span>
-                            ))}
-                          </p>
-                        )}
-                      </div>
-                    )}
+                        </div>
+                      )}
                     {currentRecommendations.length != 0 &&
                       isRecomendacionesMenuOpen && (
                         <div
@@ -271,10 +285,10 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
                                     section.allowed
                                       ? setVentanaRecActiva(section.url)
                                       : window.open(
-                                          section.url,
-                                          "_blank",
-                                          "noopener,noreferrer",
-                                        );
+                                        section.url,
+                                        "_blank",
+                                        "noopener,noreferrer",
+                                      );
                                     setIsRecomendacionesMenuOpen(false);
                                   }}
                                 >
@@ -315,9 +329,8 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
                 )}
               </div>
               <div
-                className={`isla-dinamica-right ${
-                  isSectionMenuOpen ? "menu-open" : ""
-                }`}
+                className={`isla-dinamica-right ${isSectionMenuOpen ? "menu-open" : ""
+                  }`}
                 ref={rightRef}
                 onMouseEnter={handleMouseEnterSection}
                 onMouseLeave={handleMouseLeaveSection}
@@ -367,7 +380,7 @@ const IslaDinamica = ({ sections, sectionRefs }) => {
           </div>
         )}
       </div>
-      {!isNavShow && <Nav showDirect={true} />}
+      {!isNavShow && <Nav showDirect={isMobile} />}
     </div>
   );
 };

@@ -673,7 +673,7 @@ const routes = [
     name: "ishka",
     content: sectionsISHKA,
     mosaique: MosaiqueIshka,
-    backgroundImage: imageIshka,
+    backgroundImage: Salon1,
     color: "rgb(19 18 18)",
   },
   {
