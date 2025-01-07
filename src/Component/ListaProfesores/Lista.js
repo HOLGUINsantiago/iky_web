@@ -25,6 +25,11 @@ const ProfessorList = () => {
   // Référence de la carte pour contrôler les zooms
   const mapRef = useRef(null);
 
+  const initialView = {
+    center: [0, 0], // Centro inicial (puedes modificarlo si quieres otro lugar)
+    zoom: 2,       // Nivel de zoom inicial para un mapa deszoomeado
+  };
+
   // Fonction pour récupérer les données des professeurs depuis l'API
   const fetchProfessors = async () => {
     try {
@@ -119,7 +124,7 @@ const ProfessorList = () => {
       <div className="map-container-ripey">
         <MapContainer
           center={[0, 0]} // Coordonnées initiales (centre du monde)
-          zoom={12}
+          zoom={2}
           minZoom={2}
           maxZoom={18} // Niveau de zoom maximal (empêche de zoomer plus loin)
           style={{
