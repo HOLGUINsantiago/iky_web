@@ -18,13 +18,8 @@ import flyer from "./assets/images/post_instruct.png";
 
 
 const urlList = [
-  "https://gateway-service-latest.onrender.com/api/profesores/standup",
-  "https://profesores-service-latest.onrender.com/api/profesores/standup",
-  "https://estudiantes-service-latest.onrender.com/api/estudiantes/standup",
-  "https://calendarios-service-latest.onrender.com/api/calendarios/reactivo/standup",
-  "https://subscripciones-service-latest.onrender.com/api/calendarios/subscripciones/standup",
-  "https://estudiantes-service-latest.onrender.com/api/estudiantes/standup",
-  "https://eventos-services-latest.onrender.com/api/eventos/standup"
+  "https://silky-tessie-santiago03h-c56517a6.koyeb.app/api/eventos/standup",
+  "https://profesores-services-reactivo.fly.dev/api/profesores/standup"
 ];
 
 function App() {
@@ -60,7 +55,7 @@ function App() {
   useEffect(() => {
     const fetchEventos = () => {
       fetch(
-        "https://gateway-service-latest.onrender.com/api/eventos/profesor/13",
+        "https://silky-tessie-santiago03h-c56517a6.koyeb.app/api/eventos/profesor/13",
       )
         .then((response) => {
           if (!response.ok) {

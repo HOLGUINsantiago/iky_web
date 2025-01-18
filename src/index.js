@@ -6,6 +6,12 @@ import { createPopper } from "@popperjs/core";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("GTM-5WNKL46Z"); // Reemplaza con tu ID
+ReactGA.send("pageview");
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

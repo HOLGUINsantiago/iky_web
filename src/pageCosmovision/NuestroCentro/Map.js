@@ -17,14 +17,16 @@ const center = {
   lng: -76.523714,
 };
 
+const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+
 const zoom = 15;
 
 const Mapa = () => {
   return (
     <div style={containerStyle}>
       <APIProvider
-        apiKey={"AIzaSyDmmuC_vI61t9jci4dSJIPaSZGsP-4irk8"}
-        onLoad={() => console.log("Maps API has loaded.")}
+        apiKey={apiKey}
+        onLoad={() => console.log("Maps API has loaded.", apiKey)}
       >
         <Map defaultZoom={zoom} defaultCenter={center} mapId="a11436f6e96f86d3">
           <AdvancedMarker key={"IshkaCenter"} position={center}>
