@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pageHome/Home.js";
 import Loader from "./Component/loaders/Loaders.js"; // Import du Loader
@@ -16,10 +16,9 @@ import Confirmation from "./Component/PageConfirmation.js";
 import backgroundImage from "./assets/images/YogaBack.jpg";
 import flyer from "./assets/images/post_instruct.png";
 
-
 const urlList = [
   "https://silky-tessie-santiago03h-c56517a6.koyeb.app/api/eventos/standup",
-  "https://profesores-services-reactivo.fly.dev/api/profesores/standup"
+  "https://profesores-services-reactivo.fly.dev/api/profesores/standup",
 ];
 
 function App() {

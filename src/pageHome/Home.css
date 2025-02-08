@@ -1,3 +1,7 @@
+body{
+  overflow-x: hidden;
+}
+
 .home-container {
   height: 100vh;
   /* Hauteur de l'image de fond */
@@ -267,6 +271,7 @@
   height: auto;
   /* Mantiene la relación de aspecto de la imagen */
   margin-right: 2vw;
+  overflow-x: hidden;
 }
 
 .left-side-vision p {
