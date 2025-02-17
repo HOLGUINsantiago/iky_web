@@ -50,13 +50,16 @@ const DiplomaGallery = ({ cardsData }) => {
     <div className="card-container-diplomas">
       <p className="text-diplome">
         Chakra Raja Kan es el director académico y gerente de Ishka Center, el
-        cual fundó en 2004. Es el creador del Sistema IKY, los entrenamientos
-        internacionales de yoga, el RIPEY, así como de IKYnesis y
-        del Kankueb Dance.
+        cual fundó en el año 2004. Es el creador del Sistema IKY, el Kankueb
+        Dance, el IKYnesis, así como de los entrenamientos internacionales de
+        yoga y del Registro Internacional para Enseñantes de Yoga (RIPEY).
       </p>
       {isSmallScreen ? (
         <ul className="simple-list">
-          {[cardsData[cardsData.length - 1], ...cardsData.slice(0, cardsData.length - 1)].map((card) => (
+          {[
+            cardsData[cardsData.length - 1],
+            ...cardsData.slice(0, cardsData.length - 1),
+          ].map((card) => (
             <li key={card.id} onClick={() => setSelectedCard(card)}>
               {card.description}
             </li>

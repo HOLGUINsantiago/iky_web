@@ -13,7 +13,7 @@ function MosaiqueYoga() {
   };
 
   const items = [
-    "Systema Iky",
+    "Systema IKY",
     "",
     "Cursos, retiros y talleres",
     "Profesorado e intructorado",
@@ -28,7 +28,7 @@ function MosaiqueYoga() {
 
   const items_mobile = [
     "YOGA",
-    "Systema Iky",
+    "Systema IKY",
     "Cursos, retiros y talleres",
     "Profesorado e intructorado",
     "Profondizaciones y especializaciones",

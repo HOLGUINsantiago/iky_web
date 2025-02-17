@@ -20,7 +20,7 @@ const GlowingHoverCard = () => {
       courses: [
         { course: "Yoga", time: "08:00 AM - 10:00 AM", link: "/yoga" },
         {
-          course: "Ikynesis / feldenkrais",
+          course: "IKYnesis / Feldenkrais",
           time: "11:00 AM - 13:00 PM",
           link: "/iky",
         },
