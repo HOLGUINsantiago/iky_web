@@ -362,7 +362,7 @@ const sectionsIkynesis = [
     recommendations: [],
   },
   {
-    id: 5,
+    id: 2,
     name: "Método Feldenkrais®",
     content: <MetodoFeldenkrais2 />,
     recommendations: [

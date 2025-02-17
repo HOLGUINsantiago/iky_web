@@ -23,9 +23,8 @@
 }
 
 .auth-menu {
-  position: absolute;
-  top: 60px;
-  right: 0;
+  position: relative;
+  right: 25%;
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -55,14 +54,15 @@
   color: #000000;
   font-weight: 500;
   background-color: transparent;
-  border : none; 
+  border: none;
   border-radius: 8px;
   height: 25px;
   font-weight: bold;
 }
 
 .auth-link-styled:hover {
-  transform: scale(1.1); /* Augmente la taille du texte à 110% lors du survol */
+  transform: scale(1.1);
+  /* Augmente la taille du texte à 110% lors du survol */
 }
 
 .login-sidebar {

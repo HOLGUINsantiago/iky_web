@@ -21,11 +21,14 @@ const urlList = [
   "https://profesores-services-reactivo.fly.dev/api/profesores/standup",
 ];
 
+const SecondaryProject = React.lazy(() => import('https://github.com/HOLGUINsantiago/iky_platform/iky_plateform/src/App.js'));
+
 function App() {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   const [eventosReal, setEventosReal] = useState([]);
   const apiUrl = process.env.REACT_APP_API_URL;
+  const ghPlatform = process.env.REACT_APP_GH_PLATFORM;
 
   const token = localStorage.getItem("authToken");
 
@@ -76,6 +79,21 @@ function App() {
 
     fetchEventos();
   }, []);
+
+  fetch(apiUrl + "/api/estudiantes", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": token,
+    },
+  })
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+      return response.json();
+    })
+    .then(data => sessionStorage.setItem("user", JSON.stringify(data)))
+    .catch(error => console.error("Error fetching students:", error));
+
 
   useEffect(() => {
     console.log("Estado actualizado de eventosReal:", eventosReal);
@@ -144,6 +162,7 @@ function App() {
           <Route path="/confirm/*" element={<Confirmation />} />
           <Route path="/events" element={<EventList />} />
           <Route path="/event/:id" element={<EventDetail events={eventosReal} />} />
+          <Route path="/plataforma/*" element={<React.Suspense fallback={<Loader />}><SecondaryProject /></React.Suspense>} />
         </Routes>
       </div>
     </div>

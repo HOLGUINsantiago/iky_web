@@ -75,13 +75,13 @@ function AuthMenu() {
           </ul>
         </div>
       )}
-      {/* {menuOpen && !isAuthenticated && (
+      {menuOpen && isAuthenticated && (
         <UserMenu
           user={user}
           handleLogout={handleLogout}
           toggleMenu={toggleMenu}
         />
-      )} */}
+      )}
 
       {loginVisible && (
         <div className="login-sidebar">
