@@ -43,7 +43,7 @@ const programs1 = [
     ],
   },
   {
-    title: "Prenium presencial",
+    title: "Premium presencial",
     price: 40,
     features: [
       "Acceso a clases presenciales en Cali: 16",
@@ -77,7 +77,7 @@ const programs2 = [
     ],
   },
   {
-    title: "Prenium presencial",
+    title: "Premium presencial",
     price: 40,
     features: [
       "Acceso a clases presenciales en Cali: 16",
@@ -88,14 +88,14 @@ const programs2 = [
     ],
   },
   {
-    title: "Prenium online",
+    title: "Premium online",
     price: 15,
     features: [
       "Acceso a clases online por meets y grabadas por drive",
       "Acceso a la plataforma y calendario",
       "Acceso a todos los podcasts",
       "Acceso a grupo de WhatsApp",
-      "1 clase online gratis de ikynesis",
+      "1 clase online gratis de IKYnesis",
       "Acceso a charlas y eventos online",
     ],
   },
@@ -112,7 +112,7 @@ const programs3 = [
     ],
   },
   {
-    title: "Prenium presencial",
+    title: "Premium presencial",
     price: 45,
     features: [
       "Acceso a clases presenciales en Cali: 16",
@@ -124,14 +124,14 @@ const programs3 = [
     ],
   },
   {
-    title: "Prenium online",
+    title: "Premium online",
     price: 15,
     features: [
       "Acceso a clases online por meets y grabadas dentro de ma plataforma",
       "Acceso a la plataforma con biblioteca y calendario",
       "Acceso a todos los podcasts",
       "Acceso a grupo de WhatsApp",
-      "2 clases online gratis de ikynesis",
+      "2 clases online gratis de IKYnesis",
       "Acceso a charlas y eventos online",
       "Acceso al algoritmo de recomendación personalizado",
     ],
@@ -267,8 +267,8 @@ function Home({ events }) {
                   meditación y el desarrollo personal.
                   <br />
                   <br />
-                  Iniciada en colombia en 2003 por el maestro Carlos Holguín,
-                  iky se fundamenta en las técnicas y principios clásicos del
+                  Iniciada en Colombia en 2003 por el maestro Carlos Holguín,
+                  IKY se fundamenta en las técnicas y principios clásicos del
                   yoga tántrico y el kankueb maya, adaptados y sistematizados
                   para las necesidades y realidades de la humanidad actual a
                   través de los nuevos desarrollos de la biomecánica y la
@@ -338,7 +338,7 @@ function Home({ events }) {
             </div>
           </div>
           <div className="separator-bar"></div>
-          <h2 className="title-home">Programmas</h2>
+          <h2 className="title-home">Programas</h2>
           <div className="programmes-wrapper" ref={programsRef}>
             {programs1.map((program, index) => (
               <Programmas

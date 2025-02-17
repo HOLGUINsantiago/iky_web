@@ -6,35 +6,31 @@ function IKYNESIS() {
   return (
     <div className="ikynesis-container">
       <p className="ikynesis-text">
-        IKYnesis es una metodología de intervención en el sistema nervioso a
-        través del movimiento corporal, desarrollada por{" "}
+        IKYnesis es una metodología de biomecánica desarrollada{" "}
         <Link to="/about">
           <strong className="link">C. R. Kan</strong>
         </Link>{" "}
-        a partir de los fundamentos y técnicas del Método Feldenkrais®, que
-        hace énfasis en la aplicación de numerosas formas de visualización,
-        cultivo de sensaciones y sentimientos (IKY Drishtis) durante la
-        ejecución del movimiento corporal.
+        para la rehabilitación y fortalecimiento osteomuscular, así como el
+        empoderamiento y crecimiento personal, que estimula y entrena el sistema
+        nervioso desde las secuencias propuestas en el Método Feldenkrais® de
+        Autoconciencia a Través del Movimiento, adicionadas con las diversas
+        formas de visualización y cultivo de sensaciones y patrones mentales del
+        Sistema IKY.
       </p>
       <p className="ikynesis-text">
-        El Método Feldenkrais® de Autoconciencia a Través del Movimiento es
-        definido como un sistema pedagógico que promueve el bienestar, la
-        eficiencia corporal y mental, desde la observación y reaprendizaje de la
-        actividad neuromuscular, a partir de ejercicios de movimiento corporal
-        que mejoran la coordinación, la flexibilidad y la agilidad, logrando
-        mayor facilidad y rango de movimiento.
+        IKYnesis estimula cambios en las redes neuronales centrales y
+        periféricas, que mejoran exponencialmente el desempeño físico, así como
+        el manejo de la mente y las emociones.
       </p>
       <p className="ikynesis-text">
-        IKYnesis ayuda a sus practicantes desde la generación de estímulos en el
-        sistema nervioso a través del movimiento, produciendo cambios en las
-        redes neuronales centrales y periféricas que favorecen exponencialmente
-        el desempeño físico, así como el manejo de la mente y las emociones. Lo
-        anterior conlleva a superar problemas osteo musculares tales como
-        dolores, inflamaciones, rigidez, lesiones, además de facilitar la
-        movilidad y agilidad física. Tiene un efecto profundo en la generación
-        de equilibrio y claridad interior, promoviendo el mejoramiento de la
-        auto imagen, la auto determinación, la autoridad interna y el dominio de
-        sí mismo.
+        Su práctica ayuda a superar problemas osteomusculares tales como
+        dolores, lesiones, inflamaciones y rigidez, además de facilitar la
+        movilidad y agilidad física, y el desarrollo de la fuerza. Favorece
+        además la salud y el bienestar físico y mental, en aras de la
+        eficiencia, el auto control, el equilibrio de la mente y del proceso
+        emocional, y lo más importante, favorece la autodeterminación, el
+        dominio de sí mismo, la autoridad interna, la auto imagen y el
+        empoderamiento personal.
       </p>
     </div>
   );

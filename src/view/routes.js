@@ -32,6 +32,7 @@ import Simon from "../assets/images/profil/Simon.jpg";
 import SystemaIKY from "../pageYoga/SystemaIky/SystemaIKY.js";
 import YogaDef from "../pageYoga/YogaDef.js";
 import Kankueb from "../pageEvenement/Kankueb/Kankueb.js";
+import MetodoFeldenkrais2 from "../pageIky/Ikynesis/MetodoFeldenkrais2.js";
 
 import YogaBack from "../assets/images/YogaBack.jpg";
 import imageIkynesis from "../assets/images/imageIkynesis.jpeg";
@@ -65,6 +66,7 @@ import CosmovisionMaya from "../pageEvenement/CosmovisonMaya/Cosmovision.js";
 import Techniques from "../pageEvenement/mysticDance/Tecnicas.js";
 import ProfesoradoInstructorado from "../pageYoga/profesoradoInstructorado/ProfesoradoInstructorado.js";
 import Yes from "../pageYoga/YES/Yes.js";
+import SesionesIndividuales from "../pageIky/Ikynesis/SesionesIndividuales.js";
 
 const cardsData = [
   {
@@ -292,7 +294,7 @@ const sectionsYoga = [
   },
   {
     id: 2,
-    name: "Systema Iky",
+    name: "Systema IKY",
     content: <SystemaIKY />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
@@ -360,9 +362,9 @@ const sectionsIkynesis = [
     recommendations: [],
   },
   {
-    id: 2,
-    name: "Yoga del movimiento",
-    content: loremIpsum({ count: 20, units: "paragraphs" }),
+    id: 5,
+    name: "Método Feldenkrais®",
+    content: <MetodoFeldenkrais2 />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
@@ -376,21 +378,6 @@ const sectionsIkynesis = [
   },
   {
     id: 3,
-    name: "Método Feldenkrais®",
-    content: loremIpsum({ count: 20, units: "paragraphs" }),
-    recommendations: [
-      { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
-      { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },
-      {
-        title: "1 Link 1",
-        url: "https://biojava.org/docs/api6.1.0/org/biojava/nbio/core/alignment/template/Profile.html",
-        porcentaje: 50,
-        allowed: true,
-      },
-    ],
-  },
-  {
-    id: 4,
     name: "Cursos, retiros y talleres",
     content: loremIpsum({ count: 20, units: "paragraphs" }),
     recommendations: [
@@ -405,9 +392,9 @@ const sectionsIkynesis = [
     ],
   },
   {
-    id: 5,
-    name: "Sesiones individuales",
-    content: loremIpsum({ count: 20, units: "paragraphs" }),
+    id: 4,
+    name: "Sesiones individuales de integracion somatica",
+    content: <SesionesIndividuales />,
     recommendations: [
       { title: "1 Blog 1", url: "#ikyblog3", porcentaje: 10, allowed: true },
       { title: "1 Blog 2", url: "#ikyblog2", porcentaje: 20, allowed: true },

@@ -1,9 +1,9 @@
-.ikynesis-container {
+.metodoF-container {
     padding: 20px;
     margin: 0 auto;
   }
   
-  .ikynesis-text {
+  .metodoF-text {
     font-size: 1rem;
     line-height: 1.7;
     color: #ffffff;
@@ -11,7 +11,7 @@
     text-align: justify;
   }
   
-  .ikynesis-text strong {
+  .metodoF-text strong {
     color: #c9c9c9; /* Couleur rouge pour souligner certains éléments */
   }
   

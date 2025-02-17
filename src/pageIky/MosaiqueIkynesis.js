@@ -13,8 +13,8 @@ function Mosaique() {
   };
 
   const items = [
-    "Yoga del movimiento",
     "Método Feldenkrais®",
+    "",
     "Cursos, retiros y talleres",
     "Sesiones individuales",
     "IKYnesis",
@@ -28,15 +28,14 @@ function Mosaique() {
 
   const items_mobile = [
     "IKYnesis",
-    "Yoga del movimiento",
     "Método Feldenkrais®",
     "Cursos, retiros y talleres",
     "Sesiones individuales",
   ];
 
-  const sectionIds = ["1", "2", "3", "4", "", "", "", "", "", "", ""];
+  const sectionIds = ["1", "", "3", "4", "", "", "", "", "", "", ""];
 
-  const specialSections = ["1", "2", "3", "4"];
+  const specialSections = ["1", "3", "4"];
 
   const [isMobile, setIsMobile] = useState(false);
 
