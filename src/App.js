@@ -55,7 +55,7 @@ function App() {
 
   useEffect(() => {
     const fetchEventos = () => {
-      fetch("https://silky-tessie-santiago03h-c56517a6.koyeb.app/api/eventos/profesor/13")
+      fetch("https://event-service.fly.dev/api/eventos/profesor/13")
         .then((response) => {
           if (!response.ok) {
             throw new Error(`Error: ${response.statusText}`);
