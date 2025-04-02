@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.4f29d60c.css",
-    "main.js": "/static/js/main.969efe39.js",
+    "main.css": "/static/css/main.954bcddc.css",
+    "main.js": "/static/js/main.04ea62be.js",
     "static/js/453.579ea4ad.chunk.js": "/static/js/453.579ea4ad.chunk.js",
     "static/media/EcoHotel_Brochure.pdf": "/static/media/EcoHotel_Brochure.8c449279a6d5ceac6181.pdf",
     "static/media/backIshka.jpg": "/static/media/backIshka.5d74d522265ca290ac50.jpg",
+    "static/media/Carlos.jpg": "/static/media/Carlos.3f276be04be2fc1a5164.jpg",
     "static/media/photoFelden.JPG": "/static/media/photoFelden.7dd8ffdde689f2ad2a7e.JPG",
     "static/media/Calendar_CHOLQ_IJ.png": "/static/media/Calendar_CHOLQ_IJ.3c7edadbe2f179ed70aa.png",
     "static/media/dance.JPG": "/static/media/dance.f2955023574ebbe3dd16.JPG",
@@ -17,7 +18,6 @@
     "static/media/IMG_5834.JPG": "/static/media/IMG_5834.35ab30773b35cf3a5824.JPG",
     "static/media/431A0466.jpg": "/static/media/431A0466.b98c69758f9a711b7c59.jpg",
     "static/media/IMG_9535.jpg": "/static/media/IMG_9535.05d38096cff63cc5c70f.jpg",
-    "static/media/Carlos.jpg": "/static/media/Carlos.00452c6103c015a1db93.jpg",
     "static/media/YogaBack.jpg": "/static/media/YogaBack.bcecb41296e9796274b7.jpg",
     "static/media/IMG_9638.JPG": "/static/media/IMG_9638.7c60d8a4fc4792fcf56b.JPG",
     "static/media/IMG_6553.JPG": "/static/media/IMG_6553.628392d7a9fd239167f0.JPG",
@@ -85,12 +85,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.4f29d60c.css.map": "/static/css/main.4f29d60c.css.map",
-    "main.969efe39.js.map": "/static/js/main.969efe39.js.map",
+    "main.954bcddc.css.map": "/static/css/main.954bcddc.css.map",
+    "main.04ea62be.js.map": "/static/js/main.04ea62be.js.map",
     "453.579ea4ad.chunk.js.map": "/static/js/453.579ea4ad.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f29d60c.css",
-    "static/js/main.969efe39.js"
+    "static/css/main.954bcddc.css",
+    "static/js/main.04ea62be.js"
   ]
 }
