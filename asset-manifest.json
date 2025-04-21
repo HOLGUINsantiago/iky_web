@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.954bcddc.css",
-    "main.js": "/static/js/main.e7e1b76a.js",
+    "main.js": "/static/js/main.ed2558ed.js",
     "static/js/453.579ea4ad.chunk.js": "/static/js/453.579ea4ad.chunk.js",
     "static/media/EcoHotel_Brochure.pdf": "/static/media/EcoHotel_Brochure.8c449279a6d5ceac6181.pdf",
     "static/media/backIshka.jpg": "/static/media/backIshka.5d74d522265ca290ac50.jpg",
@@ -86,11 +86,11 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.954bcddc.css.map": "/static/css/main.954bcddc.css.map",
-    "main.e7e1b76a.js.map": "/static/js/main.e7e1b76a.js.map",
+    "main.ed2558ed.js.map": "/static/js/main.ed2558ed.js.map",
     "453.579ea4ad.chunk.js.map": "/static/js/453.579ea4ad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.954bcddc.css",
-    "static/js/main.e7e1b76a.js"
+    "static/js/main.ed2558ed.js"
   ]
 }
