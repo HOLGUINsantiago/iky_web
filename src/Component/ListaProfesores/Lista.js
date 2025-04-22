@@ -34,7 +34,7 @@ const ProfessorList = () => {
   const fetchProfessors = async () => {
     try {
       const response = await fetch(
-        "https://profesores-services-reactivo.fly.dev/api/profesores/public/diplomado",
+        "https://gateway-delicate-dust-1135.fly.dev/api/profesores/public/diplomado",
       );
       const data = await response.json();
       console.log("Datos obtenidos:", data); // Aquí vemos los datos recibidos

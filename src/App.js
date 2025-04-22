@@ -17,7 +17,6 @@ import backgroundImage from "./assets/images/YogaBack.jpg";
 import flyer from "./assets/images/post_instruct.png";
 
 const urlList = [
-  "https://silky-tessie-santiago03h-c56517a6.koyeb.app/api/eventos/standup",
   "https://profesores-services-reactivo.fly.dev/api/profesores/standup",
 ];
 
@@ -26,7 +25,8 @@ const SecondaryProject = React.lazy(() => import('https://github.com/HOLGUINsant
 function App() {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
-  const [eventosReal, setEventosReal] = useState([]);
+  const [isLoadingImage, setIsLoadingImage] = useState(true);
+  const [eventosReal, setEventosReal] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
   const ghPlatform = process.env.REACT_APP_GH_PLATFORM;
 
@@ -47,7 +47,6 @@ function App() {
 
   useEffect(() => {
     fetchData();
-
     const intervalId = setInterval(fetchData, 2 * 60 * 1000);
 
     return () => clearInterval(intervalId);
@@ -100,7 +99,7 @@ function App() {
   }, [eventosReal]);
 
   useEffect(() => {
-    const handleLoad = () => setIsLoading(false);
+    const handleLoad = () => setIsLoadingImage(false);
     const images = document.querySelectorAll("img");
     let loadedImagesCount = 0;
 
@@ -128,7 +127,7 @@ function App() {
     }
   }, [location]);
 
-  if (isLoading) {
+  if (isLoading || isLoadingImage) {
     return (
       <div className="container-loader">
         <Loader />

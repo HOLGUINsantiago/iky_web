@@ -216,7 +216,7 @@ function Home({ events }) {
   };
 
   // Verificar si `events` tiene datos antes de renderizar
-  if (!events || events.length === 0) {
+  if (!events) {
     return (
       <div className="container-loader">
         <Loader />
@@ -308,7 +308,7 @@ function Home({ events }) {
               />
               <Routes>
                 <Route
-                  path="/event/:id"
+                  path="/event/:idEvento"
                   element={
                     <EvenementInstructoradoDetails
                       events={events.filter((ev) => ev.isInstructorado)}

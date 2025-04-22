@@ -63,11 +63,6 @@ const EventList = ({ events }) => {
     };
   }, []);
 
-  // Verificar si `events` tiene datos antes de renderizar
-  if (!events || events.length === 0) {
-    return <div>Cargando eventos...</div>;
-  }
-
   return (
     <div className="event-list">
       <div className="events-grid">

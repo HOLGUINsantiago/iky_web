@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Evenement.css";
+import ImagenBlackblaze from "../../tools/ImagenBlackblaze";
 
 const EventList = ({ events }) => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const EventList = ({ events }) => {
   const handleViewMore = (id) => {
     navigate(`/event/${id}`);
   };
+
 
   // Fonction pour calculer le nombre de jours restants
   const calculateDaysRemaining = (eventDate) => {
@@ -74,9 +76,9 @@ const EventList = ({ events }) => {
               onClick={() => handleViewMore(event.id)} // Appel de la navigation
               ref={(el) => (eventRefs.current[index] = el)} // Associe la référence à la carte
             >
-              <img
-                src={event.eventImage}
-                alt={`${event.title} Aperçu`}
+              <ImagenBlackblaze
+                src={event.imagenCobertura}
+                alt={`${event.resumen || "Evento"} Imagen`}
                 className="event-image"
               />
               <h2 className="event-title">{event.title}</h2>

@@ -49,10 +49,6 @@ const EventDetail = ({ events }) => {
     };
   }, []);
 
-  if (!events) {
-    return <div>Cargando eventos...</div>;
-  }
-
   if (!event) {
     return <div>Evento no encontrado</div>;
   }
