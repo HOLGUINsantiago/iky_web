@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/" />
+    <meta http-equiv="refresh" content="0; url=#/" />
   </head>
   <body>
     <p>Redirection...</p>
+    <script>
+      // Redirección por JavaScript como respaldo
+      if (!location.hash) {
+        location.replace('#/');
+      }
+    </script>
   </body>
 </html>
