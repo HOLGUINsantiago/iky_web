@@ -215,15 +215,6 @@ function Home({ events }) {
     setIsMenuOpen((prev) => !prev);
   };
 
-  // Verificar si `events` tiene datos antes de renderizar
-  if (!events) {
-    return (
-      <div className="container-loader">
-        <Loader />
-      </div>
-    );
-  }
-
   return (
     <div>
       <div className="home-container">

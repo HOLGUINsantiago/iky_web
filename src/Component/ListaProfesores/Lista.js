@@ -4,6 +4,7 @@ import SearchComponent from "./SearchBar.js";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import Loader from "../loaders/Loaders.js";
 
 // Correction pour les icônes de Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
@@ -31,24 +32,30 @@ const ProfessorList = () => {
   };
 
   // Fonction pour récupérer les données des professeurs depuis l'API
-  const fetchProfessors = async () => {
-    try {
-      const response = await fetch(
-        "https://gateway-delicate-dust-1135.fly.dev/api/profesores/public/diplomado",
-      );
-      const data = await response.json();
-      console.log("Datos obtenidos:", data); // Aquí vemos los datos recibidos
-      setProfessors(data); // Actualizamos el estado
-      setLoading(false);
-    } catch (error) {
-      console.error("Error al obtener los profesores:", error);
-      setLoading(false);
+  const fetchProfessorsWithRetries = async (retries = 100, delay = 10000) => {
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      try {
+        const response = await fetch("https://gateway-delicate-dust-1135.fly.dev/api/profesores/public/diplomado");
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        console.log("Datos obtenidos:", data);
+        setProfessors(data);
+        setLoading(false);
+        return; // Salir si todo está bien
+      } catch (error) {
+        console.error(`Intento ${attempt} fallido al obtener profesores:`, error);
+        if (attempt < retries) {
+          await new Promise(resolve => setTimeout(resolve, delay)); // Esperar antes del próximo intento
+        }
+      }
     }
+    console.error("Fallaron todos los intentos para obtener los profesores.");
   };
+
 
   // Appeler la fonction fetchProfessors quand le composant est monté
   useEffect(() => {
-    fetchProfessors();
+    fetchProfessorsWithRetries();
   }, []);
 
   const handleSearchNameChange = (e) => {
@@ -71,25 +78,29 @@ const ProfessorList = () => {
     setSelectedProfessor(null);
   };
 
-  // Fonction de filtrage des professeurs
-  const filteredProfessors = professors.filter((professor) => {
-    const fullName = (professor.nombre + " " + professor.prenom).toLowerCase();
-    const code = professor.codigo.toLowerCase();
+  const filteredProfessors = Array.isArray(professors) && professors.length > 0
+    ? professors.filter((professor) => {
+      const fullName = `${professor?.nombre ?? ""} ${professor?.prenom ?? ""}`.toLowerCase();
+      const code = (professor?.codigo ?? "").toLowerCase();
+      const address = (professor?.adress ?? "").toLowerCase();
 
-    return (
-      (fullName.includes(searchName.toLowerCase()) || searchName === "") &&
-      (professor.adress.toLowerCase().includes(searchLocation.toLowerCase()) ||
-        searchLocation === "") &&
-      (code.includes(searchCode.toLowerCase()) || searchCode === "")
-    );
-  });
+      return (
+        (fullName.includes(searchName.toLowerCase()) || searchName === "") &&
+        (address.includes(searchLocation.toLowerCase()) || searchLocation === "") &&
+        (code.includes(searchCode.toLowerCase()) || searchCode === "")
+      );
+    })
+    : [];
+
+
 
   // Gérer le zoom automatique en fonction des résultats de la recherche
   useEffect(() => {
     if (filteredProfessors.length > 0 && mapRef.current) {
-      const bounds = filteredProfessors.map((professor) => {
-        return [professor.latitud, professor.longitud];
-      });
+      const bounds = filteredProfessors
+        .filter((professor) => professor?.latitud != null && professor?.longitud != null)
+        .map((professor) => [professor.latitud, professor.longitud]);
+
       const map = mapRef.current;
       map.fitBounds(bounds); // Ajuste la vue de la carte pour inclure tous les marqueurs
     }
@@ -97,7 +108,13 @@ const ProfessorList = () => {
 
   // Afficher un message de chargement si les données ne sont pas encore récupérées
   if (loading) {
-    return <p>Chargement des données...</p>;
+    return (
+      <>
+        <div className="map-container-ripey">
+          <Loader />;
+        </div>
+      </>
+    )
   }
 
   return (
