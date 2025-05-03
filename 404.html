@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=#/" />
+    <meta charset="UTF-8" />
+    <title>Redireccionando...</title>
   </head>
   <body>
-    <p>Redirection...</p>
+    <p>Redireccionando...</p>
     <script>
-      // Redirección por JavaScript como respaldo
-      if (!location.hash) {
-        location.replace('#/');
+      // Si no hay hash, añadir #/ y reemplazar la URL sin recargar
+      if (!location.hash || location.hash === "#") {
+        location.replace(location.href.split("#")[0] + "#/");
       }
     </script>
   </body>
