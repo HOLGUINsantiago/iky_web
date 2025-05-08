@@ -110,7 +110,7 @@ const ProfessorList = () => {
   if (loading) {
     return (
       <>
-        <div className="map-container-ripey">
+        <div className="loader">
           <Loader />;
         </div>
       </>
