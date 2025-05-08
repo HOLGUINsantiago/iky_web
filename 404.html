@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <title>Redireccionando...</title>
+    <script>
+      const pathname = window.location.pathname.replace(/^\/+|\/+$/g, '');
+      const newUrl = window.location.origin + '/#/' + pathname + window.location.search + window.location.hash;
+      window.location.replace(newUrl);
+    </script>
   </head>
   <body>
-    <p>Redireccionando...</p>
-    <script>
-      // Si no hay hash, añadir #/ y reemplazar la URL sin recargar
-      if (!location.hash || location.hash === "#") {
-        location.replace(location.href.split("#")[0] + "#/");
-      }
-    </script>
+    <p>Redireccionando a la aplicación...</p>
   </body>
 </html>
