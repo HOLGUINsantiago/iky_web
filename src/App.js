@@ -20,7 +20,12 @@ const urlList = [
   "https://profesores-services-reactivo.fly.dev/api/profesores/standup",
 ];
 
-const SecondaryProject = React.lazy(() => import('https://github.com/HOLGUINsantiago/iky_platform/iky_plateform/src/App.js'));
+const SecondaryProject = React.lazy(
+  () =>
+    import(
+      "https://github.com/HOLGUINsantiago/iky_platform/iky_plateform/src/App.js"
+    ),
+);
 
 function App() {
   const location = useLocation();
@@ -29,6 +34,8 @@ function App() {
   const [eventosReal, setEventosReal] = useState(null);
   const apiUrl = process.env.REACT_APP_API_URL;
   const ghPlatform = process.env.REACT_APP_GH_PLATFORM;
+  const isLocalhost =
+    typeof window !== "undefined" && window.location.hostname === "localhost";
 
   const token = localStorage.getItem("authToken");
 
@@ -64,7 +71,9 @@ function App() {
         .then((data) => {
           const updatedData = data.map((event) => ({
             ...event,
-            isInstructorado: event.resumen.includes("Instructorado") || event.resumen.includes("Profesorado"),
+            isInstructorado:
+              event.resumen.includes("Instructorado") ||
+              event.resumen.includes("Profesorado"),
           }));
           setEventosReal(updatedData);
           console.log("Datos con isInstructorado (local):", updatedData);
@@ -83,16 +92,15 @@ function App() {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": token,
+      Authorization: token,
     },
   })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
       return response.json();
     })
-    .then(data => sessionStorage.setItem("user", JSON.stringify(data)))
-    .catch(error => console.error("Error fetching students:", error));
-
+    .then((data) => sessionStorage.setItem("user", JSON.stringify(data)))
+    .catch((error) => console.error("Error fetching students:", error));
 
   useEffect(() => {
     console.log("Estado actualizado de eventosReal:", eventosReal);
@@ -127,7 +135,7 @@ function App() {
     }
   }, [location]);
 
-  if (isLoading || isLoadingImage) {
+  if ((isLoading || isLoadingImage) && !isLocalhost) {
     return (
       <div className="container-loader">
         <Loader />
@@ -160,8 +168,18 @@ function App() {
           <Route path="/videos" element={<Categorie />} />
           <Route path="/confirm/*" element={<Confirmation />} />
           <Route path="/events" element={<EventList />} />
-          <Route path="/event/:id" element={<EventDetail events={eventosReal} />} />
-          <Route path="/plataforma/*" element={<React.Suspense fallback={<Loader />}><SecondaryProject /></React.Suspense>} />
+          <Route
+            path="/event/:id"
+            element={<EventDetail events={eventosReal} />}
+          />
+          <Route
+            path="/plataforma/*"
+            element={
+              <React.Suspense fallback={<Loader />}>
+                <SecondaryProject />
+              </React.Suspense>
+            }
+          />
         </Routes>
       </div>
     </div>

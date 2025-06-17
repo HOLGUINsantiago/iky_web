@@ -164,6 +164,8 @@ function Home({ events }) {
   const programsRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
+  const isLocalhost =
+    typeof window !== "undefined" && window.location.hostname === "localhost";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -216,7 +218,7 @@ function Home({ events }) {
   };
 
   // Verificar si `events` tiene datos antes de renderizar
-  if (!events) {
+  if (!events && !isLocalhost) {
     return (
       <div className="container-loader">
         <Loader />

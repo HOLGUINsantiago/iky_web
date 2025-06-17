@@ -16,6 +16,8 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
   const mosaiqueRef = useRef(null);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
   const [isLoading, setIsLoading] = useState(true);
+  const isLocalhost =
+    typeof window !== "undefined" && window.location.hostname === "localhost";
 
   useEffect(() => {
     const handleLoad = () => setIsLoading(false);
@@ -127,7 +129,7 @@ const Page = ({ sections, Mosaique, backgroundImage, color }) => {
   }, []);
 
   // Affichage du loader si la page est en cours de chargement
-  if (isLoading) {
+  if (isLoading && !isLocalhost) {
     return (
       <div className="container-loader">
         <Loader />
