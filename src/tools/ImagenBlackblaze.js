@@ -7,7 +7,7 @@ const ImagenBlackblaze = ({ src, alt, className }) => {
         if (!src) return;
 
         // Aquí se construye directamente la URL pública al backend
-        const fullUrl = `https://gateway-delicate-dust-1135.fly.dev/api/profesores/public/imagen?fileName=${src}`;
+        const fullUrl = `https://monolito-iky.fly.dev/api/profesores/public/imagen?fileName=${src}`;
 
         setImageUrl(fullUrl);
     }, [src]);

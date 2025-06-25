@@ -34,7 +34,7 @@ const ProfessorList = () => {
 
     try {
       const response = await fetch(
-        "https://gateway-delicate-dust-1135.fly.dev/api/profesores/public/diplomado",
+        "https://monolito-iky.fly.dev/api/profesores/public/diplomado",
       );
       const data = await response.json();
 
@@ -67,17 +67,17 @@ const ProfessorList = () => {
 
   const filteredProfessors = Array.isArray(professors)
     ? professors.filter((professor) => {
-        const fullName =
-          `${professor?.nombre || ""} ${professor?.prenom || ""}`.toLowerCase();
-        const code = (professor?.codigo || "").toLowerCase();
-        const address = (professor?.adress || "").toLowerCase();
+      const fullName =
+        `${professor?.nombre || ""} ${professor?.prenom || ""}`.toLowerCase();
+      const code = (professor?.codigo || "").toLowerCase();
+      const address = (professor?.adress || "").toLowerCase();
 
-        return (
-          fullName.includes(searchName.toLowerCase()) &&
-          address.includes(searchLocation.toLowerCase()) &&
-          code.includes(searchCode.toLowerCase())
-        );
-      })
+      return (
+        fullName.includes(searchName.toLowerCase()) &&
+        address.includes(searchLocation.toLowerCase()) &&
+        code.includes(searchCode.toLowerCase())
+      );
+    })
     : [];
 
   useEffect(() => {
