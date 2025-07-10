@@ -16,7 +16,7 @@ const UserMenu = ({
 
   // Fonction pour afficher/masquer le menu
   const handleMenuClick = () => {
-    setMenuVisible(!menuVisible); // Bascule entre afficher et masquer le menu
+    window.location.href = "https://iky.com.co/platform";
   };
 
   // Fonction pour fermer le menu

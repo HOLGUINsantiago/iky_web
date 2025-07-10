@@ -13,19 +13,7 @@ import ScrollToTop from "./ScrollToTop.js";
 import EventList from "./Component/NewEvenement/Evenement.js";
 import EventDetail from "./Component/NewEvenement/EventDetails.js";
 import Confirmation from "./Component/PageConfirmation.js";
-import backgroundImage from "./assets/images/YogaBack.jpg";
-import flyer from "./assets/images/post_instruct.png";
-
-const urlList = [
-  "https://profesores-services-reactivo.fly.dev/api/profesores/standup",
-];
-
-const SecondaryProject = React.lazy(
-  () =>
-    import(
-      "https://github.com/HOLGUINsantiago/iky_platform/iky_plateform/src/App.js"
-    ),
-);
+import { Helmet } from "react-helmet";
 
 function App() {
   const location = useLocation();
@@ -37,31 +25,54 @@ function App() {
   const isLocalhost =
     typeof window !== "undefined" && window.location.hostname === "localhost";
 
-  const token = localStorage.getItem("authToken");
-
-  const fetchData = async () => {
-    try {
-      for (const url of urlList) {
-        const response = await fetch(url);
-        if (response.ok) {
-          const data = await response.json();
-        }
-      }
-    } catch (error) {
-      console.error("Error al realizar las solicitudes:", error);
-    }
-  };
-
   useEffect(() => {
-    fetchData();
-    const intervalId = setInterval(fetchData, 2 * 60 * 1000);
+    const login = async () => {
+      const token = localStorage.getItem("authToken");
+      if (!token) {
+        return;
+      }
+      fetch(`${apiUrl}/api/profesores`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          sessionStorage.setItem("user", JSON.stringify(data))
+        })
+        .catch((error) => {
+          console.error("Error al login", error);
+        });
 
-    return () => clearInterval(intervalId);
+      fetch(apiUrl + "/api/estudiantes", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+          return response.json();
+        })
+        .then((data) => sessionStorage.setItem("user", JSON.stringify(data)))
+        .catch((error) => console.error("Error fetching students:", error));
+    }
+
+    login();
+
   }, []);
 
   useEffect(() => {
     const fetchEventos = () => {
-      fetch("https://monolito-iky.fly.dev/api/eventos/profesor/13")
+      fetch(apiUrl + "/api/eventos/profesor/13")
         .then((response) => {
           if (!response.ok) {
             throw new Error(`Error: ${response.statusText}`);
@@ -87,20 +98,6 @@ function App() {
 
     fetchEventos();
   }, []);
-
-  fetch(apiUrl + "/api/estudiantes", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: token,
-    },
-  })
-    .then((response) => {
-      if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
-      return response.json();
-    })
-    .then((data) => sessionStorage.setItem("user", JSON.stringify(data)))
-    .catch((error) => console.error("Error fetching students:", error));
 
   useEffect(() => {
     console.log("Estado actualizado de eventosReal:", eventosReal);
@@ -145,12 +142,44 @@ function App() {
 
   return (
     <div className="App">
+      <Helmet>
+        <title>IKY Yoga - Tu plataforma de Yoga</title>
+        <meta name="description" content="Clases, eventos y videos de yoga en IKY. Descubre nuestra plataforma y únete a la comunidad." />
+        <link rel="canonical" href={window.location.href} />
+      </Helmet>
       <div className="components">
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home events={eventosReal} />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/" element={
+            <>
+              <Helmet>
+                <title>Inicio | IKY Yoga</title>
+                <meta name="description" content="Página principal de IKY Yoga. Descubre clases, eventos y más." />
+                <link rel="canonical" href="https://iky.com.co/" />
+              </Helmet>
+              <Home events={eventosReal} />
+            </>
+          } />
+          <Route path="/login" element={
+            <>
+              <Helmet>
+                <title>Iniciar sesión | IKY Yoga</title>
+                <meta name="description" content="Accede a tu cuenta en IKY Yoga." />
+                <link rel="canonical" href="https://iky.com.co/login" />
+              </Helmet>
+              <LoginPage />
+            </>
+          } />
+          <Route path="/signup" element={
+            <>
+              <Helmet>
+                <title>Registrarse | IKY Yoga</title>
+                <meta name="description" content="Crea tu cuenta en IKY Yoga y únete a la comunidad." />
+                <link rel="canonical" href="https://iky.com.co/signup" />
+              </Helmet>
+              <SignupPage />
+            </>
+          } />
           {routes.map((route, idx) => (
             <Route
               key={idx}
@@ -165,20 +194,21 @@ function App() {
               }
             />
           ))}
-          <Route path="/videos" element={<Categorie />} />
+          <Route path="/videos" element={
+            <>
+              <Helmet>
+                <title>Videos de Yoga | IKY Yoga</title>
+                <meta name="description" content="Explora nuestra colección de videos de yoga." />
+                <link rel="canonical" href="https://iky.com.co/videos" />
+              </Helmet>
+              <Categorie />
+            </>
+          } />
           <Route path="/confirm/*" element={<Confirmation />} />
           <Route path="/events" element={<EventList />} />
           <Route
             path="/event/:id"
             element={<EventDetail events={eventosReal} />}
-          />
-          <Route
-            path="/plataforma/*"
-            element={
-              <React.Suspense fallback={<Loader />}>
-                <SecondaryProject />
-              </React.Suspense>
-            }
           />
         </Routes>
       </div>
