@@ -79,7 +79,7 @@ const EventList = ({ events }) => {
               ref={(el) => (eventRefs.current[index] = el)}
             >
               <img
-                src={event.imagenCobertura}
+                src={"https://monolito-iky.fly.dev/api/profesores/public/imagen?fileName=" + event.imagenCobertura}
                 alt={`${event.resumen} Aperçu`}
                 className="event-image"
               />
